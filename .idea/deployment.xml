@@ -36,6 +36,9 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/README.txt" />
             <excludedPath local="true" path="$PROJECT_DIR$/.gitattributes" />
             <excludedPath local="true" path="$PROJECT_DIR$/.gitignore" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/src" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/images" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/css/jquery-ui-1.12.1" />
           </excludedPaths>
         </serverdata>
       </paths>

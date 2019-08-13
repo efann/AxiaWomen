@@ -1,7 +1,7 @@
 body, caption, th, td, input, textarea, select, option, legend, fieldset,
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 body
@@ -9,11 +9,7 @@ body
   color: black;
   margin: 0;
   padding: 0px;
-  background-color: #88B1EF;
-  /*
-  background-image: url('/sites/default/files/pictures/header_footer/background.jpg');
-  background-repeat: repeat;
-  */
+  background-color: whitesmoke;
 }
 
 body.navbar-is-fixed-top
@@ -26,15 +22,23 @@ a:link,
 a:visited
 {
   text-decoration: none;
-  color: #0F2B8E;
+  color: darkcyan;
   font-style: normal;
   font-weight: bold;
+
+  /*
+    From https://stackoverflow.com/questions/6008324/fade-effect-on-link-hover
+  */
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
 }
 
 a:active,
-a:hover
+a:hover,
+a:focus
 {
-  text-decoration: underline;
+  color: black;
 }
 
 #ajax-loading
@@ -61,7 +65,7 @@ a:hover
 
 #admin-menu
 {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 0.9em;
   height: 30px;
 }
@@ -98,7 +102,7 @@ hr
 
 div.row
 {
-  background-color: #DEE4FF;
+  background-color: white;
   min-height: 600px;
   margin: 0;
   padding-top: 192px;
@@ -128,6 +132,16 @@ select
   Menus
 */
 
+#block-header a
+{
+  font-size: 2.0em;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*
+  Menus
+*/
+
 /*.navbar-header is used for the pretty background at the top.*/
 .container > .navbar-header
 {
@@ -137,7 +151,7 @@ select
 
 .navbar-inverse
 {
-  background-color: #5C9CCC;
+  background-color: white;
   margin: 0 auto;
 }
 
@@ -211,11 +225,24 @@ select
   background-size: 100% 100%;
   margin: 0 auto;
   border: none;
-  background-color: #EEEEEE;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 20px 0;
 }
 
+.footer a,
+.footer a:link,
+.footer a:visited
+{
+  color: #A6A6A6;
+}
+
+.footer a:active,
+.footer a:hover,
+.footer a:focus
+{
+  color: white;
+}
 
 /*----------------------------------------------------------------------------------------*/
 
