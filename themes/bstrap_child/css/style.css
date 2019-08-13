@@ -1,0 +1,222 @@
+body, caption, th, td, input, textarea, select, option, legend, fieldset,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+body
+{
+  color: black;
+  margin: 0;
+  padding: 0px;
+  background-color: #88B1EF;
+  /*
+  background-image: url('/sites/default/files/pictures/header_footer/background.jpg');
+  background-repeat: repeat;
+  */
+}
+
+body.navbar-is-fixed-top
+{
+  margin-top: 0;
+}
+
+a,
+a:link,
+a:visited
+{
+  text-decoration: none;
+  color: #0F2B8E;
+  font-style: normal;
+  font-weight: bold;
+}
+
+a:active,
+a:hover
+{
+  text-decoration: underline;
+}
+
+#ajax-loading
+{
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 2000;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  margin: 0 auto;
+  top: 25px;
+  display: none;
+  background-color: white;
+}
+
+#ajax-loading img
+{
+  width: 48px;
+  height: auto;
+  margin: 5px;
+}
+
+#admin-menu
+{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.9em;
+  height: 30px;
+}
+
+h1
+{
+  font-size: 1.8em;
+  line-height: 1.3em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+h2
+{
+  font-size: 1.25em;
+  line-height: 1.3em;
+  margin-top: 0.667em;
+  margin-bottom: 0.667em;
+}
+
+h3
+{
+  font-size: 1.1em;
+  line-height: 1.3em;
+  margin-top: 0.769em;
+  margin-bottom: 0.769em;
+}
+
+hr
+{
+  border-top: 1px solid gray;
+  clear: both;
+}
+
+div.row
+{
+  background-color: #DEE4FF;
+  min-height: 600px;
+  margin: 0;
+  padding-top: 192px;
+}
+
+.container
+{
+  padding: 0;
+}
+
+select
+{
+  cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*
+  Contact form
+*/
+#contact-message-feedback-form .form-actions
+{
+  padding-top: 10px;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*
+  Menus
+*/
+
+/*.navbar-header is used for the pretty background at the top.*/
+.container > .navbar-header
+{
+  width: 100%;
+  margin: 0;
+}
+
+.navbar-inverse
+{
+  background-color: #5C9CCC;
+  margin: 0 auto;
+}
+
+/*I got these settings from grid.less for .container*/
+@media (min-width: 768px)
+{
+  .navbar-inverse
+  {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px)
+{
+  .navbar-inverse
+  {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .navbar-inverse
+  {
+    max-width: 1170px;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+  color: #FFFFFF;
+  font-weight: normal;
+  font-size: 1.0em;
+  padding: 7px 15px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover
+{
+  border: none;
+  background-color: darkgray;
+}
+
+.navbar-toggle
+{
+  background-color: #5C9CCC;
+  right: 5px;
+}
+
+@media (min-width: 768px)
+{
+  .navbar .navbar-collapse
+  {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px)
+{
+  div.navbar-collapse
+  {
+    background-color: #5C9CCC;
+  }
+}
+
+
+/*----------------------------------------------------------------------------------------*/
+/* Footer */
+
+.footer
+{
+  background-size: 100% 100%;
+  margin: 0 auto;
+  border: none;
+  background-color: #EEEEEE;
+  color: black;
+  padding: 20px 0;
+}
+
+
+/*----------------------------------------------------------------------------------------*/
+
+
