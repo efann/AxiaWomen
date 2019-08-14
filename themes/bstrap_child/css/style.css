@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
 body
 {
-  color: black;
+  color: #222;
   margin: 0;
   padding: 0px;
   background-color: whitesmoke;
@@ -38,7 +38,7 @@ a:active,
 a:hover,
 a:focus
 {
-  color: black;
+  color: #222;
 }
 
 #ajax-loading
@@ -137,85 +137,81 @@ select
   font-size: 2.0em;
 }
 
-/*----------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
 /*
-  Menus
+  Menu
 */
 
-/*.navbar-header is used for the pretty background at the top.*/
-.container > .navbar-header
+#block-custommainmenu,
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form
 {
-  width: 100%;
-  margin: 0;
-}
-
-.navbar-inverse
-{
-  background-color: white;
-  margin: 0 auto;
-}
-
-/*I got these settings from grid.less for .container*/
-@media (min-width: 768px)
-{
-  .navbar-inverse
-  {
-    max-width: 750px;
-  }
-}
-
-@media (min-width: 992px)
-{
-  .navbar-inverse
-  {
-    max-width: 970px;
-  }
-}
-
-@media (min-width: 1200px)
-{
-  .navbar-inverse
-  {
-    max-width: 1170px;
-  }
+  background-color: #002C54;
 }
 
 .navbar-inverse .navbar-nav > li > a
 {
-  color: #FFFFFF;
-  font-weight: normal;
-  font-size: 1.0em;
-  padding: 7px 15px;
+  color: white;
+  font-weight: bold;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover
+.navbar-inverse
 {
+  background-color: whitesmoke;
   border: none;
-  background-color: darkgray;
 }
 
-.navbar-toggle
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus
 {
-  background-color: #5C9CCC;
-  right: 5px;
+  color: #EFD797;
+  background-color: #002C54;
+}
+
+.navbar-header
+{
+  width: 100%;
 }
 
 @media (min-width: 768px)
 {
-  .navbar .navbar-collapse
+  .navbar .navbar-nav
   {
-    text-align: left;
+    float: right;
   }
+
+  .navbar-nav > li > a
+  {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
 }
 
-@media (max-width: 767px)
+/*
+  Weird, but otherwise you get scroll bars when expanding sub-menu.
+*/
+#navbar-collapse.in
 {
-  div.navbar-collapse
-  {
-    background-color: #5C9CCC;
-  }
+  overflow: hidden;
+  display: table;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+/*
+  Contact Form
+*/
+
+.captcha .panel-heading
+{
+  display: none;
+}
+
+#contact-message-feedback-form label
+{
+  display: none;
+}
 
 /*----------------------------------------------------------------------------------------*/
 /* Footer */
@@ -225,7 +221,7 @@ select
   background-size: 100% 100%;
   margin: 0 auto;
   border: none;
-  background-color: black;
+  background-color: #222;
   color: white;
   padding: 20px 0;
 }
