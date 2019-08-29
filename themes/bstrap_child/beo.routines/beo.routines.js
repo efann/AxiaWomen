@@ -1,4 +1,4 @@
-// Updated on September 27, 2017
+//   Updated on August 29, 2019
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
@@ -173,9 +173,10 @@ var Beo =
     // Unfortunately, at the moment, I don't have a way to determine the title bar height
     // before it displays. So I use Chrome Inspect when viewing a dialog box to determine
     // the height.
-    setupImageDialogBox: function (tnTitleBarHeight, tcFadeEffect, tlCheckClass)
+    setupImageDialogBox: function (tnTitleBarHeight, tcFadeEffect, tlCheckClass, tcMainContent)
     {
       tlCheckClass = (typeof tlCheckClass !== 'undefined') ? tlCheckClass : true;
+      tcMainContent = (typeof tcMainContent !== 'undefined') ? tcMainContent : "div.main-container";
 
       Beo.fnDialogImageTitleBarHeight = tnTitleBarHeight;
 
@@ -186,7 +187,7 @@ var Beo =
       // to override the image output.
       var lcPageTitle = jQuery(document).attr('title').split('|')[0].trim();
 
-      jQuery("div.main-container img").each(function ()
+      jQuery(tcMainContent + " img").each(function ()
       {
         var loImage = jQuery(this);
         if (!loImage.attr('alt'))
@@ -373,6 +374,29 @@ var Beo =
     isWindowInIFrame: function ()
     {
       return (window.location != window.parent.location);
+    },
+    //----------------------------------------------------------------------------------------------------
+    adjustTabsAlignment: function (toTabs)
+    {
+      var lnWidth = jQuery(window).width();
+
+      if (lnWidth >= 768)
+      {
+        if (toTabs.tabs().hasClass("ui-tabs-vertical ui-helper-clearfix"))
+        {
+          toTabs.tabs().removeClass("ui-tabs-vertical ui-helper-clearfix");
+          toTabs.find("li").addClass("ui-corner-top").removeClass("ui-corner-left");
+        }
+      }
+      else
+      {
+        if (!toTabs.tabs().hasClass("ui-tabs-vertical ui-helper-clearfix"))
+        {
+          toTabs.tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+          toTabs.find("li").removeClass("ui-corner-top").addClass("ui-corner-left");
+        }
+      }
+
     }
     //----------------------------------------------------------------------------------------------------
   };

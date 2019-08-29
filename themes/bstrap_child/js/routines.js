@@ -44,6 +44,11 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
+    setupAdditionalButtons: function (tcSelect)
+    {
+      jQuery(tcSelect).button();
+    },
+    //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
       var lcAJAX = "#ajax-loading";

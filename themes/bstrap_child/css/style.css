@@ -63,15 +63,6 @@ a:focus
   margin: 5px;
 }
 
-img
-{
-  max-width: 350px;
-  height: auto;
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-
 #admin-menu
 {
   font-family: 'Fjalla One', sans-serif;
@@ -125,6 +116,13 @@ div.row
 select
 {
   cursor: pointer;
+}
+
+img,
+.dialogbox-image
+{
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -247,6 +245,27 @@ select
 .footer a:focus
 {
   color: white;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/* Views */
+
+.view-front-page-blogs
+{
+  overflow: hidden;
+  background-color: linen;
+  padding-bottom: 20px;
+}
+
+.view-front-page-blogs .views-field-title
+{
+  font-weight: bold;
+}
+
+.view-front-page-blogs .views-field-field-post-date
+{
+  font-style: italic;
+  padding-bottom: 10px;
 }
 
 /*----------------------------------------------------------------------------------------*/
