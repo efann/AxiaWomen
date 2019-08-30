@@ -100,14 +100,6 @@ hr
   clear: both;
 }
 
-div.row
-{
-  background-color: white;
-  min-height: 600px;
-  margin: 0;
-  padding-top: 192px;
-}
-
 .container
 {
   padding: 0;
@@ -116,13 +108,6 @@ div.row
 select
 {
   cursor: pointer;
-}
-
-img,
-.dialogbox-image
-{
-  padding-right: 20px;
-  padding-bottom: 20px;
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -260,12 +245,21 @@ img,
 .view-front-page-blogs .views-field-title
 {
   font-weight: bold;
+  text-align: center;
 }
 
 .view-front-page-blogs .views-field-field-post-date
 {
   font-style: italic;
   padding-bottom: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.view-front-page-blogs .views-field-body .col-sm-5,
+.view-front-page-blogs .views-field-body .col-sm-7
+{
+  width: 100%;
 }
 
 /*----------------------------------------------------------------------------------------*/

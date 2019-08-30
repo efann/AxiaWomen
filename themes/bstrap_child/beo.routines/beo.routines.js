@@ -1,4 +1,4 @@
-//   Updated on August 29, 2019
+//   Updated on August 30, 2019
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
@@ -173,10 +173,13 @@ var Beo =
     // Unfortunately, at the moment, I don't have a way to determine the title bar height
     // before it displays. So I use Chrome Inspect when viewing a dialog box to determine
     // the height.
-    setupImageDialogBox: function (tnTitleBarHeight, tcFadeEffect, tlCheckClass, tcMainContent)
+    // From https://stackoverflow.com/questions/8998612/how-to-pass-the-value-undefined-to-a-function-with-multiple-parameters
+    // By the way, to pass undefined as a parameter, use void 0
+    setupImageDialogBox: function (tnTitleBarHeight, tcFadeEffect, tlCheckClass, tcMainContent, tcDefaultImageClass)
     {
       tlCheckClass = (typeof tlCheckClass !== 'undefined') ? tlCheckClass : true;
       tcMainContent = (typeof tcMainContent !== 'undefined') ? tcMainContent : "div.main-container";
+      tcDefaultImageClass = (typeof tcDefaultImageClass !== 'undefined') ? tcDefaultImageClass : "responsive-image-regular";
 
       Beo.fnDialogImageTitleBarHeight = tnTitleBarHeight;
 
@@ -209,7 +212,7 @@ var Beo =
 
           if ((typeof lcClasses === 'undefined') || (lcClasses.indexOf('responsive-image') < 0))
           {
-            loImage.addClass("responsive-image-regular");
+            loImage.addClass(tcDefaultImageClass);
           }
         }
 
