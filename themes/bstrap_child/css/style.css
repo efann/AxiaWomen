@@ -100,6 +100,11 @@ hr
   clear: both;
 }
 
+.main-container .row
+{
+  padding-top: 80px;
+}
+
 .container
 {
   padding: 0;
@@ -108,6 +113,30 @@ hr
 select
 {
   cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*
+  Nodes
+*/
+
+.page-node-type-blog .page-header
+{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.page-node-type-blog .field--name-field-row-of-image-text .field--item
+{
+  padding-bottom: 15px;
+}
+
+.page-node-type-blog .field--name-field-post-date
+{
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 9px;
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -233,33 +262,27 @@ select
 }
 
 /*----------------------------------------------------------------------------------------*/
-/* Views */
+/* Blocks */
 
-.view-front-page-blogs
+.block-front-page-blog-block
 {
   overflow: hidden;
   background-color: linen;
   padding-bottom: 20px;
 }
 
-.view-front-page-blogs .views-field-title
+.block-front-page-blog-block .views-field-title
 {
   font-weight: bold;
   text-align: center;
 }
 
-.view-front-page-blogs .views-field-field-post-date
+.block-front-page-blog-block .views-field-field-post-date
 {
   font-style: italic;
   padding-bottom: 10px;
   font-size: 0.9em;
   text-align: center;
-}
-
-.view-front-page-blogs .views-field-body .col-sm-5,
-.view-front-page-blogs .views-field-body .col-sm-7
-{
-  width: 100%;
 }
 
 /*----------------------------------------------------------------------------------------*/

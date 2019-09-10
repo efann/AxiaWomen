@@ -9,7 +9,6 @@
           </mappings>
           <excludedPaths>
             <excludedPath path="/var/www/axiawomen.org/public_html/core" />
-            <excludedPath path="/var/www/axiawomen.org/public_html/modules" />
             <excludedPath path="/var/www/axiawomen.org/public_html/profiles" />
             <excludedPath path="/var/www/axiawomen.org/public_html/sites" />
             <excludedPath path="/var/www/axiawomen.org/public_html/vendor" />
@@ -39,6 +38,20 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/src" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/images" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/css/jquery-ui-1.12.1" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/admin_toolbar" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/autologout" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/captcha" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/ctools" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/entity_reference_revisions" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/imce" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/linkit" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/login_emailusername" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/mailchimp" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/paragraphs" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/pathauto" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/recaptcha" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/token" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/twig_tweak" />
           </excludedPaths>
         </serverdata>
       </paths>
