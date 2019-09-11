@@ -6,7 +6,6 @@ namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Core\Database\Database;
 use Drupal\Core\Modules\Text;
-use Drupal\Core\Url;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -14,21 +13,22 @@ use Drupal\views\Views;
 //-------------------------------------------------------------------------------------------------
 
 /**
- * Provides an 'image slider' block.
+ * Provides an 'all blogs' block.
  *
  * @Block(
- *   id = "aw_front_page_blog_block",
- *   admin_label = @Translation("AW Front Page Blog Block"),
- *   category = @Translation("Custom block for displaying the top 3 blogs.")
+ *   id = "aw_derived_from_front_page_block",
+ *   admin_label = @Translation("AW Derived from Front Page Block"),
+ *   category = @Translation("Custom block for displaying content derived from Front Page content.")
  * )
  */
-class FrontPageBlogBlock extends AWBlock
+class FrontPageContentBlock extends AWBlock
 {
   const NO_DATA = 'Not much data to show here. . . .';
   const VIEW_NAME = 'views_for_custom_programmatically';
-  const VIEW_BLOCK_ID = 'block_for_front_page_blogs';
+  const VIEW_BLOCK_ID = 'block_derived_from_front_page';
 
   //-------------------------------------------------------------------------------------------------
+
   /**
    * {@inheritdoc}
    */
@@ -44,40 +44,44 @@ class FrontPageBlogBlock extends AWBlock
       );
     }
 
-    $lcContent = "<div class='col-sm-12'>\n";
+    $lcContent = "";;
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
-      $lcContent .= "<div class='col-sm-4 views-row row$lnIndex'>\n";
-
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
 
-      $lcTitle = $this->getNodeField($loNode, 'title');
-      // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
-      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
-      $lcPostDate = $this->getNodeField($loNode, 'field_post_date');
-      $lcPostDateFormat = date('l, F j, Y', strtotime($lcPostDate));
-
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_row_of_image_text');
-      $lcText = text_summary($this->getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
-
+       // Top Parallax
+      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_top_parallax');
+      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcTitle</a></span></div>";
-      $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
+      $lcContent .= "<div class='parallax-window' data-parallax='scroll' data-image-src='$lcImage'></div>\n";
 
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
+      $lcContent .= " </div > \n";
 
-      $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='views-more-link ui-button ui-corner-all ui-widget' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
+      // First Things
+      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
+
+      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_first_things');
+      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+
+      $lcContent .= "<div class='col-sm-6'>\n";
+      $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
+      $lcContent .= " </div > \n";
+
+      $lcContent .= "<div class='col-sm-6'>\n";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= " </div > \n";
 
       $lcContent .= " </div > \n";
     }
-
-    $lcContent .= " </div > \n";
 
     // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(

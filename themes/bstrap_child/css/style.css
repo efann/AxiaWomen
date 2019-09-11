@@ -120,6 +120,11 @@ select
   Nodes
 */
 
+.page-node-type-front-page .page-header
+{
+  display: none;
+}
+
 .page-node-type-blog .page-header
 {
   text-align: center;
@@ -163,6 +168,11 @@ select
   Menu
 */
 
+.page-node-type-front-page #navbar
+{
+  background-color: transparent;
+}
+
 #block-custommainmenu,
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form
@@ -170,9 +180,19 @@ select
   background-color: #002C54;
 }
 
+@media (min-width: 768px)
+{
+  .page-node-type-front-page #block-custommainmenu,
+  .page-node-type-front-page .navbar-inverse .navbar-collapse,
+  .page-node-type-front-page .navbar-inverse .navbar-form
+  {
+    background-color: transparent;
+  }
+}
+
 .navbar-inverse .navbar-nav > li > a
 {
-  color: white;
+  color: darkcyan;
   font-weight: bold;
 }
 
@@ -264,35 +284,44 @@ select
 /*----------------------------------------------------------------------------------------*/
 /* Blocks */
 
-.block-front-page-blog-block
+.block-aw-front-page-blog-block
 {
   overflow: hidden;
   background-color: linen;
   padding-bottom: 20px;
 }
 
-.block-front-page-blog-block .views-field-title
+.block-aw-all-blogs-block .views-field-title,
+.block-aw-front-page-blog-block .views-field-title
 {
   font-weight: bold;
   text-align: center;
+  margin-top: 10px;
 }
 
-.block-front-page-blog-block a,
-.block-front-page-blog-block a:link,
-.block-front-page-blog-block a:visited
+.block-aw-all-blogs-block .views-field-field_image,
+.block-aw-front-page-blog-block .views-field-field_image
+{
+  text-align: center;
+}
+
+.block-aw-front-page-blog-block a,
+.block-aw-front-page-blog-block a:link,
+.block-aw-front-page-blog-block a:visited
 {
   color: darkslateblue;
 }
 
 /* Weird. I had to reset here also. */
-.block-front-page-blog-block a:active,
-.block-front-page-blog-block a:hover,
-.block-front-page-blog-block a:focus
+.block-aw-front-page-blog-block a:active,
+.block-aw-front-page-blog-block a:hover,
+.block-aw-front-page-blog-block a:focus
 {
   color: #222;
 }
 
-.block-front-page-blog-block .views-field-field-post-date
+.block-aw-all-blogs-block .views-field-field-post-date,
+.block-aw-front-page-blog-block .views-field-field-post-date
 {
   font-style: italic;
   padding-bottom: 10px;
@@ -300,8 +329,14 @@ select
   text-align: center;
 }
 
+.block-aw-all-blogs-block .views-field-more-button,
+.block-aw-front-page-blog-block .views-field-more-button
+{
+  padding: 10px 0;
+}
+
 /* From https://stackoverflow.com/questions/11225912/make-div-height-occupy-parent-remaining-height */
-.block-front-page-blog-block .col-sm-12
+.block-aw-front-page-blog-block .col-sm-12
 {
   display: flex;
   flex-direction: column;
@@ -309,33 +344,43 @@ select
 
 @media (min-width: 768px)
 {
-  .block-front-page-blog-block .col-sm-12
+  .block-aw-front-page-blog-block .col-sm-12
   {
     flex-direction: row;
   }
 }
 
-.block-front-page-blog-block .views-row
+.block-aw-front-page-blog-block .views-row
 {
   flex-grow: 1;
 }
 
-.block-front-page-blog-block .row0
+.block-aw-front-page-blog-block .row0
 {
   background-color: #EAAD6A;
 }
 
-.block-front-page-blog-block .row1
+.block-aw-front-page-blog-block .row1
 {
   background-color: #B23B37;
 }
 
-.block-front-page-blog-block .row2
+.block-aw-front-page-blog-block .row2
 {
   background-color: #52C1C8;
 }
 
-
 /*----------------------------------------------------------------------------------------*/
+/* Parallax */
 
+.parallax-mirror img
+{
+  display: block;
+}
+
+.parallax-window
+{
+  min-height: 400px;
+  background: transparent;
+}
 

@@ -22,6 +22,15 @@ beo.routines:
     component:
       beo.routines/beo.style.css: {}
 
+parallax:
+  remote: https://pixelcog.github.io/parallax.js/
+  license:
+    name: MIT License
+    url: https://github.com/pixelcog/parallax.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    parallax.js-1.5.0/parallax.min.js: {}
+
 # routines.js needs to be loaded before the google maps api. That's
 # why I place it in theme.files rather than under global-styling.
 theme.files:
@@ -38,4 +47,5 @@ global-loading:
     - core/jquery
     - bstrap_child/jquery.ui
     - bstrap_child/beo.routines
+    - bstrap_child/parallax
     - bstrap_child/theme.files

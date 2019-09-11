@@ -74,6 +74,9 @@ theme.has_glyphicons ? 'has-glyphicons',
       Routines.setupAdditionalButtons('a.views-more-link');
 
       Beo.setupImageDialogBox(20, 'explode', void 0, void 0, 'responsive-image-large');
+
+      // Perform after Beo.setupImageDialogBox
+      Routines.setupParallax();
     });
   </script>
 

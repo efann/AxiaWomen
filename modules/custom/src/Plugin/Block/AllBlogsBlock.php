@@ -14,21 +14,22 @@ use Drupal\views\Views;
 //-------------------------------------------------------------------------------------------------
 
 /**
- * Provides an 'image slider' block.
+ * Provides an 'all blogs' block.
  *
  * @Block(
- *   id = "aw_front_page_blog_block",
- *   admin_label = @Translation("AW Front Page Blog Block"),
- *   category = @Translation("Custom block for displaying the top 3 blogs.")
+ *   id = "aw_all_blogs_block",
+ *   admin_label = @Translation("AW All Blogs Block"),
+ *   category = @Translation("Custom block for displaying all of the blogs.")
  * )
  */
-class FrontPageBlogBlock extends AWBlock
+class AllBlogsBlock extends AWBlock
 {
   const NO_DATA = 'Not much data to show here. . . .';
   const VIEW_NAME = 'views_for_custom_programmatically';
-  const VIEW_BLOCK_ID = 'block_for_front_page_blogs';
+  const VIEW_BLOCK_ID = 'block_for_blogs_page';
 
   //-------------------------------------------------------------------------------------------------
+
   /**
    * {@inheritdoc}
    */
@@ -44,12 +45,12 @@ class FrontPageBlogBlock extends AWBlock
       );
     }
 
-    $lcContent = "<div class='col-sm-12'>\n";
+    $lcContent = "";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
-      $lcContent .= "<div class='col-sm-4 views-row row$lnIndex'>\n";
+      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
 
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
@@ -66,18 +67,21 @@ class FrontPageBlogBlock extends AWBlock
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
+      $lcContent .= "<div class='col-sm-5'>\n";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= " </div > \n";
+
+      $lcContent .= "<div class='col-sm-7'>\n";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcTitle</a></span></div>";
       $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
 
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
 
       $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='views-more-link ui-button ui-corner-all ui-widget' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
+      $lcContent .= " </div > \n";
 
       $lcContent .= " </div > \n";
     }
-
-    $lcContent .= " </div > \n";
 
     // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(

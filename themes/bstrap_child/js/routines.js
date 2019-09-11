@@ -1,6 +1,7 @@
 var Routines =
   {
     CONTACT_BLOCK: "#contact-message-feedback-form",
+    PARALLAX_CLASS: ".parallax-window",
 
     //----------------------------------------------------------------------------------------------------
     initializeRoutines: function ()
@@ -27,6 +28,17 @@ var Routines =
 
     },
 
+    //----------------------------------------------------------------------------------------------------
+    setupParallax: function ()
+    {
+      jQuery(Routines.PARALLAX_CLASS).each(function ()
+      {
+        var lcSource = jQuery(this).attr("data-image-src");
+
+        jQuery(this).parallax({imageSrc: lcSource});
+      });
+
+    },
     //----------------------------------------------------------------------------------------------------
     setupWatermarks: function ()
     {
