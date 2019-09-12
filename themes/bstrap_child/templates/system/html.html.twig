@@ -63,6 +63,13 @@ theme.has_glyphicons ? 'has-glyphicons',
   <css-placeholder token="{{ placeholder_token|raw }}">
   <js-placeholder token="{{ placeholder_token|raw }}">
 
+  <script id="mcjs">
+    !function (c, h, i, m, p)
+    {
+      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/92d6db129f1b4b0169f83188f/e2295897b803aab511bb397de.js");
+  </script>
+
   <script type="text/javascript">
     // From http://stackoverflow.com/questions/3698200/window-onload-vs-document-ready
     //   and
@@ -75,8 +82,8 @@ theme.has_glyphicons ? 'has-glyphicons',
 
       Beo.setupImageDialogBox(20, 'explode', void 0, void 0, 'responsive-image-large');
 
-      // Perform after Beo.setupImageDialogBox
-      Routines.setupParallax();
+      // Turns out that the Parallax is called when loading the library
+      // so no need to manually call a Routines.setupParallax() or something similar.
     });
   </script>
 

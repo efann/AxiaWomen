@@ -74,10 +74,10 @@ class FrontPageBlogBlock extends AWBlock
 
       $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='views-more-link ui-button ui-corner-all ui-widget' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
 
-      $lcContent .= " </div > \n";
+      $lcContent .= "</div>\n";
     }
 
-    $lcContent .= " </div > \n";
+    $lcContent .= "</div>\n";
 
     // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(

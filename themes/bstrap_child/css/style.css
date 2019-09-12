@@ -163,31 +163,11 @@ select
   font-size: 2.0em;
 }
 
-/*----------------------------------------------------------------------------------------------------*/
-/*
-  Menu
-*/
-
-.page-node-type-front-page #navbar
-{
-  background-color: transparent;
-}
-
 #block-custommainmenu,
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form
 {
-  background-color: #002C54;
-}
-
-@media (min-width: 768px)
-{
-  .page-node-type-front-page #block-custommainmenu,
-  .page-node-type-front-page .navbar-inverse .navbar-collapse,
-  .page-node-type-front-page .navbar-inverse .navbar-form
-  {
-    background-color: transparent;
-  }
+  background-color: whitesmoke;
 }
 
 .navbar-inverse .navbar-nav > li > a
@@ -284,6 +264,15 @@ select
 /*----------------------------------------------------------------------------------------*/
 /* Blocks */
 
+.block-aw-derived-from-front-page-block,
+.block-aw-front-page-blog-block,
+.block-aw-all-images-block,
+.block-aw-all-blogs-block,
+.block-aw-front-page-blog-block
+{
+  width: 100%;
+}
+
 .block-aw-front-page-blog-block
 {
   overflow: hidden;
@@ -291,6 +280,12 @@ select
   padding-bottom: 20px;
 }
 
+.block-aw-derived-from-front-page-block .first-things
+{
+  padding: 25px 0;
+}
+
+.block-aw-all-images-block .views-field-title,
 .block-aw-all-blogs-block .views-field-title,
 .block-aw-front-page-blog-block .views-field-title
 {
@@ -299,6 +294,19 @@ select
   margin-top: 10px;
 }
 
+.block-aw-all-images-block .views-field-title
+{
+  margin-top: 2px;
+}
+
+.block-aw-all-images-block .views-field-copyright
+{
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.block-aw-all-images-block .views-field-field_image,
 .block-aw-all-blogs-block .views-field-field_image,
 .block-aw-front-page-blog-block .views-field-field_image
 {
@@ -370,17 +378,31 @@ select
   background-color: #52C1C8;
 }
 
+
+
 /*----------------------------------------------------------------------------------------*/
 /* Parallax */
 
+/* img is set to display: none in beo.styles.css */
 .parallax-mirror img
 {
   display: block;
 }
 
+/* The min-height/height will be calculated in the generating block. */
 .parallax-window
 {
-  min-height: 400px;
   background: transparent;
+  display: block;
+  position: relative;
 }
 
+.parallax-window .parallax-text
+{
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 60%; /* Adjust this value to move the positioned div up and down */
+  padding: 0 25px;
+  color: whitesmoke;
+}
