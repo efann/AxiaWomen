@@ -237,6 +237,19 @@ select
 /*----------------------------------------------------------------------------------------*/
 /* Footer */
 
+/* img is set to display: none in beo.styles.css */
+.footer img
+{
+  display: block;
+}
+
+.footer .instagram img,
+.footer .facebook img
+{
+  height: 42px;
+  width: auto;
+}
+
 .footer
 {
   background-size: 100% 100%;
@@ -379,7 +392,6 @@ select
 }
 
 
-
 /*----------------------------------------------------------------------------------------*/
 /* Parallax */
 
@@ -405,4 +417,19 @@ select
   top: 60%; /* Adjust this value to move the positioned div up and down */
   padding: 0 25px;
   color: whitesmoke;
+}
+
+.parallax-window .parallax-text a,
+.parallax-window .parallax-text a:link,
+.parallax-window .parallax-text a:visited
+{
+  color: #EAAD6A;
+}
+
+/* Weird. I had to reset here also. */
+.parallax-window .parallax-text a:active,
+.parallax-window .parallax-text a:hover,
+.parallax-window .parallax-text a:focus
+{
+  color: #222;
 }
