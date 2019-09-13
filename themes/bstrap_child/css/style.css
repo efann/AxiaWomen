@@ -103,6 +103,7 @@ hr
 .main-container .row
 {
   padding-top: 80px;
+  margin: 0;
 }
 
 .container
@@ -208,6 +209,14 @@ select
     padding-bottom: 8px;
   }
 
+}
+
+.container > .navbar-header
+{
+  padding-left: 25px;
+
+  /* Otherwise, Axia Women header label was off the screen on mobile. */
+  margin: 0;
 }
 
 /*
