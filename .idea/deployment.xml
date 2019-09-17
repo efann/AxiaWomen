@@ -53,6 +53,8 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/token" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/twig_tweak" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/parallax.js-1.5.0" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/google_analytics" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/devel" />
           </excludedPaths>
         </serverdata>
       </paths>

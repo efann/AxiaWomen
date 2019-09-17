@@ -80,7 +80,8 @@ theme.has_glyphicons ? 'has-glyphicons',
     });
   </script>
 
-      {% if ( "MailChimp" in head_title ) or ( "Welcome" in head_title ) %}
+      {% set lcTitle = head_title|safe_join(' | ')|lower %}
+      {% if ( "sign up" in lcTitle ) or ( "welcome" in lcTitle ) %}
         <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/92d6db129f1b4b0169f83188f/e2295897b803aab511bb397de.js");</script>
       {% endif %}
 

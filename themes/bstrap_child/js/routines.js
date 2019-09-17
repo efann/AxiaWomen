@@ -8,6 +8,10 @@ var Routines =
     {
       Beo.initializeBrowserFixes();
 
+      // I no longer paste the Google Analytics here as I'm tired of tracking whatever changes
+      // Google adds. Plus, their code does not format correctly when I auto-format javascript.
+      // So now I'm just using the Drupal Module, Google Analytics:
+      //   https://www.drupal.org/project/google_analytics
     },
 
     //----------------------------------------------------------------------------------------------------

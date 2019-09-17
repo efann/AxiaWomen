@@ -117,6 +117,17 @@ select
 }
 
 /*----------------------------------------------------------------------------------------*/
+/* Debugging
+   Install Devel, Kint
+   Turn on Kint debugging in files/default/services.yml which you get from default.services.yml
+ */
+
+.kint
+{
+  padding-top: 90px;
+}
+
+/*----------------------------------------------------------------------------------------*/
 /*
   Nodes
 */
