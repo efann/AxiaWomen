@@ -28,10 +28,12 @@
 
 {% set llParallax = false %}
 {% set llFirstThings = false %}
+{% set llRowImageText = false %}
 
 {% if attributes.storage['id'] is defined %}
   {% set llParallax = ('top-parallax-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llFirstThings = ('first-things-wrapper' in attributes.storage['id'].__toString()) %}
+  {% set llRowImageText = ('row-of-image-text-wrapper' in attributes.storage['id'].__toString()) %}
 {% endif %}
 
 {% if (llParallax) %}
@@ -40,10 +42,13 @@
 {% elseif (llFirstThings) %}
   <details open class="container-details">
     <summary>First Things</summary>
+{% elseif (llRowImageText) %}
+  <details open class="container-details">
+    <summary>Row(s) of Image Text</summary>
 {% endif %}
 
 <div{{ attributes.addClass(classes) }}>{{ children }}</div>
 
-{% if (llParallax) or (llFirstThings) %}
+{% if (llParallax) or (llFirstThings) or (llRowImageText) %}
   </details>
 {% endif %}
