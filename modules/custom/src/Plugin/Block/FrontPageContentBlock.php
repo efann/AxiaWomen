@@ -71,10 +71,10 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= " </div>\n";
 
-      // First Things
-      $lcContent .= "<div class='first-things col-sm-12 views-row row$lnIndex'>\n";
+      // Bottom Section
+      $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";
 
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_first_things');
+      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_bottom_section');
       $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
