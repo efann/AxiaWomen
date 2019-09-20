@@ -49,7 +49,7 @@
     <summary>Bottom Section</summary>
 {% elseif (llRowImageText) %}
   <details open class="container-details">
-    <summary>Row(s) of Image Text{{ (">Tile<" in children.__toString()) ? ' for Tiles' : '' }}</summary>
+    <summary>Row(s) of Image Text{{ (">Tile</h4>" in children.__toString()) ? ' for Tiles' : '' }}</summary>
 {% endif %}
 
     <div{{ attributes.addClass(classes) }}>{{ children }}</div>

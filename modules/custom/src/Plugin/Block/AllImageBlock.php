@@ -51,7 +51,7 @@ class AllImageBlock extends AWBlock
     {
       if (($lnIndex % 2) == 0)
       {
-        $lnRow = $lnTrack / 2;
+        $lnRow = $lnIndex / 2;
         $lcContent .= "<div class='col-sm-12 views-row row$lnRow'>\n";
         $lnTrack = 0;
       }

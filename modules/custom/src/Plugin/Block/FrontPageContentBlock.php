@@ -62,7 +62,7 @@ class FrontPageContentBlock extends AWBlock
       $lnWidth = $loImage['width'];
       $lnHeight = $loImage['height'];
 
-      $lcContent .= "<div class='top-parallax col-sm-12 views-row row$lnIndex'>\n";
+      $lcContent .= "<div class='top-parallax col-sm-12 views-row row0'>\n";
 
       $lcStyle = "style='height: $lnHeight" . "px;'";
       $lcContent .= "<div class='parallax-window' data-parallax='scroll' data-image-src='$lcImage' data-natural-width='$lnWidth' data-natural-height='$lnHeight' $lcStyle>";
@@ -70,6 +70,52 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= " </div>\n";
 
       $lcContent .= " </div>\n";
+
+      // Billboard & Tiles
+      $lcContent .= "<div class='billboard-tile col-sm-12 views-row row$lnIndex'>\n";
+      $lcBillboard = $this->getNodeField($loNode, 'field_billboard');
+
+      $lcContent .= "<div class='col-sm-4'>\n";
+      $lcContent .= "<div class='views-field views-field-field_billboard'><div class='field-content'>$lcBillboard</div></div>";
+      $lcContent .= "</div>\n";
+
+      $loEntityRows = $loNode->get('field_row_of_image_text')->referencedEntities();
+
+      $lcContent .= "<div class='col-sm-8'>\n";
+      $lnTrack = 0;
+      foreach ($loEntityRows as $lnIndex => $loRow)
+      {
+        if (($lnIndex % 2) == 0)
+        {
+          $lnRow = $lnIndex / 2;
+          $lcContent .= "<div class='col-sm-12 views-row row$lnRow'>\n";
+          $lnTrack = 0;
+        }
+
+        $lcTitle = $this->getNodeField($loRow, 'title');
+        $lcCaption = $this->getNodeField($loRow, 'field_html_text');
+        $loReferencedTileImage = $this->getReferencedEntity($loRow, 'field_image_content_id');
+        $lcTileImage = $this->getNodeField($loReferencedTileImage, 'field_image');
+
+        $lcContent .= "<div class='col-sm-6'>\n";
+        $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcTileImage' alt='$lcTitle' title='$lcTitle' /></div></div>";
+        $lcContent .= "<div class='views-field views-field-caption'><span class='field-content'>$lcCaption</span></div>";
+        $lcContent .= "</div>\n";
+
+        if (++$lnTrack >= 2)
+        {
+          $lcContent .= "</div>\n";
+          $lnTrack = 0;
+        }
+      }
+      // Means if not set to zero then the last div.col-sm-12 was not closed.
+      if ($lnTrack != 0)
+      {
+        $lcContent .= "</div>\n";
+      }
+      $lcContent .= "</div>\n";
+
+      $lcContent .= "</div>\n";
 
       // Bottom Section
       $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";

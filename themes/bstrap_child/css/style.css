@@ -137,6 +137,23 @@ select
   display: none;
 }
 
+.page-node-type-front-page .billboard-tile
+{
+  padding: 20px 0;
+}
+
+.page-node-type-front-page .billboard-tile .col-sm-12.views-row
+{
+  padding-bottom: 10px;
+}
+
+.page-node-type-front-page .billboard-tile .views-field-caption
+{
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+}
+
 .page-node-type-blog .page-header
 {
   text-align: center;
