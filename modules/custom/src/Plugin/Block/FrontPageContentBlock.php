@@ -123,6 +123,7 @@ class FrontPageContentBlock extends AWBlock
       $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_bottom_section');
       $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcTitle = $this->getNodeField($loReferencedImage, 'title');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='col-sm-6'>\n";
@@ -130,7 +131,7 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= "</div>\n";
 
       $lcContent .= "<div class='col-sm-6'>\n";
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";
