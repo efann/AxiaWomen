@@ -55,7 +55,7 @@ class AllBlogsBlock extends AWBlock
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
 
-      $lcTitle = $this->getNodeField($loNode, 'title');
+      $lcURLTitle = $this->getNodeField($loNode, 'title');
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
       $lcPostDate = $this->getNodeField($loNode, 'field_post_date');
@@ -65,14 +65,15 @@ class AllBlogsBlock extends AWBlock
       $lcText = text_summary($this->getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
 
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcTitle = $this->getNodeField($loReferencedImage, 'title');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='col-sm-5'>\n";
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
       $lcContent .= "</div>\n";
 
       $lcContent .= "<div class='col-sm-7'>\n";
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcTitle</a></span></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
       $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
 
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";

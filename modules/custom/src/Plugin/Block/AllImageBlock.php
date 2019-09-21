@@ -68,7 +68,7 @@ class AllImageBlock extends AWBlock
       $lnHeight = $loImage['height'];
 
       $lcContent .= "<div class='col-sm-6'>\n";
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img data-natural-width='$lnWidth' data-natural-height='$lnHeight' src='$lcImage' /></div></div>";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img data-natural-width='$lnWidth' data-natural-height='$lnHeight' src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcTitle</span></div>";
       $lcContent .= "<div class='views-field views-field-copyright'><span class='field-content'>$lcCopyright</span></div>";
       $lcContent .= "</div>\n";

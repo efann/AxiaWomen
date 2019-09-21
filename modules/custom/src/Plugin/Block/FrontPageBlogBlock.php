@@ -29,6 +29,7 @@ class FrontPageBlogBlock extends AWBlock
   const VIEW_BLOCK_ID = 'block_for_front_page_blogs';
 
   //-------------------------------------------------------------------------------------------------
+
   /**
    * {@inheritdoc}
    */
@@ -64,12 +65,13 @@ class FrontPageBlogBlock extends AWBlock
       $lcText = text_summary($this->getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
 
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcTitle = $this->getNodeField($loReferencedImage, 'title');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcTitle</a></span></div>";
       $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
 
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' /></div></div>";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
 
       $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='views-more-link ui-button ui-corner-all ui-widget' href='$lcURLAlias' hreflang='en'>More</a></div></div>";

@@ -92,13 +92,13 @@ class FrontPageContentBlock extends AWBlock
           $lnTrack = 0;
         }
 
-        $lcTitle = $this->getNodeField($loRow, 'title');
         $lcCaption = $this->getNodeField($loRow, 'field_html_text');
         $loReferencedTileImage = $this->getReferencedEntity($loRow, 'field_image_content_id');
+        $lcTitle = $this->getNodeField($loReferencedTileImage, 'title');
         $lcTileImage = $this->getNodeField($loReferencedTileImage, 'field_image');
 
         $lcContent .= "<div class='col-sm-6'>\n";
-        $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcTileImage' alt='$lcTitle' title='$lcTitle' /></div></div>";
+        $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcTileImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
         $lcContent .= "<div class='views-field views-field-caption'><span class='field-content'>$lcCaption</span></div>";
         $lcContent .= "</div>\n";
 
