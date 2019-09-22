@@ -55,7 +55,7 @@ class FrontPageBlogBlock extends AWBlock
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
 
-      $lcTitle = $this->getNodeField($loNode, 'title');
+      $lcURLTitle = $this->getNodeField($loNode, 'title');
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
       $lcPostDate = $this->getNodeField($loNode, 'field_post_date');
@@ -68,7 +68,7 @@ class FrontPageBlogBlock extends AWBlock
       $lcTitle = $this->getNodeField($loReferencedImage, 'title');
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcTitle</a></span></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
       $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
 
       $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
