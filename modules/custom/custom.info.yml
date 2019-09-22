@@ -1,9 +1,10 @@
 name: Custom Module
-description: Module for blocks and custom formatting of content
+description: Module for blocks, custom formatting of content, and twig extensions
 package: Custom
 type: module
 version: 1.0
 core: 8.x
+
 dependencies:
-- node
-- block
+  - node
+  - block

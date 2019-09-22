@@ -62,7 +62,11 @@
 
 		  {% if loop.index0 is even %}
             <div class='col-sm-5'>
-	          {# Wow, the Twig Tweak module rocks! #}
+{#
+                {{ custom_field_image(lnNodeID, 'field_image') }}
+
+#}
+                {# Wow, the Twig Tweak module rocks! #}
 			  {{ drupal_field('field_image', 'node', lnNodeID) }}
             </div>
 		    <div class='col-sm-7'>
