@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\Custom;
+namespace Drupal\custom\TwigExtension;
 
 use Drupal\node\Entity\Node;
 
