@@ -62,7 +62,9 @@
 
 		  {% if loop.index0 is even %}
             <div class='col-sm-5'>
-              {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+              <div class="field field--name-field-image field--type-image field--label-hidden field--item">
+                {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+              </div>
             </div>
 		    <div class='col-sm-7'>
               {{ item.content['#paragraph'].field_html_text.value|raw }}		  
@@ -71,8 +73,10 @@
 	        <div class='col-sm-7'>
               {{ item.content['#paragraph'].field_html_text.value|raw }}		  
             </div>
-		    <div class='col-sm-5'
-              {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+		    <div class='col-sm-5'>
+              <div class="field field--name-field-image field--type-image field--label-hidden field--item">
+                {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+              </div>
             </div>
           {% endif %}		  
 		</div>
@@ -95,7 +99,9 @@
 
         {% if loop.index0 is even %}
           <div class='col-sm-5'>
-            {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+            <div class="field field--name-field-image field--type-image field--item">
+              {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+            </div>
           </div>
 		  <div class='col-sm-7'>
             {{ item.content['#paragraph'].field_html_text.value|raw }}		  
@@ -105,7 +111,9 @@
             {{ item.content['#paragraph'].field_html_text.value|raw }}		  
           </div>
 	      <div class='col-sm-5'>
-            {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+            <div class="field field--name-field-image field--type-image field--item">
+              {{ custom_field_image(lnNodeID, 'field_image')|raw }}
+            </div>
           </div>
         {% endif %}		  
 	  </div>
