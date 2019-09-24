@@ -14,6 +14,12 @@ abstract class AWBlock extends BlockBase
   //-------------------------------------------------------------------------------------------------
   protected function getNodeField($toNode, $tcField)
   {
+    // And yes, you want to use ==
+    if ($toNode == null)
+    {
+      return ("Node does not exist for $tcField. A linked / used image was probably deleted.");
+    }
+
     $lcValue = '';
     if ($toNode->hasField($tcField))
     {
@@ -55,8 +61,12 @@ abstract class AWBlock extends BlockBase
     $loParagraphItem = $toNode->get($tcField)->first();
     $loEntityReference = $loParagraphItem->get('entity');
     $loEntityAdapter = $loEntityReference->getTarget();
-    $loReferencedEntity = $loEntityAdapter->getValue();
+    if ($loEntityAdapter == null)
+    {
+      return (null);
+    }
 
+    $loReferencedEntity = $loEntityAdapter->getValue();
     return ($loReferencedEntity);
   }
   //-------------------------------------------------------------------------------------------------

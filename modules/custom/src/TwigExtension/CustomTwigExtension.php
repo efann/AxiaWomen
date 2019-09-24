@@ -48,6 +48,12 @@ class CustomTwigExtension extends \Twig_Extension
   //-------------------------------------------------------------------------------------------------
   private function getNodeField($toNode, $tcField)
   {
+    // And yes, you want to use ==
+    if ($toNode == null)
+    {
+      return ("Node does not exist for $tcField. A linked / used image was probably deleted.");
+    }
+
     $lcValue = '';
     if ($toNode->hasField($tcField))
     {
