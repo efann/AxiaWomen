@@ -5,6 +5,7 @@
 namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -58,7 +59,10 @@ class AllImageBlock extends AWBlock
 
       $loNode = $loRow->_entity;
 
-      $lcTitle = $this->getNodeField($loNode, 'title');
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcTitle = HTML::escape($this->getNodeField($loNode, 'title'));
       $lcCopyright = $this->getNodeField($loNode, 'body');
       $lcImage = $this->getNodeField($loNode, 'field_image');
 

@@ -4,6 +4,7 @@
 
 namespace Drupal\custom\Plugin\Block;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Modules\Text;
 use Drupal\views\Views;
@@ -94,7 +95,10 @@ class FrontPageContentBlock extends AWBlock
 
         $lcCaption = $this->getNodeField($loRow, 'field_html_text');
         $loReferencedTileImage = $this->getReferencedEntity($loRow, 'field_image_content_id');
-        $lcTitle = $this->getNodeField($loReferencedTileImage, 'title');
+        // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+        // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+        // By the way, title has this problem as it's a plain text field with no conversion.
+        $lcTitle = HTML::escape($this->getNodeField($loReferencedTileImage, 'title'));
         $lcTileImage = $this->getNodeField($loReferencedTileImage, 'field_image');
 
         $lcContent .= "<div class='col-sm-6'>\n";
@@ -123,7 +127,10 @@ class FrontPageContentBlock extends AWBlock
       $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_bottom_section');
       $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-      $lcTitle = $this->getNodeField($loReferencedImage, 'title');
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcTitle = HTML::escape($this->getNodeField($loReferencedImage, 'title'));
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='col-sm-6'>\n";

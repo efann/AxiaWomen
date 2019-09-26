@@ -4,6 +4,7 @@
 
 namespace Drupal\custom\Plugin\Block;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Modules\Text;
 use Drupal\Core\Url;
@@ -55,7 +56,10 @@ class FrontPageBlogBlock extends AWBlock
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
 
-      $lcURLTitle = $this->getNodeField($loNode, 'title');
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcURLTitle = HTML::escape($this->getNodeField($loNode, 'title'));
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
       $lcPostDate = $this->getNodeField($loNode, 'field_post_date');
@@ -65,7 +69,10 @@ class FrontPageBlogBlock extends AWBlock
       $lcText = text_summary($this->getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
 
       $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-      $lcTitle = $this->getNodeField($loReferencedImage, 'title');
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcTitle = HTML::escape($this->getNodeField($loReferencedImage, 'title'));
       $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";

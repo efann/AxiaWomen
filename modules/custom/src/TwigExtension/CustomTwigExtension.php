@@ -1,6 +1,7 @@
 <?php
 namespace Drupal\custom\TwigExtension;
 
+use Drupal\Component\Utility\Html;
 use Drupal\node\Entity\Node;
 
 //-------------------------------------------------------------------------------------------------
@@ -39,7 +40,10 @@ class CustomTwigExtension extends \Twig_Extension
   {
     $loEntity = \Drupal::entityTypeManager()->getStorage('node')->load($tnID);
 
-    $lcTitle = $this->getNodeField($loEntity, 'title');
+    // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+    // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+    // By the way, title has this problem as it's a plain text field with no conversion.
+    $lcTitle = HTML::escape($this->getNodeField($loEntity, 'title'));
     $lcImage = $this->getNodeField($loEntity, $tcFieldName);
 
     return ("<img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' />");
