@@ -121,6 +121,26 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= "</div>\n";
 
+      // Middle Parallax
+      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_middle_parallax');
+      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+
+      // From https://stackoverflow.com/questions/36087896/drupal-8-get-the-image-width-height-alt-etc-in-a-twig-or-preprocess-fi/52944485#52944485
+      $loImage = $loReferencedImage->field_image[0]->getValue();
+      $lnWidth = $loImage['width'];
+      $lnHeight = $loImage['height'];
+
+      $lcContent .= "<div class='middle-parallax col-sm-12 views-row row0'>\n";
+
+      $lcStyle = "style='height: $lnHeight" . "px;'";
+      $lcContent .= "<div class='parallax-window' data-parallax='scroll' data-image-src='$lcImage' data-natural-width='$lnWidth' data-natural-height='$lnHeight' $lcStyle>";
+      $lcContent .= "<div class='parallax-text views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
+      $lcContent .= " </div>\n";
+
+      $lcContent .= " </div>\n";
+
       // Bottom Section
       $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";
 
