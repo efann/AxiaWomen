@@ -451,7 +451,7 @@ select
   position: absolute;
   z-index: 999;
   left: 0;
-  top: 60%; /* Adjust this value to move the positioned div up and down */
+  top: 33%; /* Adjust this value to move the positioned div up and down */
   padding: 0 25px;
   color: whitesmoke;
 }
