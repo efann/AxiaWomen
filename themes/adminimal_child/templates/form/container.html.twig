@@ -26,21 +26,26 @@
   ]
 %}
 
-{% set llParallax = false %}
+{% set llTopParallax = false %}
+{% set llMiddleParallax = false %}
 {% set llBillboard = false %}
 {% set llBottomSection = false %}
 {% set llRowImageText = false %}
 
 {% if attributes.storage['id'] is defined %}
-  {% set llParallax = ('top-parallax-wrapper' in attributes.storage['id'].__toString()) %}
+  {% set llTopParallax = ('top-parallax-wrapper' in attributes.storage['id'].__toString()) %}
+  {% set llMiddleParallax = ('middle-parallax-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llBillboard = ('billboard-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llBottomSection = ('bottom-section-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llRowImageText = ('row-of-image-text-wrapper' in attributes.storage['id'].__toString()) %}
 {% endif %}
 
-{% if (llParallax) %}
+{% if (llTopParallax) %}
   <details open class="container-details">
     <summary>Top Parallax</summary>
+{% elseif (llMiddleParallax) %}
+  <details open class="container-details">
+    <summary>Middle Parallax</summary>
 {% elseif (llBillboard) %}
   <details open class="container-details">
     <summary>Billboard</summary>
@@ -54,6 +59,6 @@
 
     <div{{ attributes.addClass(classes) }}>{{ children }}</div>
 
-{% if (llParallax) or (llBillboard) or (llBottomSection) or (llRowImageText) %}
+{% if (llTopParallax) or (llMiddleParallax) or (llBillboard) or (llBottomSection) or (llRowImageText) %}
   </details>
 {% endif %}
