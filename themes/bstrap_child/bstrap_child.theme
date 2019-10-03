@@ -6,3 +6,111 @@
  *
  * Place your custom PHP code in this file.
  */
+
+
+function bstrap_child_preprocess_html(&$toVariables)
+{
+  $loNode = \Drupal::request()->attributes->get('node');
+  if ($loNode == null)
+  {
+    return;
+  }
+
+  $lnID = $loNode->id();
+  $lcType = $loNode->getType();
+
+  $lcTitle = $loNode->getTitle() . ' | ' . \Drupal::config('system.site')->get('name');
+  $lcHost = \Drupal::request()->getSchemeAndHttpHost();
+  $lcURL = $lcHost . \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $lnID);
+
+
+  $loTitleTag = [
+      '#tag' => 'meta',
+      '#attributes' => [
+          'property' => 'og:title',
+          'content' => $lcTitle,
+      ],
+  ];
+
+  $loTypeTag = [
+      '#tag' => 'meta',
+      '#attributes' => [
+          'property' => 'og:type',
+          'content' => 'website',
+      ],
+  ];
+
+  $loURLTag = [
+      '#tag' => 'meta',
+      '#attributes' => [
+          'property' => 'og:url',
+          'content' => $lcURL,
+      ],
+  ];
+
+  $toVariables['page']['#attached']['html_head'][] = [$loTitleTag, 'facebook1'];
+  $toVariables['page']['#attached']['html_head'][] = [$loTypeTag, 'facebook2'];
+  $toVariables['page']['#attached']['html_head'][] = [$loURLTag, 'facebook3'];
+
+  if (strcasecmp($lcType, 'blog') == 0)
+  {
+    $loReferencedParagraph = bstrap_child_get_referenced_entity($loNode, 'field_row_of_image_text');
+    $loReferencedImage = bstrap_child_get_referenced_entity($loReferencedParagraph, 'field_image_content_id');
+    $lcImage = $lcHost . bstrap_child_get_node_field($loReferencedImage, 'field_image');
+
+    $loImgTag = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'property' => 'og:image',
+            'content' => $lcImage,
+        ],
+    ];
+    $toVariables['page']['#attached']['html_head'][] = [$loImgTag, 'facebook4'];
+  }
+}
+
+function bstrap_child_get_node_field($toNode, $tcField)
+{
+  // And yes, you want to use ==
+  if ($toNode == null)
+  {
+    return ("Node does not exist for $tcField. A linked / used image was probably deleted.");
+  }
+
+  $lcValue = '';
+  if ($toNode->hasField($tcField))
+  {
+    $loField = $toNode->get($tcField);
+
+    if ($loField->entity instanceof \Drupal\file\Entity\File)
+    {
+      $lcPublicValue = $loField->entity->uri->value;
+      $lcURL = \Drupal::service('stream_wrapper_manager')->getViaUri($lcPublicValue)->getExternalUrl();
+
+      $laURL = parse_url($lcURL);
+      $lcValue = $laURL['path'];
+    }
+    else
+    {
+      $lcValue = $loField->value;
+    }
+  }
+
+  return ($lcValue);
+}
+
+function bstrap_child_get_referenced_entity($toNode, $tcField)
+{
+  // From https://drupal.stackexchange.com/questions/186315/how-to-get-instance-of-referenced-entity
+  // Geesh. . . .
+  $loParagraphItem = $toNode->get($tcField)->first();
+  $loEntityReference = $loParagraphItem->get('entity');
+  $loEntityAdapter = $loEntityReference->getTarget();
+  if ($loEntityAdapter == null)
+  {
+    return (null);
+  }
+
+  $loReferencedEntity = $loEntityAdapter->getValue();
+  return ($loReferencedEntity);
+}
