@@ -12,7 +12,7 @@ abstract class AWBlock extends BlockBase
 {
 
   //-------------------------------------------------------------------------------------------------
-  protected function getNodeField($toNode, $tcField)
+  public static function getNodeField($toNode, $tcField)
   {
     // And yes, you want to use ==
     if ($toNode == null)
@@ -43,7 +43,7 @@ abstract class AWBlock extends BlockBase
   }
 
   //-------------------------------------------------------------------------------------------------
-  protected function getNode($tnNodeID)
+  public static function getNode($tnNodeID)
   {
     // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
     $loNode = \Drupal::entityTypeManager()
@@ -54,7 +54,7 @@ abstract class AWBlock extends BlockBase
   }
 
   //-------------------------------------------------------------------------------------------------
-  protected function getReferencedEntity($toNode, $tcField)
+  public static function getReferencedEntity($toNode, $tcField)
   {
     // From https://drupal.stackexchange.com/questions/186315/how-to-get-instance-of-referenced-entity
     // Geesh. . . .

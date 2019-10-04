@@ -53,10 +53,10 @@ class FrontPageContentBlock extends AWBlock
       $loNode = $loRow->_entity;
 
       // Top Parallax
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_top_parallax');
-      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
-      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_top_parallax');
+      $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
       // From https://stackoverflow.com/questions/36087896/drupal-8-get-the-image-width-height-alt-etc-in-a-twig-or-preprocess-fi/52944485#52944485
       $loImage = $loReferencedImage->field_image[0]->getValue();
@@ -74,7 +74,7 @@ class FrontPageContentBlock extends AWBlock
 
       // Billboard & Tiles
       $lcContent .= "<div class='billboard-tile col-sm-12 views-row row$lnIndex'>\n";
-      $lcBillboard = $this->getNodeField($loNode, 'field_billboard');
+      $lcBillboard = AWBlock::getNodeField($loNode, 'field_billboard');
 
       $lcContent .= "<div class='col-sm-4'>\n";
       $lcContent .= "<div class='views-field views-field-field_billboard'><div class='field-content'>$lcBillboard</div></div>";
@@ -93,13 +93,13 @@ class FrontPageContentBlock extends AWBlock
           $lnTrack = 0;
         }
 
-        $lcCaption = $this->getNodeField($loRow, 'field_html_text');
-        $loReferencedTileImage = $this->getReferencedEntity($loRow, 'field_image_content_id');
+        $lcCaption = AWBlock::getNodeField($loRow, 'field_html_text');
+        $loReferencedTileImage = AWBlock::getReferencedEntity($loRow, 'field_image_content_id');
         // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
         // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
         // By the way, title has this problem as it's a plain text field with no conversion.
-        $lcTitle = HTML::escape($this->getNodeField($loReferencedTileImage, 'title'));
-        $lcTileImage = $this->getNodeField($loReferencedTileImage, 'field_image');
+        $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedTileImage, 'title'));
+        $lcTileImage = AWBlock::getNodeField($loReferencedTileImage, 'field_image');
 
         $lcContent .= "<div class='col-sm-6'>\n";
         $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcTileImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
@@ -122,10 +122,10 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= "</div>\n";
 
       // Middle Parallax
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_middle_parallax');
-      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
-      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_middle_parallax');
+      $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
       // From https://stackoverflow.com/questions/36087896/drupal-8-get-the-image-width-height-alt-etc-in-a-twig-or-preprocess-fi/52944485#52944485
       $loImage = $loReferencedImage->field_image[0]->getValue();
@@ -144,14 +144,14 @@ class FrontPageContentBlock extends AWBlock
       // Bottom Section
       $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";
 
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_bottom_section');
-      $lcText = $this->getNodeField($loReferencedParagraph, 'field_html_text');
-      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_bottom_section');
+      $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
-      $lcTitle = HTML::escape($this->getNodeField($loReferencedImage, 'title'));
-      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+      $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
+      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='col-sm-6'>\n";
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";

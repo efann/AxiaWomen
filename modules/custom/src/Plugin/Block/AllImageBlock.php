@@ -62,9 +62,9 @@ class AllImageBlock extends AWBlock
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
-      $lcTitle = HTML::escape($this->getNodeField($loNode, 'title'));
-      $lcCopyright = $this->getNodeField($loNode, 'body');
-      $lcImage = $this->getNodeField($loNode, 'field_image');
+      $lcTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      $lcCopyright = AWBlock::getNodeField($loNode, 'body');
+      $lcImage = AWBlock::getNodeField($loNode, 'field_image');
 
       // From https://stackoverflow.com/questions/36087896/drupal-8-get-the-image-width-height-alt-etc-in-a-twig-or-preprocess-fi/52944485#52944485
       $loImage = $loNode->field_image[0]->getValue();

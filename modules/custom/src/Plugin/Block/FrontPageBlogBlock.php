@@ -59,21 +59,21 @@ class FrontPageBlogBlock extends AWBlock
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
-      $lcURLTitle = HTML::escape($this->getNodeField($loNode, 'title'));
+      $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
-      $lcPostDate = $this->getNodeField($loNode, 'field_post_date');
+      $lcPostDate = AWBlock::getNodeField($loNode, 'field_post_date');
       $lcPostDateFormat = date('l, F j, Y', strtotime($lcPostDate));
 
-      $loReferencedParagraph = $this->getReferencedEntity($loNode, 'field_row_of_image_text');
-      $lcText = text_summary($this->getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_row_of_image_text');
+      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
 
-      $loReferencedImage = $this->getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
-      $lcTitle = HTML::escape($this->getNodeField($loReferencedImage, 'title'));
-      $lcImage = $this->getNodeField($loReferencedImage, 'field_image');
+      $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
+      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
       $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
