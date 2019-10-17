@@ -41,28 +41,6 @@ a:focus
   color: #222;
 }
 
-#ajax-loading
-{
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: 2000;
-  width: 58px;
-  height: 58px;
-  border-radius: 15px;
-  margin: 0 auto;
-  top: 25px;
-  display: none;
-  background-color: white;
-}
-
-#ajax-loading img
-{
-  width: 48px;
-  height: auto;
-  margin: 5px;
-}
-
 #admin-menu
 {
   font-family: 'Fjalla One', sans-serif;
@@ -116,6 +94,25 @@ select
   cursor: pointer;
 }
 
+header a img,
+.footer a img
+{
+  opacity: 1.0;
+  -moz-transition: opacity 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
+
+  transition: opacity 0.25s ease;
+}
+
+header a img:hover,
+.footer a img:hover
+{
+  opacity: 0.75;
+  -moz-transition: opacity 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Debugging
    Install Devel, Kint
@@ -125,6 +122,33 @@ select
 .kint
 {
   padding-top: 90px;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*
+  Ajax
+*/
+
+#ajax-loading
+{
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 2000;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  margin: 0 auto;
+  top: 25px;
+  display: none;
+  background-color: white;
+}
+
+#ajax-loading img
+{
+  width: 48px;
+  height: auto;
+  margin: 5px;
 }
 
 /*----------------------------------------------------------------------------------------*/
