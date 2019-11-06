@@ -303,9 +303,20 @@ header a img:hover,
 #block-header img
 {
   display: block;
-  height: 80px;
+  height: 60px;
   width: auto;
+  margin-top: 5px;
+  box-shadow: 0 0 5px 5px lightgrey;
 }
+
+@media (min-width: 768px)
+{
+  #block-header img
+  {
+    height: 80px;
+  }
+}
+
 
 /*----------------------------------------------------------------------------------------*/
 /* Footer */
