@@ -15,6 +15,29 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
+    // Only change the default behaviour of the logo if on the front page where you
+    // should find the slogan.
+    // And the slogan is in a block: #block-block-3
+    setupLogo: function ()
+    {
+      if (jQuery('body.path-frontpage').length == 0)
+      {
+        return;
+      }
+
+      Beo.fnDialogImageTitleBarHeight = 20;
+      Beo.createImageDialog();
+
+      jQuery('#block-header a').click(function (toEvent)
+      {
+        toEvent.preventDefault();
+
+        // Beo.onDialogImageClick will look for img inside of link.
+        Beo.onDialogImageClick(jQuery(this));
+      });
+    },
+
+    //----------------------------------------------------------------------------------------------------
     setupWatermarks: function ()
     {
       var lcForm = Routines.CONTACT_BLOCK;

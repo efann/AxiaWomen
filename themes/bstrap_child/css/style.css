@@ -295,6 +295,18 @@ header a img:hover,
   display: none;
 }
 
+
+/*----------------------------------------------------------------------------------------*/
+/* Header */
+/* img is set to display: none in beo.styles.css */
+
+#block-header img
+{
+  display: block;
+  height: 80px;
+  width: auto;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Footer */
 
