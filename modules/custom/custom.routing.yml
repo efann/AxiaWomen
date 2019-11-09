@@ -16,3 +16,12 @@ ajax.content:
     # Only allow alpha, digits, underlines & dashes.
     tcType: ^[a-zA-Z0-9_-]+
     tnNodeID: ^[0-9]+
+
+admin.routine:
+  path: '/admin/custom/{tcTask}'
+  defaults:
+    _controller: '\Drupal\custom\Controller\AdminController::runTask'
+  requirements:
+    _role: 'maintenance_user'
+    # Only allow alpha, digits, underlines & dashes.
+    tcTask: ^[a-zA-Z0-9_-]+

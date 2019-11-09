@@ -3,3 +3,5 @@ services:
     class: Drupal\custom\TwigExtension\CustomTwigExtension
     tags:
       - { name: twig.extension }
+  custom.service:
+    class: Drupal\custom\Service\CustomFunctions
