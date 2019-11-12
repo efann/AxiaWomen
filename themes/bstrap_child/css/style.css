@@ -80,7 +80,7 @@ hr
 
 .main-container .row
 {
-  padding-top: 80px;
+  padding-top: 120px;
   margin: 0;
 }
 
@@ -313,7 +313,7 @@ header a img:hover,
 {
   #block-header img
   {
-    height: 80px;
+    height: 75px;
   }
 }
 
