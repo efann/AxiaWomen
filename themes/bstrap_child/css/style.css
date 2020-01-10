@@ -211,9 +211,9 @@ header a img:hover,
   Menus
 */
 
-#block-header a
+.navbar-fixed-top
 {
-  font-size: 2.0em;
+  height: 115px;
 }
 
 #block-custommainmenu,
@@ -221,6 +221,12 @@ header a img:hover,
 .navbar-inverse .navbar-form
 {
   background-color: whitesmoke;
+}
+
+#block-custommainmenu
+{
+  padding-top: 75px;
+  overflow: hidden;
 }
 
 .navbar-inverse .navbar-nav > li > a
@@ -300,23 +306,24 @@ header a img:hover,
 /* Header */
 /* img is set to display: none in beo.styles.css */
 
+#block-header
+{
+  position: absolute;
+}
+
+#block-header a
+{
+  font-size: 2.0em;
+}
+
+/* The height here matches the height of the header.navbar-fixed-top */
 #block-header img
 {
   display: block;
-  height: 60px;
+  height: 115px;
   width: auto;
-  margin-top: 5px;
-  box-shadow: 0 0 5px 5px lightgrey;
+  margin: 0;
 }
-
-@media (min-width: 768px)
-{
-  #block-header img
-  {
-    height: 75px;
-  }
-}
-
 
 /*----------------------------------------------------------------------------------------*/
 /* Footer */
