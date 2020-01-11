@@ -225,8 +225,16 @@ header a img:hover,
 
 #block-custommainmenu
 {
-  padding-top: 75px;
+  padding-top: 0;
   overflow: hidden;
+}
+
+@media (min-width: 768px)
+{
+  #block-custommainmenu
+  {
+    padding-top: 75px;
+  }
 }
 
 .navbar-inverse .navbar-nav > li > a
