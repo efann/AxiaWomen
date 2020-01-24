@@ -146,6 +146,9 @@ header a img:hover,
 
 #ajax-loading img
 {
+  /* Override beo.style.css img setting */
+  display: block;
+
   width: 48px;
   height: auto;
   margin: 5px;
