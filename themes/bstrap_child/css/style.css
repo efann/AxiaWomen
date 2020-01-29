@@ -202,11 +202,27 @@ header a img:hover,
 
 /*----------------------------------------------------------------------------------------*/
 /*
-  Contact form
+  Forms
 */
+
 #contact-message-feedback-form .form-actions
 {
   padding-top: 10px;
+}
+
+.paypal-form
+{
+  padding-top: 0px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 768px)
+{
+  .paypal-form
+  {
+    padding-top: 45px;
+    padding-bottom: 0px;
+  }
 }
 
 /*----------------------------------------------------------------------------------------*/
