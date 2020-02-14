@@ -56,6 +56,8 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/google_analytics" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/devel" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/publishcontent" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/metatag" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/modules/simple_sitemap" />
           </excludedPaths>
         </serverdata>
       </paths>

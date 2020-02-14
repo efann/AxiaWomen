@@ -181,6 +181,7 @@ header a img:hover,
   text-align: center;
 }
 
+.page-node-type-wow .page-header,
 .page-node-type-blog .page-header
 {
   text-align: center;
@@ -188,11 +189,13 @@ header a img:hover,
   margin: 0;
 }
 
+.page-node-type-wow .field--name-field-row-of-image-text .field--item,
 .page-node-type-blog .field--name-field-row-of-image-text .field--item
 {
   padding-bottom: 15px;
 }
 
+.page-node-type-wow .field--name-field-post-date,
 .page-node-type-blog .field--name-field-post-date
 {
   text-align: center;
