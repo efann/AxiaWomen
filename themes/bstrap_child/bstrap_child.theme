@@ -61,7 +61,7 @@ function bstrap_child_preprocess_html(&$toVariables)
   $toVariables['page']['#attached']['html_head'][] = [$loTypeTag, 'facebook3'];
   $toVariables['page']['#attached']['html_head'][] = [$loURLTag, 'facebook4'];
 
-  if (strcasecmp($lcType, 'blog') == 0)
+  if ((strcasecmp($lcType, 'blog') == 0) || (strcasecmp($lcType, 'wow') == 0))
   {
     $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_row_of_image_text');
     $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
