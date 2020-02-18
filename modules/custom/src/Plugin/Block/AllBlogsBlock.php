@@ -49,19 +49,17 @@ class AllBlogsBlock extends AWBlock
 
     $lcContent = "";
 
-
     $lcPage = \Drupal::request()->query->get('page');
+    // Convert to integer.
     $lnPage = $lcPage + 0;
     $lnItems = $loViewExecutable->getItemsPerPage();
     $loViewExecutable->setOffset($lnPage * $lnItems);
-    $lnOffset = $lnPage * $lnItems;
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
 
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
-      $fred = $loViewExecutable->getItemsPerPage();
-      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex" . " $lcPage $lnOffset'>\n";
+      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
 
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
