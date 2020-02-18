@@ -38,6 +38,7 @@ class AllBlogsBlock extends AWBlock
   {
 
     $loViewExecutable = Views::getView(self::VIEW_NAME);
+
     if (!is_object($loViewExecutable))
     {
       return array(
@@ -48,10 +49,19 @@ class AllBlogsBlock extends AWBlock
 
     $lcContent = "";
 
+
+    $lcPage = \Drupal::request()->query->get('page');
+    $lnPage = $lcPage + 0;
+    $lnItems = $loViewExecutable->getItemsPerPage();
+    $loViewExecutable->setOffset($lnPage * $lnItems);
+    $lnOffset = $lnPage * $lnItems;
+
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
-      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
+      $fred = $loViewExecutable->getItemsPerPage();
+      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex" . " $lcPage $lnOffset'>\n";
 
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
@@ -91,10 +101,19 @@ class AllBlogsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
+    $lcPagerHTML = '';
+    $loPager = $loViewExecutable->pager;
+    if ($loPager instanceof \Drupal\views\Plugin\views\pager\Full)
+    {
+      $loRenderer = \Drupal::service('renderer');
+      $lcPagerHTML = "<p>&nbsp;</p>" . $loRenderer->render($loPager->render(array()));
+    }
+
     // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(
         '#type' => 'markup',
-        '#markup' => $lcContent,
+        '#cache' => array('max-age' => 0),
+        '#markup' => $lcContent . $lcPagerHTML,
     ));
 
   }
