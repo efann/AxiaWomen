@@ -43,43 +43,6 @@ class AdminController
   }
 
   //-------------------------------------------------------------------------------------------------
-  private function generateNodeContent($tnNodeID)
-  {
-    $loNode = $this->getNode($tnNodeID);
-    $lcBody = '';
-
-    $lcBody .= "<div class='presentation_title'>" . $loNode->get('title')->value . "</div>\n";
-
-    $lcBody .= "<div class='flexslider'>\n";
-    $lcBody .= "<ul class='slides'>\n";
-
-    $lnCount = sizeof($loNode->get('field_presentation_slide'));
-    for ($i = 0; $i < $lnCount; ++$i)
-    {
-      $lcBody .= "<li>\n";
-      $lcBody .= $loNode->get('field_presentation_slide')[$i]->value;
-      $lcBody .= "</li>\n";
-    }
-
-    $lcBody .= "</ul>\n";
-    $lcBody .= "</div>\n";
-
-    return ($lcBody);
-  }
-
-  //-------------------------------------------------------------------------------------------------
-
-  private function getNode($tnNodeID)
-  {
-    // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
-    $loNode = \Drupal::entityTypeManager()
-        ->getStorage('node')
-        ->load($tnNodeID);
-
-    return ($loNode);
-  }
-
-  //-------------------------------------------------------------------------------------------------
 
 }
 

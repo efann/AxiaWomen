@@ -1,42 +1,29 @@
 <?php
 
-// From http://valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically
 
-namespace Drupal\custom\Plugin\Block;
+namespace Drupal\custom\Controller;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Database\Database;
-use Drupal\Core\Modules\Text;
 use Drupal\Core\Url;
+use Drupal\custom\Plugin\Block\AWBlock;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-
-/**
- * Provides an 'all blogs' block.
- *
- * @Block(
- *   id = "aw_all_blogs_block",
- *   admin_label = @Translation("AW All Blogs Block"),
- *   category = @Translation("Custom block for displaying all of the blogs.")
- * )
- */
-class AllBlogsBlock extends AWBlock
+class AllBlogsController
 {
   const NO_DATA = 'Not much data to show here. . . .';
   const VIEW_NAME = 'views_for_custom_programmatically';
   const VIEW_BLOCK_ID = 'block_for_blogs_page';
 
-  //-------------------------------------------------------------------------------------------------
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build()
+  // The controller method receives these parameters as arguments.
+  // The parameters are mapped to the arguments with the same name.
+  // So in this case, the page method of the NodeController has one argument: $tcCustomCategory. There may be multiple parameters in a
+  // route, but their names should be unique.
+//-------------------------------------------------------------------------------------------------
+  public function getContent()
   {
-
     $loViewExecutable = Views::getView(self::VIEW_NAME);
 
     if (!is_object($loViewExecutable))
@@ -52,10 +39,13 @@ class AllBlogsBlock extends AWBlock
     $lcPage = \Drupal::request()->query->get('page');
     // Convert to integer.
     $lnPage = $lcPage + 0;
+
     $lnItems = $loViewExecutable->getItemsPerPage();
     $loViewExecutable->setOffset($lnPage * $lnItems);
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+
+    $lcContent .= '<section id="block-awallblogsblock" class="block block-custom block-aw-all-blogs-block clearfix">' . "\n";
 
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
@@ -99,6 +89,8 @@ class AllBlogsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
+    $lcContent .= '</section>' . "\n";
+
     $lcPagerHTML = '';
     $loPager = $loViewExecutable->pager;
     if ($loPager instanceof \Drupal\views\Plugin\views\pager\Full)
@@ -113,9 +105,17 @@ class AllBlogsBlock extends AWBlock
         '#cache' => array('max-age' => 0),
         '#markup' => $lcContent . $lcPagerHTML,
     ));
-
   }
 
+  //-------------------------------------------------------------------------------------------------
+  public function getTitle()
+  {
+    $lcValue = trim($this->fcCategory);
+    $lcValue = str_replace('-', ' ', $lcValue);
+    $lcValue = str_replace('_', ' ', $lcValue);
+
+    return (ucwords($lcValue, " "));
+  }
   //-------------------------------------------------------------------------------------------------
 
 }
