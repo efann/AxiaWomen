@@ -91,28 +91,31 @@ class AllBlogsController
 
     $lcContent .= '</section>' . "\n";
 
-    $lcPagerHTML = '';
     $loPager = $loViewExecutable->pager;
     if ($loPager instanceof \Drupal\views\Plugin\views\pager\Full)
     {
       $loRenderer = \Drupal::service('renderer');
       $lcPagerHTML = "<p>&nbsp;</p>" . $loRenderer->render($loPager->render(array()));
+
+      // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
+      return (array(
+          '#type' => 'markup',
+          '#cache' => array('max-age' => 0),
+          '#markup' => $lcContent . $lcPagerHTML,
+      ));
+
     }
 
-    // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(
         '#type' => 'markup',
-        '#cache' => array('max-age' => 0),
-        '#markup' => $lcContent . $lcPagerHTML,
+        '#markup' => $lcContent,
     ));
   }
 
   //-------------------------------------------------------------------------------------------------
   public function getTitle()
   {
-    $lcValue = trim($this->fcCategory);
-    $lcValue = str_replace('-', ' ', $lcValue);
-    $lcValue = str_replace('_', ' ', $lcValue);
+    $lcValue = "Blogs of Axia Women";
 
     return (ucwords($lcValue, " "));
   }
