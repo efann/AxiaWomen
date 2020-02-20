@@ -103,7 +103,6 @@ class AllBlogsController
           '#cache' => array('max-age' => 0),
           '#markup' => $lcContent . $lcPagerHTML,
       ));
-
     }
 
     return (array(
@@ -115,7 +114,7 @@ class AllBlogsController
   //-------------------------------------------------------------------------------------------------
   public function getTitle()
   {
-    $lcValue = "Blogs of Axia Women";
+    $lcValue = "Blog Posts";
 
     return (ucwords($lcValue, " "));
   }
