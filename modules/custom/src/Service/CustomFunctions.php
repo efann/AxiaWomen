@@ -22,12 +22,12 @@ class CustomFunctions
     catch (\Exception $loErr)
     {
       $llOkay = false;
-      $lcResults = 'An error happened: ' . $loErr->getMessage();
+      $lcResults = '<h2>Error</h2><p>An error happened:</p>' . $loErr->getMessage();
     }
 
     if ($llOkay)
     {
-      $lcResults = 'The content was successfully refreshed.';
+      $lcResults = '<h2>Success</h2><p>The content was successfully refreshed. Front Page, Blogs and WOW content have been updated.</p>';
     }
 
     return ($lcResults);

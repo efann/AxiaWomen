@@ -402,6 +402,7 @@ header a img:hover,
 .block-aw-front-page-blog-block,
 .block-aw-all-images-block,
 .block-aw-all-blogs-block,
+.block-aw-all-wow-block,
 .block-aw-front-page-blog-block
 {
   width: 100%;
@@ -421,6 +422,7 @@ header a img:hover,
 
 .block-aw-all-images-block .views-field-title,
 .block-aw-all-blogs-block .views-field-title,
+.block-aw-all-wow-block .views-field-title,
 .block-aw-front-page-blog-block .views-field-title
 {
   font-weight: bold;
@@ -442,6 +444,7 @@ header a img:hover,
 
 .block-aw-all-images-block .views-field-field_image,
 .block-aw-all-blogs-block .views-field-field_image,
+.block-aw-all-wow-block .views-field-field_image,
 .block-aw-front-page-blog-block .views-field-field_image
 {
   text-align: center;
@@ -463,6 +466,7 @@ header a img:hover,
 }
 
 .block-aw-all-blogs-block .views-field-field-post-date,
+.block-aw-all-wow-block .views-field-field-post-date,
 .block-aw-front-page-blog-block .views-field-field-post-date
 {
   font-style: italic;
@@ -472,6 +476,7 @@ header a img:hover,
 }
 
 .block-aw-all-blogs-block .views-field-more-button,
+.block-aw-all-wow-block .views-field-more-button,
 .block-aw-front-page-blog-block .views-field-more-button
 {
   padding: 10px 0;
@@ -513,12 +518,14 @@ header a img:hover,
 }
 
 .block-aw-all-blogs-block .views-row,
+.block-aw-all-wow-block .views-row,
 .block-aw-all-images-block .views-row
 {
   padding: 15px 0;
 }
 
 .block-aw-all-blogs-block .views-row:nth-child(even),
+.block-aw-all-wow-block .views-row:nth-child(even),
 .block-aw-all-images-block .views-row:nth-child(even)
 {
   background-color: initial;
@@ -527,10 +534,16 @@ header a img:hover,
 @media (min-width: 768px)
 {
   .block-aw-all-blogs-block .views-row:nth-child(even),
+  .block-aw-all-wow-block .views-row:nth-child(even),
   .block-aw-all-images-block .views-row:nth-child(even)
   {
     background-color: lightgrey;
   }
+}
+
+#block-wowlisting
+{
+  padding: 15px 0;
 }
 
 /*----------------------------------------------------------------------------------------*/
