@@ -27,7 +27,7 @@ class CustomFunctions
 
     if ($llOkay)
     {
-      $lcResults = '<h2>Success</h2><p>The content was successfully refreshed. Front Page, Blogs and WOW content have been updated.</p>';
+      $lcResults = '<h2 style="text-align: center;">Success</h2><p style="text-align: center;">The content was successfully refreshed. <em>Front Page</em>, <em>Blogs</em> and <em>WOW</em> content have been updated.</p>';
     }
 
     return ($lcResults);
