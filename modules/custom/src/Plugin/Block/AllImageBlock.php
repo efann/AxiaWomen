@@ -4,7 +4,6 @@
 
 namespace Drupal\custom\Plugin\Block;
 
-use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\views\Views;
 

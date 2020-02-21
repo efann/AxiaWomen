@@ -5,7 +5,6 @@
 namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Database\Database;
 use Drupal\Core\Modules\Text;
 use Drupal\Core\Url;
 use Drupal\views\Views;

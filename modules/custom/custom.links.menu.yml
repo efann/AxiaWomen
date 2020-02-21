@@ -1,6 +1,5 @@
 custom.mainmenu:
-  title: 'WOW'
-  description: 'Link to current Woman of the Week'
   menu_name: custom-main-menu
-  url: internal:/node/1
+  class: Drupal\custom\Plugin\Menu\WOWLinkMenu
+  url: internal:/#
   weight: -40
