@@ -373,6 +373,22 @@ header a img:hover,
   width: auto;
 }
 
+.footer .instagram,
+.footer .facebook,
+.footer .youtube,
+.footer .anchorreview
+{
+  text-align: center;
+}
+
+.footer .instagram a,
+.footer .facebook a,
+.footer .youtube a,
+.footer .anchorreview a
+{
+  display: inline-block;
+}
+
 .footer
 {
   background-size: 100% 100%;
