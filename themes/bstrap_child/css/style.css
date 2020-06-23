@@ -216,7 +216,8 @@ header a img:hover,
 .paypal-form
 {
   padding-top: 0px;
-  padding-bottom: 15px;
+  padding: 15px 0;
+  text-align: center;
 }
 
 @media (min-width: 768px)
@@ -380,6 +381,12 @@ header a img:hover,
 {
   text-align: center;
 }
+
+.footer .anchorreview
+{
+  padding-top: 10px;
+}
+
 
 .footer .instagram a,
 .footer .facebook a,
