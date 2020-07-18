@@ -317,6 +317,11 @@ header a img:hover,
   display: table;
 }
 
+.navbar-toggle
+{
+  background-color: darkcyan;
+}
+
 /*----------------------------------------------------------------------------------------------------*/
 /*
   Contact Form
@@ -419,6 +424,20 @@ header a img:hover,
 {
   color: white;
 }
+
+.footer .textsection
+{
+  text-align: center;
+}
+
+@media (min-width: 768px)
+{
+  .footer .textsection
+  {
+    text-align: left;
+  }
+}
+
 
 /*----------------------------------------------------------------------------------------*/
 /* Blocks */
