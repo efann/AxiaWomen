@@ -64,7 +64,8 @@ class AllBlogsController
       $lcPostDateFormat = date('l, F j, Y', strtotime($lcPostDate));
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_row_of_image_text');
-      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), null, 750);
+      // Format must be an existing text formatter.
+      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 750);
 
       $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
