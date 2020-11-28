@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76317806-01dc-4c2e-b88e-241ae78f99dc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="DrupalConfiguration" enabled="true" version="8">
+    <drupalPath>D:\PHP\drupal-8.8.2</drupalPath>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JoomlaConfiguration">
+    <joomlaConfigPath />
+    <joomlaPath />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/../../PHP/drupal-8.8.2/core" />
+      <path value="$PROJECT_DIR$/../../PHP/drupal-8.8.2/modules" />
+      <path value="$PROJECT_DIR$/../../PHP/drupal-8.8.2/vendor" />
+    </include_path>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/deployment.xml" />
+        <option value="$PROJECT_DIR$/.idea/webServers.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PNMUMRPxjq7JDbYqe7v1KdXk6x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/view-source_192.168.64.10_view_all-wow_page=2.html" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.php.frameworks" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src\Controller" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src\Plugin\Menu" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src" />
+      <recent name="D:\PhpStorm\AxiaWomen\themes\bstrap_child\templates\field" />
+      <recent name="D:\PhpStorm\AxiaWomen\themes\adminimal_child\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src\Plugin" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src\TwigExtension" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules\custom\src" />
+      <recent name="D:\PhpStorm\AxiaWomen\modules" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76317806-01dc-4c2e-b88e-241ae78f99dc" name="Default Changelist" comment="" />
+      <created>1565710115103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565710115103</updated>
+      <workItem from="1565710116230" duration="863000" />
+      <workItem from="1565710990178" duration="7292000" />
+      <workItem from="1565726886465" duration="5315000" />
+      <workItem from="1565810027119" duration="1545000" />
+      <workItem from="1566576006902" duration="53000" />
+      <workItem from="1566576088793" duration="1224000" />
+      <workItem from="1567020850836" duration="721000" />
+      <workItem from="1567093300308" duration="10249000" />
+      <workItem from="1567179958285" duration="4488000" />
+      <workItem from="1567202713108" duration="41000" />
+      <workItem from="1568069126506" duration="9835000" />
+      <workItem from="1568125816495" duration="7229000" />
+      <workItem from="1568148043472" duration="7257000" />
+      <workItem from="1568211264480" duration="14535000" />
+      <workItem from="1568300639695" duration="29184000" />
+      <workItem from="1568406124257" duration="3218000" />
+      <workItem from="1568644864847" duration="19941000" />
+      <workItem from="1568824036369" duration="1687000" />
+      <workItem from="1568858887881" duration="142000" />
+      <workItem from="1568860028631" duration="122000" />
+      <workItem from="1568925585600" duration="4582000" />
+      <workItem from="1568992369667" duration="5939000" />
+      <workItem from="1569102666484" duration="3164000" />
+      <workItem from="1569107666909" duration="18610000" />
+      <workItem from="1569192440132" duration="488000" />
+      <workItem from="1569249112305" duration="15000" />
+      <workItem from="1569249181808" duration="3097000" />
+      <workItem from="1569351210621" duration="2622000" />
+      <workItem from="1569509281257" duration="1626000" />
+      <workItem from="1569510937170" duration="1013000" />
+      <workItem from="1569874205420" duration="1196000" />
+      <workItem from="1570026178624" duration="1530000" />
+      <workItem from="1570032515172" duration="84000" />
+      <workItem from="1570033675774" duration="1066000" />
+      <workItem from="1570052870923" duration="291000" />
+      <workItem from="1570117165474" duration="11018000" />
+      <workItem from="1570146489017" duration="3344000" />
+      <workItem from="1570204720410" duration="447000" />
+      <workItem from="1570205341089" duration="1156000" />
+      <workItem from="1570207293797" duration="2369000" />
+      <workItem from="1570828715764" duration="16000" />
+      <workItem from="1571152035874" duration="611000" />
+      <workItem from="1571246655312" duration="659000" />
+      <workItem from="1571248895924" duration="55000" />
+      <workItem from="1571322073097" duration="937000" />
+      <workItem from="1572024302047" duration="9000" />
+      <workItem from="1572024327591" duration="1606000" />
+      <workItem from="1572301805232" duration="1534000" />
+      <workItem from="1573069214704" duration="139000" />
+      <workItem from="1573069380143" duration="1571000" />
+      <workItem from="1573074582351" duration="1257000" />
+      <workItem from="1573232438897" duration="10655000" />
+      <workItem from="1573583590802" duration="233000" />
+      <workItem from="1573585166230" duration="417000" />
+      <workItem from="1573680412254" duration="624000" />
+      <workItem from="1573768433156" duration="1855000" />
+      <workItem from="1578691881070" duration="1866000" />
+      <workItem from="1578756700634" duration="39000" />
+      <workItem from="1578756799597" duration="165000" />
+      <workItem from="1578756971921" duration="12000" />
+      <workItem from="1579223801109" duration="2000" />
+      <workItem from="1579286650320" duration="2000" />
+      <workItem from="1579843071112" duration="8000" />
+      <workItem from="1579843677622" duration="137000" />
+      <workItem from="1579843825466" duration="11000" />
+      <workItem from="1580319448831" duration="16000" />
+      <workItem from="1580319500200" duration="902000" />
+      <workItem from="1581023048246" duration="20000" />
+      <workItem from="1581023193367" duration="5000" />
+      <workItem from="1581623769527" duration="1830000" />
+      <workItem from="1581702817608" duration="1947000" />
+      <workItem from="1581781654379" duration="1471000" />
+      <workItem from="1581951341207" duration="3484000" />
+      <workItem from="1581969177404" duration="271000" />
+      <workItem from="1581969461580" duration="77000" />
+      <workItem from="1581969546071" duration="45000" />
+      <workItem from="1581969598774" duration="19574000" />
+      <workItem from="1582074295380" duration="3926000" />
+      <workItem from="1582134858080" duration="4696000" />
+      <workItem from="1582151014411" duration="14128000" />
+      <workItem from="1582297277390" duration="3030000" />
+      <workItem from="1582309439152" duration="182000" />
+      <workItem from="1584289177665" duration="40000" />
+      <workItem from="1584647109567" duration="792000" />
+      <workItem from="1584718616001" duration="92000" />
+      <workItem from="1584902801330" duration="786000" />
+      <workItem from="1586537195196" duration="8000" />
+      <workItem from="1588182601567" duration="182000" />
+      <workItem from="1588183382668" duration="47000" />
+      <workItem from="1590180540466" duration="371000" />
+      <workItem from="1592605167298" duration="304000" />
+      <workItem from="1592605675918" duration="19000" />
+      <workItem from="1592605725245" duration="1018000" />
+      <workItem from="1592955877851" duration="188000" />
+      <workItem from="1593911460379" duration="51000" />
+      <workItem from="1594066100562" duration="1272000" />
+      <workItem from="1594394169834" duration="39000" />
+      <workItem from="1594394251456" duration="1310000" />
+      <workItem from="1594481407528" duration="1553000" />
+      <workItem from="1598625866071" duration="17000" />
+      <workItem from="1598625917261" duration="58000" />
+      <workItem from="1598626102534" duration="658000" />
+      <workItem from="1599923773957" duration="2250000" />
+      <workItem from="1600532388837" duration="122000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598625964912">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="640" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1598625964912" />
+    <state x="92" y="92" width="1736" height="896" key="DirDiffDialog" timestamp="1599926666112">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="DirDiffDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926666112" />
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1599923799290">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599923799290" />
+    <state x="667" y="296" width="586" height="534" key="find.popup" timestamp="1599926397852">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="667" y="296" width="586" height="534" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926397852" />
+    <state x="811" y="446" key="publish.login" timestamp="1599926462764">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="811" y="446" key="publish.login/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926462764" />
+  </component>
+  <component name="WordPressConfiguration">
+    <wordpressPath />
+  </component>
+</project>
