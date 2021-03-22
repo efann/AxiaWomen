@@ -58,6 +58,7 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/publishcontent" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/metatag" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/simple_sitemap" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/lightbox2-2.11.3" />
           </excludedPaths>
         </serverdata>
       </paths>

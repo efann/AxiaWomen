@@ -197,6 +197,7 @@
       <workItem from="1599923773957" duration="2250000" />
       <workItem from="1600532388837" duration="122000" />
       <workItem from="1606590054099" duration="15000" />
+      <workItem from="1616454089834" duration="104000" />
     </task>
     <servers />
   </component>
@@ -214,28 +215,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="640" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598625964912">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="640" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1598625964912" />
-    <state x="92" y="92" width="1736" height="896" key="DirDiffDialog" timestamp="1599926666112">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="92" y="92" width="1736" height="896" key="DirDiffDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926666112" />
-    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1599923799290">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599923799290" />
-    <state x="667" y="296" width="586" height="534" key="find.popup" timestamp="1599926397852">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="667" y="296" width="586" height="534" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926397852" />
-    <state x="811" y="446" key="publish.login" timestamp="1599926462764">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="811" y="446" key="publish.login/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1599926462764" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
