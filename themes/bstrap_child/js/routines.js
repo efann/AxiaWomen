@@ -20,21 +20,23 @@ var Routines =
     // And the slogan is in a block: #block-block-3
     setupLogo: function ()
     {
+      /*
       if (jQuery('body.path-frontpage').length == 0)
       {
         return;
       }
 
-      Beo.fnDialogImageTitleBarHeight = 20;
-      Beo.createImageDialog();
+            Beo.fnDialogImageTitleBarHeight = 20;
+            Beo.createImageDialog();
 
-      jQuery('#block-header a').click(function (toEvent)
-      {
-        toEvent.preventDefault();
+            jQuery('#block-header a').click(function (toEvent)
+            {
+              toEvent.preventDefault();
 
-        // Beo.onDialogImageClick will look for img inside of link.
-        Beo.onDialogImageClick(jQuery(this));
-      });
+              // Beo.onDialogImageClick will look for img inside of link.
+              Beo.onDialogImageClick(jQuery(this));
+            });
+      */
     },
 
     //----------------------------------------------------------------------------------------------------

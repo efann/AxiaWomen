@@ -22,6 +22,18 @@ beo.routines:
     component:
       beo.routines/beo.style.css: {}
 
+lightbox2:
+  remote: https://lokeshdhakar.com/projects/lightbox2/
+  license:
+    name: MIT License
+    url: https://lokeshdhakar.com/projects/lightbox2/#license
+    gpl-compatible: true
+  js:
+    lightbox2-2.11.3/dist/js/lightbox.js: {}
+  css:
+    component:
+      lightbox2-2.11.3/dist/css/lightbox.css: {}
+
 parallax:
   remote: https://pixelcog.github.io/parallax.js/
   license:
@@ -47,5 +59,6 @@ global-loading:
     - core/jquery
     - bstrap_child/jquery.ui
     - bstrap_child/beo.routines
+    - bstrap_child/lightbox2
     - bstrap_child/parallax
     - bstrap_child/theme.files
