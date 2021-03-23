@@ -15,28 +15,21 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
-    // Only change the default behaviour of the logo if on the front page where you
-    // should find the slogan.
-    // And the slogan is in a block: #block-block-3
+    // Only change the default behaviour of the logo if NOT on the front page.
+    // If not on the front page, then change the href to the home page.
+    // Otherwise, leave alone in order to work with Lightbox.
     setupLogo: function ()
     {
-      /*
       if (jQuery('body.path-frontpage').length == 0)
       {
-        return;
+        let loLink = jQuery('#block-header a');
+        loLink.removeAttr('data-lightbox');
+        loLink.removeAttr('data-alt');
+        loLink.removeAttr('data-title');
+
+        loLink.attr('href', '/');
       }
 
-            Beo.fnDialogImageTitleBarHeight = 20;
-            Beo.createImageDialog();
-
-            jQuery('#block-header a').click(function (toEvent)
-            {
-              toEvent.preventDefault();
-
-              // Beo.onDialogImageClick will look for img inside of link.
-              Beo.onDialogImageClick(jQuery(this));
-            });
-      */
     },
 
     //----------------------------------------------------------------------------------------------------
