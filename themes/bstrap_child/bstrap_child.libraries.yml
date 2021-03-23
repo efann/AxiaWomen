@@ -29,10 +29,10 @@ lightbox2:
     url: https://lokeshdhakar.com/projects/lightbox2/#license
     gpl-compatible: true
   js:
-    lightbox2-2.11.3/dist/js/lightbox.js: {}
+    lightbox2-2.11.3/dist/js/lightbox.min.js: {}
   css:
     component:
-      lightbox2-2.11.3/dist/css/lightbox.css: {}
+      lightbox2-2.11.3/dist/css/lightbox.min.css: {}
 
 parallax:
   remote: https://pixelcog.github.io/parallax.js/
