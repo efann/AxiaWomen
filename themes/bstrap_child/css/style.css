@@ -94,8 +94,7 @@ select
   cursor: pointer;
 }
 
-header a img,
-.footer a img
+a img
 {
   opacity: 1.0;
   -moz-transition: opacity 0.25s ease;
@@ -104,8 +103,7 @@ header a img,
   transition: opacity 0.25s ease;
 }
 
-header a img:hover,
-.footer a img:hover
+a img:hover
 {
   opacity: 0.75;
   -moz-transition: opacity 0.25s ease;

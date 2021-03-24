@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="76317806-01dc-4c2e-b88e-241ae78f99dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/bstrap_child.libraries.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/bstrap_child.libraries.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/js/routines.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/js/routines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/templates/system/html.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/templates/system/html.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.php.frameworks" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -201,7 +203,8 @@
       <workItem from="1600532388837" duration="122000" />
       <workItem from="1606590054099" duration="15000" />
       <workItem from="1616454089834" duration="104000" />
-      <workItem from="1616454239499" duration="4401000" />
+      <workItem from="1616454239499" duration="13436000" />
+      <workItem from="1616524976350" duration="118000" />
     </task>
     <servers />
   </component>
@@ -222,5 +225,9 @@
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
