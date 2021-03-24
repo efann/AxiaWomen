@@ -54,14 +54,7 @@ var Routines =
       jQuery(tcSelect).button();
     },
     //----------------------------------------------------------------------------------------------------
-    // When an image is clicked, using jQuery dialog, the picture is displayed like
-    // that of FancyBox.
-    //
-    // Unfortunately, at the moment, I don't have a way to determine the title bar height
-    // before it displays. So I use Chrome Inspect when viewing a dialog box to determine
-    // the height.
-    // From https://stackoverflow.com/questions/8998612/how-to-pass-the-value-undefined-to-a-function-with-multiple-parameters
-    // By the way, to pass undefined as a parameter, use void 0
+    // Now using Lightbox to display images.
     setupLightbox: function ()
     {
       let llCheckClass = true;
