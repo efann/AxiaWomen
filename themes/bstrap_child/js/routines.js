@@ -35,7 +35,7 @@ var Routines =
     //----------------------------------------------------------------------------------------------------
     setupWatermarks: function ()
     {
-      var lcForm = Routines.CONTACT_BLOCK;
+      let lcForm = Routines.CONTACT_BLOCK;
       if (jQuery(lcForm).length == 0)
       {
         return;
@@ -57,8 +57,8 @@ var Routines =
     //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
-      var lcAJAX = "#ajax-loading";
-      var loAJAX = jQuery(lcAJAX);
+      let lcAJAX = "#ajax-loading";
+      let loAJAX = jQuery(lcAJAX);
       if (loAJAX.length == 0)
       {
         alert("The HTML element " + lcAJAX + " does not exist!");
