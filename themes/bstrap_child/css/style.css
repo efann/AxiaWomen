@@ -1,7 +1,7 @@
 body, caption, th, td, input, textarea, select, option, legend, fieldset,
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 body
@@ -43,7 +43,7 @@ a:focus
 
 #admin-menu
 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-size: 0.9em;
   height: 30px;
 }
@@ -611,8 +611,9 @@ a img:hover
   z-index: 999;
   left: 0;
   top: 33%; /* Adjust this value to move the positioned div up and down */
-  padding: 0 25px;
+  padding: 10px 25px;
   color: whitesmoke;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .parallax-window .parallax-text a,

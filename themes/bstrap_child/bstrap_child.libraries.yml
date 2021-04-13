@@ -8,7 +8,7 @@ jquery.ui:
     //ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js: { type: external, minified: true }
   css:
     component:
-      css/jquery-ui-1.12.1/jquery-ui.min.css: { minified: true }
+      css/jquery-ui-1.12.1/jquery-ui.css: {}
 
 beo.routines:
   remote: https://gist.github.com/efann

@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76317806-01dc-4c2e-b88e-241ae78f99dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/bstrap_child/beo.routines/beo.routines.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/beo.routines/beo.routines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/bstrap_child.libraries.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/bstrap_child.libraries.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/jquery-ui-1.12.1/jquery-ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/bstrap_child/templates/system/html.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/bstrap_child/templates/system/html.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +220,8 @@
       <workItem from="1617285661318" duration="777000" />
       <workItem from="1617313150879" duration="160000" />
       <workItem from="1617322180268" duration="67000" />
+      <workItem from="1618341927146" duration="764000" />
+      <workItem from="1618342758331" duration="2560000" />
     </task>
     <servers />
   </component>

@@ -37,7 +37,6 @@
             <excludedPath local="true" path="$PROJECT_DIR$/.gitignore" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/src" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/images" />
-            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/css/jquery-ui-1.12.1" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/admin_toolbar" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/autologout" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/captcha" />
@@ -59,6 +58,7 @@
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/metatag" />
             <excludedPath path="/var/www/axiawomen.org/public_html/modules/simple_sitemap" />
             <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/lightbox2-2.11.3" />
+            <excludedPath path="/var/www/axiawomen.org/public_html/themes/bstrap_child/css/jquery-ui-1.12.1" />
           </excludedPaths>
         </serverdata>
       </paths>
