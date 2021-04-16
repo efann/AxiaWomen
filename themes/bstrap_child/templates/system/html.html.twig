@@ -71,6 +71,9 @@ theme.has_glyphicons ? 'has-glyphicons',
     jQuery(document).ready(function ()
     {
       Routines.initializeRoutines();
+
+      Routines.fixMenuActiveIssue();
+
       Routines.setupLogo();
       Routines.setupWatermarks();
       Routines.setupAdditionalButtons('a.views-more-link');

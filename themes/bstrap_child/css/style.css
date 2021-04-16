@@ -234,7 +234,12 @@ a img:hover
 
 .navbar-fixed-top
 {
-  height: 115px;
+  height: 125px;
+}
+
+.navbar
+{
+  margin-bottom: 0;
 }
 
 #block-custommainmenu,
@@ -260,8 +265,14 @@ a img:hover
 
 .navbar-inverse .navbar-nav > li > a
 {
-  color: darkcyan;
+  color: #0A033B;
   font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus
+{
+  color: #93A9D7;
 }
 
 .navbar-inverse
@@ -274,8 +285,8 @@ a img:hover
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus
 {
-  color: #EFD797;
-  background-color: #002C54;
+  color: #93A9D7;
+  background-color: transparent;
 }
 
 .navbar-header
@@ -350,11 +361,32 @@ a img:hover
   font-size: 2.0em;
 }
 
+#block-header #logo-circle,
+#block-header #logo-text
+{
+  float: left;
+}
+
+#block-header #logo-text
+{
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
 /* The height here matches the height of the header.navbar-fixed-top */
-#block-header img
+#block-header #logo-circle img
 {
   display: block;
   height: 115px;
+  width: auto;
+  margin: 0;
+  margin-top: 3px;
+}
+
+#block-header #logo-text img
+{
+  display: block;
+  height: 60px;
   width: auto;
   margin: 0;
 }
