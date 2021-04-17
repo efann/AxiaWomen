@@ -55,28 +55,6 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
-    // From https://www.google.com/search?q=drupal+menu+link+front+not+active&oq=drupal+menu+link+front+not+active
-    // There's an issue when the href does not match data-drupal-link-system-path in the menu links.
-    fixMenuActiveIssue: function ()
-    {
-      let lcPath = window.location.pathname;
-      if ((lcPath === '/') || (lcPath.startsWith('/wow/')))
-      {
-        jQuery("#block-custommainmenu li a").each(function (tnIndex)
-        {
-          let loThis = jQuery(this);
-          let lcHref = loThis.attr('href');
-          if (lcPath === lcHref)
-          {
-            loThis.parent().addClass('active');
-            // jQuery equivalent of break;
-            return (false);
-          }
-        });
-      }
-
-    },
-    //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
       let lcAJAX = "#ajax-loading";
