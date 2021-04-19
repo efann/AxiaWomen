@@ -72,6 +72,11 @@ h3
   margin-bottom: 0.769em;
 }
 
+h1.page-header
+{
+  display: none;
+}
+
 hr
 {
   border-top: 1px solid gray;
@@ -273,6 +278,8 @@ a img:hover
 {
   color: #0A033B;
   font-weight: bold;
+  letter-spacing: 0.3rem;
+  font-size: 1.0em;
 }
 
 /*
@@ -289,6 +296,12 @@ a img:hover
 {
   color: #93A9D7;
   background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus
+{
+  text-shadow: 1px 1px 1px gray;
 }
 
 .navbar-header
@@ -655,6 +668,7 @@ a img:hover
 .parallax-window .parallax-text a:visited
 {
   color: #EAAD6A;
+  letter-spacing: 0.3rem;
 }
 
 /* Weird. I had to reset here also. */
@@ -662,5 +676,5 @@ a img:hover
 .parallax-window .parallax-text a:hover,
 .parallax-window .parallax-text a:focus
 {
-  color: #222;
+  color: lightgray;
 }
