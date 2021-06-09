@@ -116,6 +116,11 @@ a img:hover
   transition: opacity 0.25s ease;
 }
 
+.btn-primary
+{
+  background-color: #93A9D7;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Debugging
    Install Devel, Kint
@@ -254,6 +259,15 @@ a img:hover
   background-color: whitesmoke;
 }
 
+@media (max-width: 767px)
+{
+  div.navbar-collapse
+  {
+    /* Needed to cover the search bar. */
+    z-index: 10;
+  }
+}
+
 #block-custommainmenu
 {
   padding-top: 0;
@@ -346,7 +360,7 @@ a img:hover
 
 .navbar-toggle
 {
-  background-color: darkcyan;
+  background-color: #93A9D7;
 }
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -407,6 +421,24 @@ a img:hover
   height: 60px;
   width: auto;
   margin: 0;
+}
+
+.search-block-form
+{
+  /* If you don't use fixed, then the search shoves the menu off the header. */
+  position: absolute;
+  padding-top: 90px;
+  padding-right: 29px;
+  right: 0;
+  width: 50%;
+}
+
+@media (min-width: 768px)
+{
+  .search-block-form
+  {
+    padding-top: 5px;
+  }
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -485,7 +517,6 @@ a img:hover
     text-align: left;
   }
 }
-
 
 /*----------------------------------------------------------------------------------------*/
 /* Blocks */
