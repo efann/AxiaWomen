@@ -278,7 +278,7 @@ a img:hover
 {
   #block-custommainmenu
   {
-    padding-top: 75px;
+    padding-top: 95px;
   }
 }
 
@@ -344,6 +344,7 @@ a img:hover
 .container > .navbar-header
 {
   padding-left: 25px;
+  position: absolute;
 
   /* Otherwise, Axia Women header label was off the screen on mobile. */
   margin: 0;
@@ -426,11 +427,10 @@ a img:hover
 .search-block-form
 {
   /* If you don't use fixed, then the search shoves the menu off the header. */
-  position: absolute;
   padding-top: 90px;
   padding-right: 29px;
-  right: 0;
   width: 50%;
+  float: right;
 }
 
 @media (min-width: 768px)
@@ -438,6 +438,8 @@ a img:hover
   .search-block-form
   {
     padding-top: 5px;
+    padding-right: 15px;
+    width: 100%;
   }
 }
 
