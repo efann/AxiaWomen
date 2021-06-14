@@ -18,7 +18,13 @@
   'region',
   'region-' ~ region|clean_class,
 ] %}
+
+{#
+  By the way, if you don't put any blocks into the navigation region
+  through the GUI, this twig file is never called.
+#}
 {% if content %}
+  <!-- Loaded throught region--navigation.html.twig -->
   <div{{ attributes.addClass(classes) }}>
     <div class="row container">
       <div class="col-sm-6">
