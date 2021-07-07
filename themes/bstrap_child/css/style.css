@@ -103,15 +103,16 @@ select
 a img
 {
   opacity: 1.0;
+
   -moz-transition: opacity 0.25s ease;
   -webkit-transition: opacity 0.25s ease;
-
   transition: opacity 0.25s ease;
 }
 
 a img:hover
 {
   opacity: 0.75;
+
   -moz-transition: opacity 0.25s ease;
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
@@ -327,6 +328,28 @@ a img:hover
 {
   color: #93A9D7;
   background-color: whitesmoke;
+}
+
+/*
+  From https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property
+  Instead, I decided to use the technique from
+  http://d7.thecarneyeffect.co.uk/drupal-bootstrap-navbar-drowpdown-hover-fade-transition
+  as the fade out worked.
+*/
+
+.dropdown-menu
+{
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+.open > .dropdown-menu
+{
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .expanded.dropdown .caret,
