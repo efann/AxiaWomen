@@ -87,6 +87,7 @@ hr
 {
   padding-top: 130px;
   margin: 0;
+  min-height: 500px;
 }
 
 .container
@@ -271,7 +272,6 @@ a img:hover
 #block-custommainmenu
 {
   padding-top: 0;
-  overflow: hidden;
 }
 
 @media (min-width: 768px)
@@ -319,6 +319,20 @@ a img:hover
 .navbar-inverse .navbar-nav > li > a:focus
 {
   color: #93A9D7;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus
+{
+  color: #93A9D7;
+  background-color: whitesmoke;
+}
+
+.expanded.dropdown .caret,
+.expanded.dropdown.open .caret
+{
+  color: #0A033B;
 }
 
 .navbar-header
@@ -674,6 +688,11 @@ a img:hover
 #block-wowlisting
 {
   padding: 15px 0;
+}
+
+#block-paypal
+{
+  padding-top: 30px;
 }
 
 /*----------------------------------------------------------------------------------------*/
