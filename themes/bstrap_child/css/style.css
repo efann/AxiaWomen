@@ -604,6 +604,16 @@ a img:hover
   text-align: center;
 }
 
+.footer .login
+{
+  display: inline-block;
+}
+
+.user-logged-in .footer .login
+{
+  display: none;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Blocks */
 
