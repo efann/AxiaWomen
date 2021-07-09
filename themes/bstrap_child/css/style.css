@@ -500,10 +500,13 @@ a img:hover
 .search-block-form
 {
   /* If you don't use fixed, then the search shoves the menu off the header. */
-  padding-top: 90px;
-  padding-right: 29px;
   width: 50%;
   float: right;
+  padding-top: unset;
+  padding-right: unset;
+  top: 90px;
+  right: 31px;
+  position: fixed;
 }
 
 @media (min-width: 768px)
@@ -512,7 +515,10 @@ a img:hover
   {
     padding-top: 5px;
     padding-right: 15px;
+    top: unset;
+    right: unset;
     width: 320px;
+    position: relative;
   }
 }
 
@@ -541,12 +547,6 @@ a img:hover
 {
   text-align: center;
 }
-
-.footer .anchorreview
-{
-  padding-top: 10px;
-}
-
 
 .footer .instagram a,
 .footer .facebook a,
@@ -580,6 +580,11 @@ a img:hover
   color: white;
 }
 
+.footer a.emphasize
+{
+  text-decoration: underline;
+}
+
 .footer .textsection
 {
   text-align: center;
@@ -591,6 +596,12 @@ a img:hover
   {
     text-align: left;
   }
+}
+
+#block-footer form,
+#block-footer h3
+{
+  text-align: center;
 }
 
 /*----------------------------------------------------------------------------------------*/
