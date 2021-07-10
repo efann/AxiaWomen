@@ -561,7 +561,7 @@ a img:hover
   background-size: 100% 100%;
   margin: 0 auto;
   border: none;
-  background-color: #222;
+  background-color: #93A9D7;
   color: white;
   padding: 20px 0;
 }
@@ -580,9 +580,20 @@ a img:hover
   color: white;
 }
 
-.footer a.emphasize
+.footer a.emphasize,
+.footer a.emphasize:link,
+.footer a.emphasize:visited
 {
   text-decoration: underline;
+  color: white;
+  font-weight: normal;
+}
+
+.footer a.emphasize:active,
+.footer a.emphasize:hover,
+.footer a.emphasize:focus
+{
+  color: #222222;
 }
 
 .footer .textsection
