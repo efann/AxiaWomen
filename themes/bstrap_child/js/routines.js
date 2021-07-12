@@ -55,6 +55,23 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
+    // Now ensuring that external links display in a separate tab.
+    updateExternalURLs: function (tcSelect)
+    {
+      jQuery(tcSelect).find('a').each(function ()
+      {
+        let loThis = jQuery(this);
+        let lcHref = loThis.attr('href');
+
+        if (Boolean(lcHref) && (!lcHref.startsWith("/")) && (!lcHref.includes(".axiawomen.org")))
+        {
+          loThis.attr('target', '_blank');
+        }
+
+      });
+    },
+
+    //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
       let lcAJAX = "#ajax-loading";

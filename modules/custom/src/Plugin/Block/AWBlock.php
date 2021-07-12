@@ -2,6 +2,7 @@
 
 namespace Drupal\custom\Plugin\Block;
 
+use Drupal;
 use Drupal\Core\Block\BlockBase;
 
 //-------------------------------------------------------------------------------------------------
@@ -69,7 +70,41 @@ abstract class AWBlock extends BlockBase
     $loReferencedEntity = $loEntityAdapter->getValue();
     return ($loReferencedEntity);
   }
+
   //-------------------------------------------------------------------------------------------------
+  public static function getTermID($tcTerm)
+  {
+    $lnID = -1;
+
+    try
+    {// From https://drupal.stackexchange.com/questions/225209/load-term-by-name
+      $laTerms = Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->loadByProperties(['name' => $tcTerm]);
+    }
+    catch (Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException $e)
+    {
+      $laTerms = null;
+    }
+    catch (Drupal\Component\Plugin\Exception\PluginNotFoundException $e)
+    {
+      $laTerms = null;
+    }
+
+    if (!$laTerms)
+    {
+      return ($lnID);
+    }
+
+    // reset() rewinds array's internal pointer to the first element and returns the
+    // value of the first array element, or FALSE if the array is empty.
+    $lnID = (int)reset($laTerms)->id();
+
+    return ($lnID);
+  }
+
+  //-------------------------------------------------------------------------------------------------
+
 
 }
 
