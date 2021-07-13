@@ -46,6 +46,9 @@ class BenefactorsBlock extends AWBlock
 
     $lcContent = "";
 
+    //********************************
+    // Champion
+
     $lcTerm = "Champion";
     $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row'>\n";
@@ -93,6 +96,9 @@ class BenefactorsBlock extends AWBlock
 
       $lcContent .= "</div>\n";
     }
+
+    //********************************
+    // Sustainer
 
     $lcTerm = "Sustainer";
     $lcURL = strtolower("/taxonomy/$lcTerm");
@@ -143,6 +149,68 @@ class BenefactorsBlock extends AWBlock
 
       $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
+      $lcContent .= "</div>\n";
+
+      if (++$lnTrack >= $lnMultiple)
+      {
+        $lcContent .= "</div>\n";
+        $lnTrack = 0;
+      }
+    }
+
+    // Means if not set to zero then the last div.col-sm-12 was not closed.
+    if ($lnTrack != 0)
+    {
+      $lcContent .= "</div>\n";
+    }
+
+    //********************************
+    // Dnor
+
+    $lcTerm = "Donor";
+    $lcURL = strtolower("/taxonomy/$lcTerm");
+    $lcContent .= "<div class='row'>\n";
+    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
+    $lcContent .= "</div>\n";
+
+    $lnTermID = AWBlock::getTermID($lcTerm);
+    $laArgs = [$lnTermID];
+
+    unset($loViewExecutable);
+
+    $loViewExecutable = Views::getView(self::VIEW_NAME);
+    $loViewExecutable->setArguments($laArgs);
+    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+
+    $lnTrack = 0;
+    $lnMultiple = 4;
+    foreach ($loViewExecutable->result as $lnIndex => $loRow)
+    {
+      if (($lnIndex % $lnMultiple) == 0)
+      {
+        $lnRow = $lnIndex / $lnMultiple;
+        $lcContent .= "<div class='row views-row row$lnRow'>\n";
+        $lnTrack = 0;
+      }
+
+      $loNode = $loRow->_entity;
+      $lnID = $loNode->id();
+
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
+      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
+
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
+      // Format must be an existing text formatter.
+      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 750);
+
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+
+      $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
       $lcContent .= "</div>\n";
 
