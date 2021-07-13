@@ -46,7 +46,7 @@ class BenefactorsBlock extends AWBlock
 
     $lcContent = "";
 
-    $lcTerm = "Sustainer";
+    $lcTerm = "Champion";
     $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row'>\n";
     $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
@@ -94,7 +94,7 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
-    $lcTerm = "Supporter";
+    $lcTerm = "Sustainer";
     $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row'>\n";
     $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
