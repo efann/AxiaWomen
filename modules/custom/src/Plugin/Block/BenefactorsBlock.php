@@ -35,7 +35,6 @@ class BenefactorsBlock extends AWBlock
    */
   public function build()
   {
-
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     if (!is_object($loViewExecutable))
     {
@@ -48,16 +47,17 @@ class BenefactorsBlock extends AWBlock
     $lcContent = "";
 
     $lcTerm = "Sustainer";
+    $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row'>\n";
-    $lcContent .= "<a href='/taxonomy/sustainer'>$lcTerm</a>\n";
+    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
     $laArgs = [$lnTermID];
 
     $loViewExecutable->setArguments($laArgs);
-
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
       $lcContent .= "<div class='row row$lnIndex'>\n";
@@ -94,17 +94,21 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
-
     $lcTerm = "Supporter";
+    $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row'>\n";
-    $lcContent .= "<a href='/taxonomy/supporter'>$lcTerm</a>\n";
+    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
     $laArgs = [$lnTermID];
 
+    unset($loViewExecutable);
+
+    $loViewExecutable = Views::getView(self::VIEW_NAME);
     $loViewExecutable->setArguments($laArgs);
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+
     $lnTrack = 0;
     $lnMultiple = 4;
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
