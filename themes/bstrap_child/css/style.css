@@ -792,6 +792,12 @@ a img:hover
   min-height: 0;
 }
 
+#block-awbenefactorsblock .row.category
+{
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Parallax */
 

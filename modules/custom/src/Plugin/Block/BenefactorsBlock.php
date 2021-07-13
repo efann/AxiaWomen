@@ -44,24 +44,47 @@ class BenefactorsBlock extends AWBlock
       );
     }
 
-    $lcContent = "";
+    // So far, the below code does not clear caches, and the view will just returns the previous result.
+    //   $toViewExecutable->storage->invalidateCaches();
+    //      nor
+    //   \Drupal::service('cache.render')->invalidateAll()
+    // So, I'm having to reset and re-initializing the loViewExecutable variable each time.
+    $lcContent = $this->buildChampion($loViewExecutable);
 
-    //********************************
-    // Champion
+    unset($loViewExecutable);
+    $loViewExecutable = Views::getView(self::VIEW_NAME);
+    $lcContent .= $this->buildSustainer($loViewExecutable);
+
+    unset($loViewExecutable);
+    $loViewExecutable = Views::getView(self::VIEW_NAME);
+    $lcContent .= $this->buildDonor($loViewExecutable);
+
+    // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
+    return (array(
+        '#type' => 'markup',
+        '#markup' => $lcContent,
+    ));
+
+  }
+
+  //-------------------------------------------------------------------------------------------------
+  private function buildChampion($toViewExecutable)
+  {
+    $lcContent = "";
 
     $lcTerm = "Champion";
     $lcURL = strtolower("/taxonomy/$lcTerm");
-    $lcContent .= "<div class='row'>\n";
+    $lcContent .= "<div class='row category'>\n";
     $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
     $laArgs = [$lnTermID];
 
-    $loViewExecutable->setArguments($laArgs);
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->setArguments($laArgs);
+    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
 
-    foreach ($loViewExecutable->result as $lnIndex => $loRow)
+    foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {
       $lcContent .= "<div class='row row$lnIndex'>\n";
       $loNode = $loRow->_entity;
@@ -97,27 +120,31 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
-    //********************************
-    // Sustainer
+    return ($lcContent);
+  }
+
+  //-------------------------------------------------------------------------------------------------
+  private function buildSustainer($toViewExecutable)
+  {
+    $lcContent = "";
+
+    $lcContent .= "<hr>\n";
 
     $lcTerm = "Sustainer";
     $lcURL = strtolower("/taxonomy/$lcTerm");
-    $lcContent .= "<div class='row'>\n";
+    $lcContent .= "<div class='row category'>\n";
     $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
     $laArgs = [$lnTermID];
 
-    unset($loViewExecutable);
-
-    $loViewExecutable = Views::getView(self::VIEW_NAME);
-    $loViewExecutable->setArguments($laArgs);
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->setArguments($laArgs);
+    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
 
     $lnTrack = 0;
     $lnMultiple = 4;
-    foreach ($loViewExecutable->result as $lnIndex => $loRow)
+    foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {
       if (($lnIndex % $lnMultiple) == 0)
       {
@@ -137,8 +164,6 @@ class BenefactorsBlock extends AWBlock
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
-      // Format must be an existing text formatter.
-      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 750);
 
       $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
@@ -165,27 +190,31 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
-    //********************************
-    // Dnor
+    return ($lcContent);
+  }
+
+  //-------------------------------------------------------------------------------------------------
+  private function buildDonor($toViewExecutable)
+  {
+    $lcContent = "";
+
+    $lcContent .= "<hr>\n";
 
     $lcTerm = "Donor";
     $lcURL = strtolower("/taxonomy/$lcTerm");
-    $lcContent .= "<div class='row'>\n";
+    $lcContent .= "<div class='row category'>\n";
     $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
     $laArgs = [$lnTermID];
 
-    unset($loViewExecutable);
-
-    $loViewExecutable = Views::getView(self::VIEW_NAME);
-    $loViewExecutable->setArguments($laArgs);
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->setArguments($laArgs);
+    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
 
     $lnTrack = 0;
     $lnMultiple = 4;
-    foreach ($loViewExecutable->result as $lnIndex => $loRow)
+    foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {
       if (($lnIndex % $lnMultiple) == 0)
       {
@@ -204,12 +233,6 @@ class BenefactorsBlock extends AWBlock
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
-      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
-      // Format must be an existing text formatter.
-      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 750);
-
-      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-
       $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
       $lcContent .= "</div>\n";
@@ -227,14 +250,8 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
-    // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
-    return (array(
-        '#type' => 'markup',
-        '#markup' => $lcContent,
-    ));
-
+    return ($lcContent);
   }
-
   //-------------------------------------------------------------------------------------------------
 
 }
