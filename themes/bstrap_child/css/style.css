@@ -22,7 +22,7 @@ a:link,
 a:visited
 {
   text-decoration: none;
-  color: darkcyan;
+  color: #93A9D7;
   font-style: normal;
   font-weight: bold;
 
@@ -73,6 +73,18 @@ h3
 }
 
 h1.page-header
+{
+  display: block;
+  text-align: center;
+  padding-top: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+  color: #93A9D7;
+  font-size: 2.5em;
+}
+
+.path-frontpage h1.page-header
 {
   display: none;
 }
@@ -564,6 +576,7 @@ a img:hover
   background-color: #93A9D7;
   color: white;
   padding: 20px 0;
+  margin-top: 100px;
 }
 
 .footer a,
@@ -795,7 +808,29 @@ a img:hover
 #block-awbenefactorsblock .row.category
 {
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 25px;
+  text-align: left;
+  font-size: 1.2em;
+
+}
+
+#block-awbenefactorsblock .views-field-title
+{
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+#block-awbenefactorsblock .champion .views-field-title
+{
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#block-awbenefactorsblock .views-field-field_image
+{
+  text-align: center;
 }
 
 /*----------------------------------------------------------------------------------------*/

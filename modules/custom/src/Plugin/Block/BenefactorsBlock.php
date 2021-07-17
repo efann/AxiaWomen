@@ -72,6 +72,8 @@ class BenefactorsBlock extends AWBlock
   {
     $lcContent = "";
 
+    $lcContent .= "<div class='champion'>\n";
+
     $lcTerm = "Champion";
     $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row category'>\n";
@@ -113,12 +115,14 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
 
       $lcContent .= "<div class='col-sm-8'>\n";
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcURLTitle</span></div>";
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";
     }
+
+    $lcContent .= "</div>\n";
 
     return ($lcContent);
   }
@@ -129,6 +133,8 @@ class BenefactorsBlock extends AWBlock
     $lcContent = "";
 
     $lcContent .= "<hr>\n";
+
+    $lcContent .= "<div class='sustainer'>\n";
 
     $lcTerm = "Sustainer";
     $lcURL = strtolower("/taxonomy/$lcTerm");
@@ -174,7 +180,7 @@ class BenefactorsBlock extends AWBlock
 
       $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcURLTitle</span></div>";
       $lcContent .= "</div>\n";
 
       if (++$lnTrack >= $lnMultiple)
@@ -190,6 +196,8 @@ class BenefactorsBlock extends AWBlock
       $lcContent .= "</div>\n";
     }
 
+    $lcContent .= "</div>\n";
+
     return ($lcContent);
   }
 
@@ -199,6 +207,8 @@ class BenefactorsBlock extends AWBlock
     $lcContent = "";
 
     $lcContent .= "<hr>\n";
+
+    $lcContent .= "<div class='donor'>\n";
 
     $lcTerm = "Donor";
     $lcURL = strtolower("/taxonomy/$lcTerm");
@@ -234,7 +244,7 @@ class BenefactorsBlock extends AWBlock
       $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
       $lcContent .= "<div class='col-sm-3'>\n";
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
+      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcURLTitle</span></div>";
       $lcContent .= "</div>\n";
 
       if (++$lnTrack >= $lnMultiple)
@@ -249,6 +259,8 @@ class BenefactorsBlock extends AWBlock
     {
       $lcContent .= "</div>\n";
     }
+
+    $lcContent .= "</div>\n";
 
     return ($lcContent);
   }

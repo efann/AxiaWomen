@@ -4,6 +4,9 @@ sites/*/*settings*.php
 # Ignore server SSH settings
 .idea/ssh*.xml
 
+.idea/*
+.idea/workspace.xml
+
 # =========================
 # Operating System Files
 # =========================
