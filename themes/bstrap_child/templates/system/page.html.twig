@@ -185,8 +185,15 @@
 
 {% if page.footer %}
   {% block footer %}
+    {#
+      I'm using container-fluid so the footer will expand the entire width.
+      Then I'm surrounding the footer content with the {{ container }} class
+      set at the top so that the content will be padded correctly.
+    #}
     <footer class="footer container-fluid" role="contentinfo">
-      {{ page.footer }}
+      <div class="{{ container }}">
+        {{ page.footer }}
+      </div>
     </footer>
   {% endblock %}
 {% endif %}
