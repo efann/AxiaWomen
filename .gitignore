@@ -3,7 +3,8 @@ sites/*/*settings*.php
 
 # Ignore server SSH settings
 .idea/ssh*.xml
-.idea/*
+
+.idea/
 
 # =========================
 # Operating System Files

@@ -545,25 +545,31 @@ a img:hover
 
 .footer .instagram img,
 .footer .facebook img,
-.footer .youtube img,
-.footer .anchorreview img
+.footer .youtube img
 {
-  height: 42px;
+  height: 28px;
+  width: auto;
+}
+
+.footer .donate img
+{
+  height: 28px;
   width: auto;
 }
 
 .footer .instagram,
 .footer .facebook,
 .footer .youtube,
-.footer .anchorreview
+.footer .donate
 {
   text-align: center;
+  padding: 5px;
 }
 
 .footer .instagram a,
 .footer .facebook a,
 .footer .youtube a,
-.footer .anchorreview a
+.footer .donate a
 {
   display: inline-block;
 }
@@ -583,7 +589,7 @@ a img:hover
 .footer a:link,
 .footer a:visited
 {
-  color: #A6A6A6;
+  color: #0A073B;
 }
 
 .footer a:active,
@@ -591,22 +597,6 @@ a img:hover
 .footer a:focus
 {
   color: white;
-}
-
-.footer a.emphasize,
-.footer a.emphasize:link,
-.footer a.emphasize:visited
-{
-  text-decoration: underline;
-  color: white;
-  font-weight: normal;
-}
-
-.footer a.emphasize:active,
-.footer a.emphasize:hover,
-.footer a.emphasize:focus
-{
-  color: #222222;
 }
 
 .footer .textsection
@@ -626,6 +616,16 @@ a img:hover
 #block-footer h3
 {
   text-align: center;
+}
+
+
+.footer .copyright
+{
+  text-align: center;
+  font-size: 0.9em;
+  padding-top: 20px;
+  line-height: 1.4em;
+  overflow: hidden;
 }
 
 .footer .login
