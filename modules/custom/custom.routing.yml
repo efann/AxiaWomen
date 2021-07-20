@@ -55,3 +55,13 @@ all.wow.content:
     # at /var/www/peterbouteneff.com/public_html/core/lib/Drupal/Core/Routing/UrlGenerator.php line 180
   requirements:
     _permission: 'access content'
+
+all.benefactors.content:
+  # More information on parameters:
+  # https://www.drupal.org/node/2186285
+  path: '/view/all-benefactors'
+  defaults:
+    _controller: '\Drupal\custom\Controller\AllBenefactorsController::getContent'
+    _title_callback: '\Drupal\custom\Controller\AllBenefactorsController::getTitle'
+  requirements:
+    _permission: 'access content'

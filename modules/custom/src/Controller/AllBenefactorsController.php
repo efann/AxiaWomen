@@ -1,39 +1,28 @@
 <?php
 
-// From http://valuebound.com/resources/blog/drupal-8-how-to-create-a-custom-block-programatically
 
-namespace Drupal\custom\Plugin\Block;
+namespace Drupal\custom\Controller;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Modules\Text;
 use Drupal\Core\Url;
+use Drupal\custom\Plugin\Block\AWBlock;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-
-/**
- * Provides an 'image slider' block.
- *
- * @Block(
- *   id = "aw_benefactors_block",
- *   admin_label = @Translation("AW Benefactors Block"),
- *   category = @Translation("Custom block for displaying the Benefactors block.")
- * )
- */
-class BenefactorsBlock extends AWBlock
+class AllBenefactorsController
 {
   const NO_DATA = 'Not much data to show here. . . .';
   const VIEW_NAME = 'views_for_custom_programmatically';
   const VIEW_BLOCK_ID = 'block_for_benefactors_page';
 
-  //-------------------------------------------------------------------------------------------------
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build()
+  // The controller method receives these parameters as arguments.
+  // The parameters are mapped to the arguments with the same name.
+  // So in this case, the page method of the NodeController has one argument: $tcCustomCategory. There may be multiple parameters in a
+  // route, but their names should be unique.
+//-------------------------------------------------------------------------------------------------
+  public function getContent()
   {
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     if (!is_object($loViewExecutable))
@@ -44,12 +33,14 @@ class BenefactorsBlock extends AWBlock
       );
     }
 
+    $lcContent = "<section id='block-awbenefactorsblock'>";
+
     // So far, the below code does not clear caches, and the view will just returns the previous result.
     //   $toViewExecutable->storage->invalidateCaches();
     //      nor
     //   \Drupal::service('cache.render')->invalidateAll()
     // So, I'm having to reset and re-initializing the loViewExecutable variable each time.
-    $lcContent = $this->buildChampion($loViewExecutable);
+    $lcContent .= $this->buildChampion($loViewExecutable);
 
     unset($loViewExecutable);
     $loViewExecutable = Views::getView(self::VIEW_NAME);
@@ -58,6 +49,8 @@ class BenefactorsBlock extends AWBlock
     unset($loViewExecutable);
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     $lcContent .= $this->buildDonor($loViewExecutable);
+
+    $lcContent .= "</section>";
 
     // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o
     return (array(
@@ -96,8 +89,6 @@ class BenefactorsBlock extends AWBlock
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
-      // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
-      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
       // Format must be an existing text formatter.
@@ -166,8 +157,6 @@ class BenefactorsBlock extends AWBlock
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
-      // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
-      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
 
@@ -240,8 +229,6 @@ class BenefactorsBlock extends AWBlock
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
-      // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
-      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
 
       $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcURLTitle</span></div>";
@@ -263,6 +250,14 @@ class BenefactorsBlock extends AWBlock
     $lcContent .= "</div>\n";
 
     return ($lcContent);
+  }
+
+  //-------------------------------------------------------------------------------------------------
+  public function getTitle()
+  {
+    $lcValue = "Our Benefactors";
+
+    return (ucwords($lcValue, " "));
   }
   //-------------------------------------------------------------------------------------------------
 
