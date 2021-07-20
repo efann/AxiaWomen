@@ -24,7 +24,7 @@ a:visited
   text-decoration: none;
   color: #93A9D7;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
 
   /*
     From https://stackoverflow.com/questions/6008324/fade-effect-on-link-hover
@@ -673,7 +673,7 @@ a img:hover
 .block-aw-all-wow-block .views-field-title,
 .block-aw-front-page-blog-block .views-field-title
 {
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin-top: 10px;
 }
@@ -817,14 +817,14 @@ a img:hover
 #block-awbenefactorsblock .views-field-title
 {
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   padding-bottom: 20px;
 }
 
 #block-awbenefactorsblock .champion .views-field-title
 {
   text-align: left;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.5em;
 }
 
