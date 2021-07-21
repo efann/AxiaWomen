@@ -799,13 +799,13 @@ a img:hover
   padding-top: 30px;
 }
 
-#block-awbenefactorsblock .row
+#block-aw-benefactors-block .row
 {
   padding: 0;
   min-height: 0;
 }
 
-#block-awbenefactorsblock .row.category
+#block-aw-benefactors-block .row.category
 {
   padding-top: 20px;
   padding-bottom: 25px;
@@ -814,23 +814,46 @@ a img:hover
 
 }
 
-#block-awbenefactorsblock .views-field-title
+#block-aw-benefactors-block .views-field-title
 {
   text-align: center;
   font-weight: 600;
   padding-bottom: 20px;
 }
 
-#block-awbenefactorsblock .champion .views-field-title
+#block-aw-benefactors-block .champion .views-field-title
 {
   text-align: left;
   font-weight: 600;
   font-size: 1.5em;
 }
 
-#block-awbenefactorsblock .views-field-field_image
+#block-aw-benefactors-block .views-field-field_image
 {
   text-align: center;
+}
+
+#block-aw-benefactors-carousel-block .carousel-inner
+{
+  text-align: center;
+  height: 425px;
+}
+
+
+#block-aw-benefactors-carousel-block .carousel-caption
+{
+  right: unset;
+  left: unset;
+  padding: 0;
+  position: unset;
+}
+
+/*
+  Not a mistake. It's the section name
+*/
+#block-awbenefactorscarouselblock .row
+{
+  padding-top: 30px;
 }
 
 /*----------------------------------------------------------------------------------------*/

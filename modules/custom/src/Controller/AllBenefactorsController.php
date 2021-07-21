@@ -33,7 +33,7 @@ class AllBenefactorsController
       );
     }
 
-    $lcContent = "<section id='block-awbenefactorsblock'>";
+    $lcContent = "<section id='block-aw-benefactors-block'>";
 
     // So far, the below code does not clear caches, and the view will just returns the previous result.
     //   $toViewExecutable->storage->invalidateCaches();
