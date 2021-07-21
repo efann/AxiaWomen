@@ -28,6 +28,8 @@ class BenefactorsCarouselBlock extends AWBlock
   const VIEW_NAME = 'views_for_custom_programmatically';
   const VIEW_BLOCK_ID = 'block_for_benefactors_page';
 
+  const BLOCK_SLIDE_ID = 'block-aw-benefactors-carousel-block';
+
   private $fnTrack;
   //-------------------------------------------------------------------------------------------------
   // I got examples for using the Bootstrap Carousel from the following links:
@@ -59,7 +61,9 @@ class BenefactorsCarouselBlock extends AWBlock
     $lcContent .= "</div>\n";
 
     $lcContent .= "<div class='col-sm-6'>\n";
-    $lcContent .= "<div id='block-aw-benefactors-carousel-block' class='carousel slide' data-ride='carousel' data-interval='4000'>\n";
+
+    $lcBlockID = self::BLOCK_SLIDE_ID;
+    $lcContent .= "<div id='$lcBlockID' class='carousel slide' data-ride='carousel' data-interval='4000'>\n";
 
     $lcContent .= "<div class='carousel-inner' role='listbox'>\n";
     // So far, the below code does not clear caches, and the view will just returns the previous result.
@@ -139,13 +143,15 @@ class BenefactorsCarouselBlock extends AWBlock
   //-------------------------------------------------------------------------------------------------
   private function getControls()
   {
+    $lcBlockID = self::BLOCK_SLIDE_ID;
+
     $lcContent = <<<EOD
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#$lcBlockID" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <a class="right carousel-control" href="#$lcBlockID" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
