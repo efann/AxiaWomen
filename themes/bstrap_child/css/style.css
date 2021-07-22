@@ -833,27 +833,24 @@ a img:hover
   text-align: center;
 }
 
-#block-aw-benefactors-carousel-block .carousel-inner
-{
-  text-align: center;
-  height: 425px;
-}
-
-
-#block-aw-benefactors-carousel-block .carousel-caption
-{
-  right: unset;
-  left: unset;
-  padding: 0;
-  position: unset;
-}
-
-/*
-  Not a mistake. It's the section name
-*/
-#block-awbenefactorscarouselblock .row
+#block-aw-benefactors-carousel-block .row
 {
   padding-top: 30px;
+}
+
+#block-aw-benefactors-carousel-block h3
+{
+  text-align: center;
+}
+
+#block-aw-benefactors-carousel-block .slick-slider
+{
+  text-align: center;
+}
+
+#block-aw-benefactors-carousel-block .slick-caption
+{
+  padding: 0;
 }
 
 /*----------------------------------------------------------------------------------------*/

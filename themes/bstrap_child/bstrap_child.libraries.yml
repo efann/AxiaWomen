@@ -26,7 +26,7 @@ lightbox2:
   remote: https://lokeshdhakar.com/projects/lightbox2/
   license:
     name: MIT License
-    url: https://lokeshdhakar.com/projects/lightbox2/#license
+    url: https://github.com/lokesh/lightbox2/blob/dev/LICENSE
     gpl-compatible: true
   js:
     lightbox2-2.11.3/dist/js/lightbox.min.js: {}
@@ -42,6 +42,18 @@ parallax:
     gpl-compatible: true
   js:
     parallax.js-1.5.0/parallax.min.js: {}
+
+slick:
+  remote: https://kenwheeler.github.io/slick/
+  license:
+    name: MIT License
+    url: https://github.com/kenwheeler/slick/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    slick-1.8.1/slick/slick.min.js: {}
+  css:
+    component:
+      slick-1.8.1/slick/slick.css: {}
 
 # routines.js needs to be loaded before the google maps api. That's
 # why I place it in theme.files rather than under global-styling.
@@ -60,5 +72,6 @@ global-loading:
     - bstrap_child/jquery.ui
     - bstrap_child/beo.routines
     - bstrap_child/lightbox2
+    - bstrap_child/slick
     - bstrap_child/parallax
     - bstrap_child/theme.files

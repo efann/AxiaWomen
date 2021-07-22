@@ -29,8 +29,8 @@ class BenefactorsCarouselBlock extends AWBlock
   const VIEW_BLOCK_ID = 'block_for_benefactors_page';
 
   const BLOCK_SLIDE_ID = 'block-aw-benefactors-carousel-block';
+  const CAROUSEL_ID = 'benefactors-carousel';
 
-  private $fnTrack;
   //-------------------------------------------------------------------------------------------------
   // I got examples for using the Bootstrap Carousel from the following links:
   //   https://getbootstrap.com/docs/4.0/components/carousel/
@@ -50,22 +50,16 @@ class BenefactorsCarouselBlock extends AWBlock
       );
     }
 
-    $this->fnTrack = 0;
-
     $lcContent = "";
 
-    $lcContent .= "<div class='container'>\n";
+    $lcBlockID = self::BLOCK_SLIDE_ID;
+    $lcContent .= "<div id='$lcBlockID' class='container'>\n";
     $lcContent .= "<div class='row'>\n";
 
-    $lcContent .= "<div class='col-sm-3'>\n";
-    $lcContent .= "</div>\n";
+    $lcContent .= "<h3>Our Benefactors</h3>\n";
 
-    $lcContent .= "<div class='col-sm-6'>\n";
-
-    $lcBlockID = self::BLOCK_SLIDE_ID;
-    $lcContent .= "<div id='$lcBlockID' class='carousel slide' data-ride='carousel' data-interval='4000'>\n";
-
-    $lcContent .= "<div class='carousel-inner' role='listbox'>\n";
+    $lcCarouselID = self::CAROUSEL_ID;
+    $lcContent .= "<div id='$lcCarouselID'>\n";
     // So far, the below code does not clear caches, and the view will just returns the previous result.
     //   $toViewExecutable->storage->invalidateCaches();
     //      nor
@@ -75,14 +69,6 @@ class BenefactorsCarouselBlock extends AWBlock
     unset($loViewExecutable);
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     $lcContent .= $this->buildViewList($loViewExecutable, "Sustainer");
-    $lcContent .= "</div>\n";
-
-    $lcContent .= $this->getControls();
-
-    $lcContent .= "</div>\n";
-    $lcContent .= "</div>\n";
-
-    $lcContent .= "<div class='col-sm-3'>\n";
     $lcContent .= "</div>\n";
 
     $lcContent .= "</div>\n";
@@ -124,41 +110,17 @@ class BenefactorsCarouselBlock extends AWBlock
       $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
-      $lcClass = ($this->fnTrack == 0) ? "item active" : "item";
-
-      $lcContent .= "<div class='$lcClass'>\n";
-      $lcContent .= "<img src = '$lcImage'>\n";
-      $lcContent .= "<div class='carousel-caption'>\n";
+      $lcContent .= "<div>\n";
+      $lcContent .= "<img src = '$lcImage' alt='$lcURLTitle' title='$lcURLTitle'>\n";
+      $lcContent .= "<div class='slick-caption'>\n";
       $lcContent .= "<a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a>";
       $lcContent .= "</div>\n";
       $lcContent .= "</div>\n";
-
-      // This way, $this->fnTrack will equal the actual count.
-      $this->fnTrack++;
     }
 
     return ($lcContent);
   }
 
-  //-------------------------------------------------------------------------------------------------
-  private function getControls()
-  {
-    $lcBlockID = self::BLOCK_SLIDE_ID;
-
-    $lcContent = <<<EOD
-    <!-- Controls -->
-    <a class="left carousel-control" href="#$lcBlockID" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#$lcBlockID" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-EOD;
-
-    return ($lcContent);
-  }
   //-------------------------------------------------------------------------------------------------
 
 }

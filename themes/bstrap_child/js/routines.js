@@ -55,6 +55,24 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
+    // Setup the carousel
+    setupSlick: function (tcSelect)
+    {
+      let loSlick = jQuery(tcSelect);
+
+      if (loSlick.length == 0)
+      {
+        return;
+      }
+
+      loSlick.slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+    },
+
+    //----------------------------------------------------------------------------------------------------
     // Now ensuring that external links display in a separate tab.
     updateExternalURLs: function (tcSelect)
     {
