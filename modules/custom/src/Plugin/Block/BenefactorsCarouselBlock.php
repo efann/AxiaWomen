@@ -113,10 +113,15 @@ class BenefactorsCarouselBlock extends AWBlock
       $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
       $lcContent .= "<div>\n";
+
+      $lcContent .= "<a href='$lcURLAlias' hreflang='en'>\n";
       $lcContent .= "<img src = '$lcImage' alt='$lcURLTitle' title='$lcURLTitle'>\n";
+      $lcContent .= "</a>\n";
+
       $lcContent .= "<div class='slick-caption'>\n";
-      $lcContent .= "<a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a>";
+      $lcContent .= "<a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a>\n";
       $lcContent .= "</div>\n";
+
       $lcContent .= "</div>\n";
     }
 

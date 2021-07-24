@@ -596,7 +596,7 @@ a img:hover
 .footer a:hover,
 .footer a:focus
 {
-  color: white;
+  color: whitesmoke;
 }
 
 .footer .textsection
@@ -833,6 +833,11 @@ a img:hover
   text-align: center;
 }
 
+#block-aw-benefactors-carousel-block
+{
+  background: #93A9D7;
+}
+
 #block-aw-benefactors-carousel-block .row
 {
   /*
@@ -846,6 +851,11 @@ a img:hover
 #block-aw-benefactors-carousel-block h3
 {
   text-align: center;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  font-size: 1.5em;
 }
 
 #block-aw-benefactors-carousel-block .slick-slider
@@ -858,10 +868,23 @@ a img:hover
   padding: 0;
 }
 
-#block-aw-benefactors-carousel-block .slick-prev:before,
-#block-aw-benefactors-carousel-block .slick-next:before
+#block-aw-benefactors-carousel-block .slick-caption a
 {
-  color: #93A9D7;
+  color: whitesmoke;
+}
+
+#block-aw-benefactors-carousel-block .slick-caption a,
+#block-aw-benefactors-carousel-block .slick-caption a:link,
+#block-aw-benefactors-carousel-block .slick-caption a:visited
+{
+  color: #0A073B;
+}
+
+#block-aw-benefactors-carousel-block .slick-caption a:active,
+#block-aw-benefactors-carousel-block .slick-caption a:hover,
+#block-aw-benefactors-carousel-block .slick-caption a:focus
+{
+  color: whitesmoke;
 }
 
 /*----------------------------------------------------------------------------------------*/
