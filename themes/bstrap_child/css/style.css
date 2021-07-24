@@ -835,7 +835,12 @@ a img:hover
 
 #block-aw-benefactors-carousel-block .row
 {
-  padding-top: 30px;
+  /*
+    Needed also for the next & previous buttons.
+    Otherwise, with small screen widths, they
+    are off the screen.
+  */
+  padding: 30px;
 }
 
 #block-aw-benefactors-carousel-block h3
@@ -851,6 +856,12 @@ a img:hover
 #block-aw-benefactors-carousel-block .slick-caption
 {
   padding: 0;
+}
+
+#block-aw-benefactors-carousel-block .slick-prev:before,
+#block-aw-benefactors-carousel-block .slick-next:before
+{
+  color: #93A9D7;
 }
 
 /*----------------------------------------------------------------------------------------*/

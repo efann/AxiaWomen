@@ -6,7 +6,6 @@ namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Modules\Text;
-use Drupal\Core\Url;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -103,7 +102,10 @@ class BenefactorsCarouselBlock extends AWBlock
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
-      $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
+      // However, rather than use
+      //   $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
+      // we want the links to take the user to the benefactors page.
+      $lcURLAlias = '/view/all-benefactors';
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
 
