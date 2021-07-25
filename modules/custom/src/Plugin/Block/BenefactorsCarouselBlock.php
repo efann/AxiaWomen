@@ -101,6 +101,7 @@ class BenefactorsCarouselBlock extends AWBlock
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      $lcURLTitle = AWBlock::getConvertFromLastFirstName($lcURLTitle);
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       // However, rather than use
       //   $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();

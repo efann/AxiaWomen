@@ -104,6 +104,21 @@ abstract class AWBlock extends BlockBase
   }
 
   //-------------------------------------------------------------------------------------------------
+  public static function getConvertFromLastFirstName($tcLastFirstName)
+  {
+    $lnPos = strpos($tcLastFirstName, ",");
+    if ($lnPos === false)
+    {
+      return ($tcLastFirstName);
+    }
+
+    $lcFirst = trim(substr($tcLastFirstName, $lnPos + 1));
+    $lcLast = trim(substr($tcLastFirstName, 0, $lnPos));
+    $lcName = "$lcFirst $lcLast";
+
+    return ($lcName);
+  }
+  //-------------------------------------------------------------------------------------------------
 
 
 }

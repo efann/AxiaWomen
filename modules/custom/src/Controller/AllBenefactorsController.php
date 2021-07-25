@@ -4,7 +4,6 @@
 namespace Drupal\custom\Controller;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Url;
 use Drupal\custom\Plugin\Block\AWBlock;
 use Drupal\views\Views;
 
@@ -89,6 +88,7 @@ class AllBenefactorsController
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      $lcURLTitle = AWBlock::getConvertFromLastFirstName($lcURLTitle);
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
       // Format must be an existing text formatter.
@@ -151,12 +151,12 @@ class AllBenefactorsController
       }
 
       $loNode = $loRow->_entity;
-      $lnID = $loNode->id();
 
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      $lcURLTitle = AWBlock::getConvertFromLastFirstName($lcURLTitle);
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_benefactor_image_text');
 
@@ -223,12 +223,12 @@ class AllBenefactorsController
       }
 
       $loNode = $loRow->_entity;
-      $lnID = $loNode->id();
 
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
       // By the way, title has this problem as it's a plain text field with no conversion.
       $lcURLTitle = HTML::escape(AWBlock::getNodeField($loNode, 'title'));
+      $lcURLTitle = AWBlock::getConvertFromLastFirstName($lcURLTitle);
 
       $lcContent .= "<div class='col-sm-3'>\n";
       $lcContent .= "<div class='views-field views-field-title'><span class='field-content'>$lcURLTitle</span></div>";
