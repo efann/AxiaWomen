@@ -67,9 +67,8 @@ class AllBenefactorsController
     $lcContent .= "<div class='champion'>\n";
 
     $lcTerm = "Champion";
-    $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row category'>\n";
-    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
+    $lcContent .= "<span>$lcTerm</span>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
@@ -128,9 +127,8 @@ class AllBenefactorsController
     $lcContent .= "<div class='sustainer'>\n";
 
     $lcTerm = "Sustainer";
-    $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row category'>\n";
-    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
+    $lcContent .= "<span>$lcTerm</span>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);
@@ -200,9 +198,8 @@ class AllBenefactorsController
     $lcContent .= "<div class='donor'>\n";
 
     $lcTerm = "Donor";
-    $lcURL = strtolower("/taxonomy/$lcTerm");
     $lcContent .= "<div class='row category'>\n";
-    $lcContent .= "<a href='$lcURL'>$lcTerm</a>\n";
+    $lcContent .= "<span>$lcTerm</span>\n";
     $lcContent .= "</div>\n";
 
     $lnTermID = AWBlock::getTermID($lcTerm);

@@ -52,11 +52,17 @@ class BenefactorsCarouselBlock extends AWBlock
     $lcContent = "";
 
     $lcBlockID = self::BLOCK_SLIDE_ID;
-    $lcContent .= "<div id='$lcBlockID' class='container'>\n";
+    $lcContent .= "<div id='$lcBlockID'>\n";
     $lcContent .= "<div class='row'>\n";
 
     $lcContent .= "<h3>Our Benefactors</h3>\n";
 
+    // If you don't use these outside columns, then
+    // the previous & next buttons will be off the screen.
+    $lcContent .= "<div class='col-xs-1'>\n";
+    $lcContent .= "</div>\n";
+
+    $lcContent .= "<div class='col-xs-10'>\n";
     $lcCarouselID = self::CAROUSEL_ID;
     $lcContent .= "<div id='$lcCarouselID'>\n";
     // So far, the below code does not clear caches, and the view will just returns the previous result.
@@ -68,6 +74,10 @@ class BenefactorsCarouselBlock extends AWBlock
     unset($loViewExecutable);
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     $lcContent .= $this->buildViewList($loViewExecutable, "Sustainer");
+    $lcContent .= "</div>\n";
+    $lcContent .= "</div>\n";
+
+    $lcContent .= "<div class='col-xs-1'>\n";
     $lcContent .= "</div>\n";
 
     $lcContent .= "</div>\n";
@@ -95,7 +105,6 @@ class BenefactorsCarouselBlock extends AWBlock
     foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {
       $loNode = $loRow->_entity;
-      $lnID = $loNode->id();
 
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
       // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
@@ -104,6 +113,7 @@ class BenefactorsCarouselBlock extends AWBlock
       $lcURLTitle = AWBlock::getConvertFromLastFirstName($lcURLTitle);
       // From https://drupal.stackexchange.com/questions/230746/get-path-alias-from-nid-or-node-object
       // However, rather than use
+      //   $lnID = $loNode->id();
       //   $lcURLAlias = Url::fromRoute('entity.node.canonical', ['node' => $lnID])->toString();
       // we want the links to take the user to the benefactors page.
       $lcURLAlias = '/view/all-benefactors';

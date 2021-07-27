@@ -45,7 +45,7 @@ class FrontPageBlogBlock extends AWBlock
       );
     }
 
-    $lcContent = "<div class='col-sm-12'>\n";
+    $lcContent = "<div class='row'>\n";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
