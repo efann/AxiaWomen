@@ -186,21 +186,24 @@ a img:hover
   display: none;
 }
 
-.page-node-type-front-page .billboard-tile
+.page-node-type-front-page .wow-summary
 {
   padding: 20px 0;
 }
 
-.page-node-type-front-page .billboard-tile .col-sm-12.views-row
+.page-node-type-front-page .wow-summary h3
 {
-  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  font-size: 1.5em;
 }
 
-.page-node-type-front-page .billboard-tile .views-field-caption
+.page-node-type-front-page .wow-summary .title a
 {
-  font-style: italic;
-  font-size: 0.9em;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.5em;
 }
 
 .page-node-type-wow .page-header,
@@ -582,7 +585,7 @@ a img:hover
   background-color: #93A9D7;
   color: white;
   padding: 20px 0;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .footer a,
@@ -656,7 +659,7 @@ a img:hover
 {
   overflow: hidden;
   background-color: linen;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 
 .block-aw-front-page-blog-block .row

@@ -3,9 +3,11 @@
 
 namespace Drupal\custom\Controller;
 
+use Drupal;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\custom\Plugin\Block\AWBlock;
+use Drupal\views\Plugin\views\pager\Full;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -36,7 +38,7 @@ class AllWOWController
 
     $lcContent = "";
 
-    $lcPage = \Drupal::request()->query->get('page');
+    $lcPage = Drupal::request()->query->get('page');
     // Convert to integer.
     $lnPage = $lcPage + 0;
 
@@ -93,9 +95,9 @@ class AllWOWController
     $lcContent .= '</section>' . "\n";
 
     $loPager = $loViewExecutable->pager;
-    if ($loPager instanceof \Drupal\views\Plugin\views\pager\Full)
+    if ($loPager instanceof Full)
     {
-      $loRenderer = \Drupal::service('renderer');
+      $loRenderer = Drupal::service('renderer');
       $lcPagerHTML = "<p>&nbsp;</p>" . $loRenderer->render($loPager->render(array()));
 
       // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o

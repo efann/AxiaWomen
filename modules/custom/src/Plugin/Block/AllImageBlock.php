@@ -4,7 +4,9 @@
 
 namespace Drupal\custom\Plugin\Block;
 
+use Drupal;
 use Drupal\Component\Utility\Html;
+use Drupal\views\Plugin\views\pager\Full;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -45,7 +47,7 @@ class AllImageBlock extends AWBlock
 
     $lcContent = "";
 
-    $lcPage = \Drupal::request()->query->get('page');
+    $lcPage = Drupal::request()->query->get('page');
     // Convert to integer.
     $lnPage = $lcPage + 0;
 
@@ -97,9 +99,9 @@ class AllImageBlock extends AWBlock
     }
 
     $loPager = $loViewExecutable->pager;
-    if ($loPager instanceof \Drupal\views\Plugin\views\pager\Full)
+    if ($loPager instanceof Full)
     {
-      $loRenderer = \Drupal::service('renderer');
+      $loRenderer = Drupal::service('renderer');
       $lcPagerHTML = "<p>&nbsp;</p>" . $loRenderer->render($loPager->render(array()));
 
       // From https://drupal.stackexchange.com/questions/199527/how-do-i-correctly-setup-caching-for-my-custom-block-showing-content-depending-o

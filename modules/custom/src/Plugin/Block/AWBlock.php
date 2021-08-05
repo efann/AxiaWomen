@@ -4,6 +4,7 @@ namespace Drupal\custom\Plugin\Block;
 
 use Drupal;
 use Drupal\Core\Block\BlockBase;
+use Drupal\file\Entity\File;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -26,10 +27,10 @@ abstract class AWBlock extends BlockBase
     {
       $loField = $toNode->get($tcField);
 
-      if ($loField->entity instanceof \Drupal\file\Entity\File)
+      if ($loField->entity instanceof File)
       {
         $lcPublicValue = $loField->entity->uri->value;
-        $lcURL = \Drupal::service('stream_wrapper_manager')->getViaUri($lcPublicValue)->getExternalUrl();
+        $lcURL = Drupal::service('stream_wrapper_manager')->getViaUri($lcPublicValue)->getExternalUrl();
 
         $laURL = parse_url($lcURL);
         $lcValue = $laURL['path'];
@@ -47,7 +48,7 @@ abstract class AWBlock extends BlockBase
   public static function getNode($tnNodeID)
   {
     // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
-    $loNode = \Drupal::entityTypeManager()
+    $loNode = Drupal::entityTypeManager()
         ->getStorage('node')
         ->load($tnNodeID);
 

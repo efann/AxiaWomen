@@ -2,11 +2,11 @@
 
 namespace Drupal\custom\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+use Drupal;
 
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
 class AdminController
 {
   // The controller method receives these parameters as arguments.
@@ -20,7 +20,7 @@ class AdminController
 
     if ($tcTask === 'ClearContentCache')
     {
-      $lcContent .= '<p style="text-align: center">' . \Drupal::service('custom.service')->clearContentCaches() . '</p>';
+      $lcContent .= '<p style="text-align: center">' . Drupal::service('custom.service')->clearContentCaches() . '</p>';
     }
 
     /*

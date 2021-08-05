@@ -2,8 +2,8 @@
 
 namespace Drupal\custom\Controller;
 
+use Drupal;
 use Symfony\Component\HttpFoundation\Response;
-use Drupal\Core\Database\Database;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -66,9 +66,9 @@ class AjaxController
   private function getNode($tnNodeID)
   {
     // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
-    $loNode = \Drupal::entityTypeManager()
-      ->getStorage('node')
-      ->load($tnNodeID);
+    $loNode = Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->load($tnNodeID);
 
     return ($loNode);
   }

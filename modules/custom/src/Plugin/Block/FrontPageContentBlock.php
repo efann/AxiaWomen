@@ -6,6 +6,7 @@ namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Modules\Text;
+use Drupal\custom\Service\CustomFunctions;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -44,7 +45,7 @@ class FrontPageContentBlock extends AWBlock
       );
     }
 
-    $lcContent = "";;
+    $lcContent = "";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
@@ -71,51 +72,38 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= " </div>\n";
 
-      // Billboard & Tiles
-      $lcContent .= "<div class='billboard-tile col-sm-12 views-row row$lnIndex'>\n";
-      $lcBillboard = AWBlock::getNodeField($loNode, 'field_billboard');
+      // WOW Summary
+      $loCustom = new CustomFunctions();
+      $lcWOWUrl = $loCustom->getCurrentWOWLink(false);
+      $lcWOWTitle = $loCustom->getCurrentWOWTitle();
+      $lcWOWUrlTitle = 'Link to current Woman of the Week';
 
-      $lcContent .= "<div class='col-sm-4'>\n";
-      $lcContent .= "<div class='views-field views-field-field_billboard'><div class='field-content'>$lcBillboard</div></div>";
+      $lcContent .= "<div class='wow-summary col-sm-12 views-row row$lnIndex'>\n";
+
+      $lcContent .= "<div class='col-sm-12 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div>";
+
+      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_wow_summary');
+      $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
+      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
+      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
+
+      $lcContent .= "<div class='col-sm-5'>\n";
+      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'>";
+      $lcContent .= "<a href='$lcWOWUrl' hreflang='en'>\n";
+      $lcContent .= "<img src='$lcImage' alt='$lcTitle' title='$lcTitle'>\n";
+      $lcContent .= "</a>\n";
+      $lcContent .= "</div></div>";
       $lcContent .= "</div>\n";
 
-      $loEntityRows = $loNode->get('field_row_of_image_text')->referencedEntities();
-
-      $lcContent .= "<div class='col-sm-8'>\n";
-      $lnTrack = 0;
-      foreach ($loEntityRows as $lnIndex => $loRow)
-      {
-        if (($lnIndex % 2) == 0)
-        {
-          $lnRow = $lnIndex / 2;
-          $lcContent .= "<div class='col-sm-12 views-row row$lnRow'>\n";
-          $lnTrack = 0;
-        }
-
-        $lcCaption = AWBlock::getNodeField($loRow, 'field_html_text');
-        $loReferencedTileImage = AWBlock::getReferencedEntity($loRow, 'field_image_content_id');
-        // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
-        // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
-        // By the way, title has this problem as it's a plain text field with no conversion.
-        $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedTileImage, 'title'));
-        $lcTileImage = AWBlock::getNodeField($loReferencedTileImage, 'field_image');
-
-        $lcContent .= "<div class='col-sm-6'>\n";
-        $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcTileImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
-        $lcContent .= "<div class='views-field views-field-caption'><span class='field-content'>$lcCaption</span></div>";
-        $lcContent .= "</div>\n";
-
-        if (++$lnTrack >= 2)
-        {
-          $lcContent .= "</div>\n";
-          $lnTrack = 0;
-        }
-      }
-      // Means if not set to zero then the last div.col-sm-12 was not closed.
-      if ($lnTrack != 0)
-      {
-        $lcContent .= "</div>\n";
-      }
+      $lcContent .= "<div class='col-sm-7'>\n";
+      $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText";
+      $lcContent .= "<h3>$lcWOWTitle</h3>";
+      $lcContent .= "<p><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>read full story...</a></p>";
+      $lcContent .= "</div></div>";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";

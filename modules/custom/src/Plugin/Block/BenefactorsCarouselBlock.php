@@ -126,7 +126,7 @@ class BenefactorsCarouselBlock extends AWBlock
       $lcContent .= "<div>\n";
 
       $lcContent .= "<a href='$lcURLAlias' hreflang='en'>\n";
-      $lcContent .= "<img src = '$lcImage' alt='$lcURLTitle' title='$lcURLTitle'>\n";
+      $lcContent .= "<img src='$lcImage' alt='$lcURLTitle' title='$lcURLTitle'>\n";
       $lcContent .= "</a>\n";
 
       $lcContent .= "<div class='slick-caption'>\n";

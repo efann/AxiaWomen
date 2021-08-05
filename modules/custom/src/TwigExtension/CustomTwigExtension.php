@@ -1,9 +1,12 @@
 <?php
+
 namespace Drupal\custom\TwigExtension;
 
+use Drupal;
 use Drupal\Component\Utility\Html;
-use Drupal\node\Entity\Node;
 use Drupal\custom\Plugin\Block\AWBlock;
+use Twig_Extension;
+use Twig_SimpleFunction;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -12,7 +15,7 @@ use Drupal\custom\Plugin\Block\AWBlock;
 /**
  * Copied from Twig Tweak
  */
-class CustomTwigExtension extends \Twig_Extension
+class CustomTwigExtension extends Twig_Extension
 {
 
   //-------------------------------------------------------------------------------------------------
@@ -22,7 +25,7 @@ class CustomTwigExtension extends \Twig_Extension
   public function getFunctions()
   {
     return [
-        new \Twig_SimpleFunction('custom_field_image', [$this, 'customFieldImage']),
+        new Twig_SimpleFunction('custom_field_image', [$this, 'customFieldImage']),
     ];
   }
 
@@ -39,7 +42,7 @@ class CustomTwigExtension extends \Twig_Extension
   //-------------------------------------------------------------------------------------------------
   public function customFieldImage($tnID, $tcFieldName)
   {
-    $loEntity = \Drupal::entityTypeManager()->getStorage('node')->load($tnID);
+    $loEntity = Drupal::entityTypeManager()->getStorage('node')->load($tnID);
 
     // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
     // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
