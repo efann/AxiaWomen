@@ -108,25 +108,21 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= "</div>\n";
 
-      // Middle Parallax
-      $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_middle_parallax');
-      $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
-      $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-      $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
+      // Benenfactors Carousel block
 
-      // From https://stackoverflow.com/questions/36087896/drupal-8-get-the-image-width-height-alt-etc-in-a-twig-or-preprocess-fi/52944485#52944485
-      $loImage = $loReferencedImage->field_image[0]->getValue();
-      $lnWidth = $loImage['width'];
-      $lnHeight = $loImage['height'];
+      // From https://drupal.stackexchange.com/questions/171686/how-can-i-programmatically-display-a-block/171733#171733
+      // It's a plugin block.
+      // By the way, the id is defined in modules/custom/src/Plugin/Block/BenefactorsCarouselBlock.php
+      // up at the top.
+      $lcBlockID = 'aw_benefactors_carousel_block';
+      $loBlockManager = \Drupal::service('plugin.manager.block');
+      $laConfig = [];
+      $loPluginBlock = $loBlockManager->createInstance($lcBlockID, $laConfig);
+      $lcPluginBlock = render($loPluginBlock->build());
 
-      $lcContent .= "<div class='middle-parallax col-sm-12 views-row row0'>\n";
-
-      $lcStyle = "style='height: $lnHeight" . "px;'";
-      $lcContent .= "<div class='parallax-window' data-parallax='scroll' data-image-src='$lcImage' data-natural-width='$lnWidth' data-natural-height='$lnHeight' $lcStyle>";
-      $lcContent .= "<div class='parallax-text views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
-      $lcContent .= " </div>\n";
-
-      $lcContent .= " </div>\n";
+      $lcContent .= "<div class='block-aw-benefactors-carousel-block col-sm-12'>\n";
+      $lcContent .= $lcPluginBlock;
+      $lcContent .= "</div>\n";
 
       // Bottom Section
       $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";

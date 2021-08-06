@@ -27,14 +27,12 @@
 %}
 
 {% set llTopParallax = false %}
-{% set llMiddleParallax = false %}
 {% set llWOWSummary = false %}
 {% set llBottomSection = false %}
 {% set llRowImageText = false %}
 
 {% if attributes.storage['id'] is defined %}
   {% set llTopParallax = ('top-parallax-wrapper' in attributes.storage['id'].__toString()) %}
-  {% set llMiddleParallax = ('middle-parallax-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llWOWSummary = ('wow-summary-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llBottomSection = ('bottom-section-wrapper' in attributes.storage['id'].__toString()) %}
   {% set llRowImageText = ('row-of-image-text-wrapper' in attributes.storage['id'].__toString()) %}
@@ -43,9 +41,6 @@
 {% if (llTopParallax) %}
   <details open class="container-details">
     <summary>Top Parallax</summary>
-{% elseif (llMiddleParallax) %}
-  <details open class="container-details">
-    <summary>Middle Parallax</summary>
 {% elseif (llWOWSummary) %}
   <details open class="container-details">
     <summary>WOW Summary</summary>
@@ -59,6 +54,6 @@
 
     <div{{ attributes.addClass(classes) }}>{{ children }}</div>
 
-{% if (llTopParallax) or (llMiddleParallax) or (llWOWSummary) or (llBottomSection) or (llRowImageText) %}
+{% if (llTopParallax) or (llWOWSummary) or (llBottomSection) or (llRowImageText) %}
   </details>
 {% endif %}

@@ -666,9 +666,16 @@ a img:hover
 {
   padding: 0;
   min-height: 0;
+  display: block;
+}
 
-  /* From https://stackoverflow.com/questions/11225912/make-div-height-occupy-parent-remaining-height */
-  display: flex;
+@media (min-width: 768px)
+{
+  .block-aw-front-page-blog-block .row
+  {
+    /* From https://stackoverflow.com/questions/11225912/make-div-height-occupy-parent-remaining-height */
+    display: flex;
+  }
 }
 
 .block-aw-derived-from-front-page-block .bottom-section
@@ -710,7 +717,7 @@ a img:hover
 .block-aw-front-page-blog-block a:link,
 .block-aw-front-page-blog-block a:visited
 {
-  color: darkslateblue;
+  color: #93A9D7;
 }
 
 /* Weird. I had to reset here also. */
@@ -753,17 +760,17 @@ a img:hover
 
 .block-aw-front-page-blog-block .row0
 {
-  background-color: #EAAD6A;
+  background-color: whitesmoke;
 }
 
 .block-aw-front-page-blog-block .row1
 {
-  background-color: #B23B37;
+  background-color: whitesmoke;
 }
 
 .block-aw-front-page-blog-block .row2
 {
-  background-color: #52C1C8;
+  background-color: whitesmoke;
 }
 
 .block-aw-all-blogs-block .views-row,
@@ -880,14 +887,14 @@ a img:hover
 #block-aw-benefactors-carousel-block .slick-caption a:link,
 #block-aw-benefactors-carousel-block .slick-caption a:visited
 {
-  color: #0A073B;
+  color: whitesmoke;
 }
 
 #block-aw-benefactors-carousel-block .slick-caption a:active,
 #block-aw-benefactors-carousel-block .slick-caption a:hover,
 #block-aw-benefactors-carousel-block .slick-caption a:focus
 {
-  color: whitesmoke;
+  color: #0A073B;
 }
 
 /*----------------------------------------------------------------------------------------*/
