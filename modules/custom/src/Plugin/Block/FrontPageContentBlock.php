@@ -120,7 +120,7 @@ class FrontPageContentBlock extends AWBlock
       $loPluginBlock = $loBlockManager->createInstance($lcBlockID, $laConfig);
       $lcPluginBlock = render($loPluginBlock->build());
 
-      $lcContent .= "<div class='block-aw-benefactors-carousel-block col-sm-12'>\n";
+      $lcContent .= "<div class='benefactors-carousel col-sm-12'>\n";
       $lcContent .= $lcPluginBlock;
       $lcContent .= "</div>\n";
 
