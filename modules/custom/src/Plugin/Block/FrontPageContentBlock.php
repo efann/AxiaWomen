@@ -80,7 +80,10 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= "<div class='wow-summary col-sm-12 views-row row$lnIndex'>\n";
 
-      $lcContent .= "<div class='col-sm-12 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div>";
+      /*
+        Force the cell of the title to match the cell of the image.
+      */
+      $lcContent .= "<div class='col-sm-12'><div class='col-sm-5 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div></div>\n";
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_wow_summary');
       $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
@@ -100,10 +103,13 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= "</div>\n";
 
       $lcContent .= "<div class='col-sm-7'>\n";
-      $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText";
+      $lcContent .= "<div class='views-field views-field-field_html_text'>\n";
+      $lcContent .= "<div class='field-content'>$lcText</div>\n";
+      $lcContent .= "<div class='field-append'>\n";
       $lcContent .= "<h3>$lcWOWTitle</h3>";
       $lcContent .= "<p><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>read full story...</a></p>";
-      $lcContent .= "</div></div>";
+      $lcContent .= "</div>\n";
+      $lcContent .= "</div>\n";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";

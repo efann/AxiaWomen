@@ -199,11 +199,39 @@ a img:hover
   font-size: 1.5em;
 }
 
+.page-node-type-front-page .wow-summary .title
+{
+  padding: 0;
+}
+
 .page-node-type-front-page .wow-summary .title a
 {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  font-size: 1.5em;
+  font-size: 1.0em;
+}
+
+@media (min-width: 992px)
+{
+  .page-node-type-front-page .wow-summary .title a
+  {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 767px)
+{
+  .page-node-type-front-page .wow-summary .title a
+  {
+    font-size: 1.5em;
+  }
+}
+
+.page-node-type-front-page .wow-summary .views-field-field_html_text .field-content
+{
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .page-node-type-wow .page-header,
