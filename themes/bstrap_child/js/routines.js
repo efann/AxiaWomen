@@ -94,8 +94,9 @@ var Routines =
       {
         let loThis = jQuery(this);
         let lcHref = loThis.attr('href');
+        let lcHostname = window.location.hostname;
 
-        if (Boolean(lcHref) && (!lcHref.startsWith("/")) && (!lcHref.includes(".axiawomen.org")))
+        if (Boolean(lcHref) && (!lcHref.startsWith("/")) && (!lcHref.includes(lcHostname)))
         {
           loThis.attr('target', '_blank');
         }
