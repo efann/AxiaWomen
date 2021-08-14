@@ -107,7 +107,7 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= "<div class='field-content'>$lcText</div>\n";
       $lcContent .= "<div class='field-append'>\n";
       $lcContent .= "<h3>$lcWOWTitle</h3>";
-      $lcContent .= "<p><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>read full story...</a></p>";
+      $lcContent .= "<p><a class='btn-primary btn' href='$lcWOWUrl' title='$lcWOWUrlTitle'>Read full story...</a></p>";
       $lcContent .= "</div>\n";
       $lcContent .= "</div>\n";
       $lcContent .= "</div>\n";
