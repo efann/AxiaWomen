@@ -758,21 +758,6 @@ a.btn-primary:focus
   text-align: center;
 }
 
-.block-aw-front-page-blog-block a,
-.block-aw-front-page-blog-block a:link,
-.block-aw-front-page-blog-block a:visited
-{
-  color: #93A9D7;
-}
-
-/* Weird. I had to reset here also. */
-.block-aw-front-page-blog-block a:active,
-.block-aw-front-page-blog-block a:hover,
-.block-aw-front-page-blog-block a:focus
-{
-  color: #222;
-}
-
 .block-aw-all-blogs-block .views-field-field-post-date,
 .block-aw-all-wow-block .views-field-field-post-date,
 .block-aw-front-page-blog-block .views-field-field-post-date

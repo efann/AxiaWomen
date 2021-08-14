@@ -49,12 +49,6 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
-    setupAdditionalButtons: function (tcSelect)
-    {
-      jQuery(tcSelect).button();
-    },
-
-    //----------------------------------------------------------------------------------------------------
     // Setup the carousel
     setupSlick: function (tcSelect)
     {

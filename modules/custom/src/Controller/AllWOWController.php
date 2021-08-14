@@ -86,7 +86,7 @@ class AllWOWController
 
       $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
 
-      $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='views-more-link ui-button ui-corner-all ui-widget' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
+      $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='btn-primary btn' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";
