@@ -133,7 +133,8 @@ a img:hover
 .btn-primary
 {
   background-color: #94AAD6;
-  border-radius: 42px;
+  border-radius: 42px !important;
+  border-color: #2E6DA4 !important;
 }
 
 .btn-primary,
@@ -151,6 +152,11 @@ a.btn-primary:focus
   color: #0A073B;
 }
 
+/* For the MailChimp Subscribe button */
+.btn:focus
+{
+  outline: unset !important;
+}
 
 /*----------------------------------------------------------------------------------------*/
 /* Debugging
@@ -299,6 +305,12 @@ a.btn-primary:focus
   }
 }
 
+#mc-embedded-subscribe
+{
+  margin: 0 !important;
+  font-weight: bold;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /*
   Menus
@@ -352,7 +364,7 @@ a.btn-primary:focus
 .navbar-inverse .navbar-nav > li > a
 {
   color: #0A033B;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.3rem;
   font-size: 1.0em;
 }
@@ -703,7 +715,6 @@ a.btn-primary:focus
 .block-aw-front-page-blog-block
 {
   overflow: hidden;
-  background-color: linen;
   padding: 20px 0;
 }
 
@@ -769,8 +780,7 @@ a.btn-primary:focus
 }
 
 .block-aw-all-blogs-block .views-field-more-button,
-.block-aw-all-wow-block .views-field-more-button,
-.block-aw-front-page-blog-block .views-field-more-button
+.block-aw-all-wow-block .views-field-more-button
 {
   padding: 10px 0;
 }
@@ -783,9 +793,16 @@ a.btn-primary:focus
   }
 }
 
+
 .block-aw-front-page-blog-block .views-row
 {
   flex-grow: 1;
+  position: relative;
+}
+
+.block-aw-front-page-blog-block .views-field-more-button
+{
+  padding-top: 40px;
 }
 
 .block-aw-front-page-blog-block .row0

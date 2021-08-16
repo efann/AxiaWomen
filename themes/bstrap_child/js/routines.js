@@ -70,7 +70,6 @@ var Routines =
             breakpoint: 768,
             settings: {
               slidesToShow: 2,
-              dots: true
             }
           },
           // You can unslick at a given breakpoint now by adding:
