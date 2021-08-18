@@ -52,7 +52,9 @@ class FrontPageContentBlock extends AWBlock
     {
       $loNode = $loRow->_entity;
 
+      //**********************************
       // Top Parallax
+      //**********************************
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_top_parallax');
       $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
       $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
@@ -72,18 +74,13 @@ class FrontPageContentBlock extends AWBlock
 
       $lcContent .= " </div>\n";
 
+      //**********************************
       // WOW Summary
+      //**********************************
       $loCustom = new CustomFunctions();
       $lcWOWUrl = $loCustom->getCurrentWOWLink(false);
       $lcWOWTitle = $loCustom->getCurrentWOWTitle();
       $lcWOWUrlTitle = 'Link to current Woman of the Week';
-
-      $lcContent .= "<div class='wow-summary col-sm-12 views-row row$lnIndex'>\n";
-
-      /*
-        Force the cell of the title to match the cell of the image.
-      */
-      $lcContent .= "<div class='col-sm-12'><div class='col-sm-5 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div></div>\n";
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_wow_summary');
       $lcText = AWBlock::getNodeField($loReferencedParagraph, 'field_html_text');
@@ -94,28 +91,37 @@ class FrontPageContentBlock extends AWBlock
       $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
       $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
-      $lcContent .= "<div class='col-sm-5'>\n";
+      $lcContent .= "<div class='wow-summary col-sm-12 views-row row$lnIndex'>\n";
+      //-
+      /*
+        Force the cell of the title to match the cell of the image.
+      */
+      $lcContent .= "<div class='col-sm-12'><div class='col-sm-5 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div></div>\n";
+      //-
+      $lcContent .= "<div class='col-sm-12 flexdisplay'><div class='col-sm-5'>\n";
       $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'>";
       $lcContent .= "<a href='$lcWOWUrl' hreflang='en'>\n";
       $lcContent .= "<img src='$lcImage' alt='$lcTitle' title='$lcTitle'>\n";
       $lcContent .= "</a>\n";
       $lcContent .= "</div></div>";
       $lcContent .= "</div>\n";
-
+      //-
       $lcContent .= "<div class='col-sm-7'>\n";
-      $lcContent .= "<div class='views-field views-field-field_html_text'>\n";
-      $lcContent .= "<div class='field-content'>$lcText</div>\n";
-      $lcContent .= "<div class='field-append'>\n";
+      $lcContent .= "<div class='views-field-field_html_text'>$lcText</div>\n";
+      $lcContent .= "<div class='field-append-title'>\n";
       $lcContent .= "<h3>$lcWOWTitle</h3>";
-      $lcContent .= "<p><a class='btn-primary btn' href='$lcWOWUrl' title='$lcWOWUrlTitle'>Read full story...</a></p>";
+      $lcContent .= "</div>\n";
+      $lcContent .= "<div class='field-append-button'>\n";
+      $lcContent .= "<a class='btn-primary btn' href='$lcWOWUrl' title='$lcWOWUrlTitle'>Read full story...</a>";
       $lcContent .= "</div>\n";
       $lcContent .= "</div>\n";
+      //-
       $lcContent .= "</div>\n";
+      $lcContent .= "</div></div>\n";
 
-      $lcContent .= "</div>\n";
-
+      //**********************************
       // Benenfactors Carousel block
-
+      //**********************************
       // From https://drupal.stackexchange.com/questions/171686/how-can-i-programmatically-display-a-block/171733#171733
       // It's a plugin block.
       // By the way, the id is defined in modules/custom/src/Plugin/Block/BenefactorsCarouselBlock.php
@@ -130,7 +136,9 @@ class FrontPageContentBlock extends AWBlock
       $lcContent .= $lcPluginBlock;
       $lcContent .= "</div>\n";
 
+      //**********************************
       // Bottom Section
+      //**********************************
       $lcContent .= "<div class='bottom-section col-sm-12 views-row row$lnIndex'>\n";
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_bottom_section');

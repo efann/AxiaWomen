@@ -45,7 +45,11 @@ class FrontPageBlogBlock extends AWBlock
       );
     }
 
-    $lcContent = "<div class='row'>\n";
+    /*
+       Use .col-sm-12 rather than .row so that the left & right margins
+       will match the blocks above.
+    */
+    $lcContent = "<div class='col-sm-12'>\n";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)

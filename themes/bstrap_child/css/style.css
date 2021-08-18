@@ -209,9 +209,11 @@ a.btn-primary:focus
   display: none;
 }
 
-.page-node-type-front-page .wow-summary
+.page-node-type-front-page .wow-summary,
+.page-node-type-front-page .benefactors-carousel,
+.page-node-type-front-page .bottom-section
 {
-  padding: 20px 0;
+  padding: 40px 0 0 0;
 }
 
 .page-node-type-front-page .wow-summary h3
@@ -223,8 +225,7 @@ a.btn-primary:focus
 }
 
 .page-node-type-front-page .wow-summary .col-sm-12,
-.page-node-type-front-page .benefactors-carousel.col-sm-12,
-.page-node-type-front-page .wow-summary .title
+.page-node-type-front-page .benefactors-carousel .col-sm-12
 {
   padding: 0;
 }
@@ -280,6 +281,11 @@ a.btn-primary:focus
 
 }
 
+.page-node-type-front-page .wow-summary .col-sm-5.title
+{
+  padding: 0;
+  padding-bottom: 7px;
+}
 
 .page-node-type-front-page .wow-summary .title a
 {
@@ -304,11 +310,57 @@ a.btn-primary:focus
   }
 }
 
-.page-node-type-front-page .wow-summary .views-field-field_html_text .field-content
+.page-node-type-front-page .wow-summary .views-field-field_html_text
 {
   font-family: 'Petit Formal Script', cursive;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.page-node-type-front-page .wow-summary .flexdisplay
+{
+  position: relative;
+  display: block;
+}
+
+.page-node-type-front-page .wow-summary .field-append-title
+{
+  padding-bottom: 10px;
+}
+
+.page-node-type-front-page .wow-summary .field-append-title h3
+{
+  margin: 0;
+  padding: 20px 0;
+}
+
+.page-node-type-front-page .wow-summary .field-append-button
+{
+  position: relative;
+}
+
+@media (min-width: 768px)
+{
+  .page-node-type-front-page .wow-summary .flexdisplay
+  {
+    display: flex;
+  }
+
+  /*
+    This way, if the image is not as tall as the text
+    there will still be enough room at the bottom so that
+    the button will not overlap.
+  */
+  .page-node-type-front-page .wow-summary .field-append-title
+  {
+    padding-bottom: 40px;
+  }
+
+  .page-node-type-front-page .wow-summary .field-append-button
+  {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .page-node-type-wow .page-header,
@@ -769,7 +821,7 @@ a.btn-primary:focus
 .block-aw-front-page-blog-block
 {
   overflow: hidden;
-  padding: 20px 0;
+  padding: 40px 0 0 0;
 }
 
 .block-aw-front-page-blog-block .row
@@ -786,11 +838,6 @@ a.btn-primary:focus
     /* From https://stackoverflow.com/questions/11225912/make-div-height-occupy-parent-remaining-height */
     display: flex;
   }
-}
-
-.block-aw-derived-from-front-page-block .bottom-section
-{
-  padding: 25px 0;
 }
 
 .block-aw-all-images-block .views-field-title,
