@@ -846,8 +846,22 @@ a.btn-primary:focus
 .block-aw-front-page-blog-block .views-field-title
 {
   font-weight: 600;
+  font-size: 2.0em;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 0px;
+  height: unset;
+  overflow: hidden;
+}
+
+@media (min-width: 768px)
+{
+  .block-aw-all-images-block .views-field-title,
+  .block-aw-all-blogs-block .views-field-title,
+  .block-aw-all-wow-block .views-field-title,
+  .block-aw-front-page-blog-block .views-field-title
+  {
+    height: 3.0em;
+  }
 }
 
 .block-aw-all-images-block .views-field-title
@@ -875,7 +889,7 @@ a.btn-primary:focus
 .block-aw-front-page-blog-block .views-field-field-post-date
 {
   font-style: italic;
-  padding-bottom: 10px;
+  padding-bottom: 25px;
   font-size: 0.9em;
   text-align: center;
 }
