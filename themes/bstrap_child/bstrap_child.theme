@@ -1,5 +1,4 @@
 <?php
-use Drupal\custom\Plugin\Block\AWBlock;
 
 /**
  * @file
@@ -7,73 +6,3 @@ use Drupal\custom\Plugin\Block\AWBlock;
  *
  * Place your custom PHP code in this file.
  */
-
-function bstrap_child_preprocess_html(&$toVariables)
-{
-  $loNode = \Drupal::request()->attributes->get('node');
-  if ($loNode == null)
-  {
-    return;
-  }
-
-  $lnID = $loNode->id();
-  $lcType = $loNode->getType();
-
-  $lcTitle = $loNode->getTitle() . ' | ' . \Drupal::config('system.site')->get('name');
-  $lcHost = \Drupal::request()->getSchemeAndHttpHost();
-  $lcURL = $lcHost . \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $lnID);
-
-
-  $loTitleTag = [
-      '#tag' => 'meta',
-      '#attributes' => [
-          'property' => 'og:title',
-          'content' => $lcTitle,
-      ],
-  ];
-
-  $loTypeTag = [
-      '#tag' => 'meta',
-      '#attributes' => [
-          'property' => 'og:type',
-          'content' => 'article',
-      ],
-  ];
-
-  $loURLTag = [
-      '#tag' => 'meta',
-      '#attributes' => [
-          'property' => 'og:url',
-          'content' => $lcURL,
-      ],
-  ];
-
-  $loAppIDTag = [
-      '#tag' => 'meta',
-      '#attributes' => [
-          'property' => 'fb:app_id',
-          'content' => '465586200831606',
-      ],
-  ];
-
-  $toVariables['page']['#attached']['html_head'][] = [$loAppIDTag, 'facebook1'];
-  $toVariables['page']['#attached']['html_head'][] = [$loTitleTag, 'facebook2'];
-  $toVariables['page']['#attached']['html_head'][] = [$loTypeTag, 'facebook3'];
-  $toVariables['page']['#attached']['html_head'][] = [$loURLTag, 'facebook4'];
-
-  if ((strcasecmp($lcType, 'blog') == 0) || (strcasecmp($lcType, 'wow') == 0))
-  {
-    $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_row_of_image_text');
-    $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
-    $lcImage = $lcHost . AWBlock::getNodeField($loReferencedImage, 'field_image');
-
-    $loImgTag = [
-        '#tag' => 'meta',
-        '#attributes' => [
-            'property' => 'og:image',
-            'content' => $lcImage,
-        ],
-    ];
-    $toVariables['page']['#attached']['html_head'][] = [$loImgTag, 'facebook5'];
-  }
-}
