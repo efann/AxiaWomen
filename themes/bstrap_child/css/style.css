@@ -786,6 +786,7 @@ a.btn-primary:focus
 }
 
 
+.footer .login,
 .footer .copyright
 {
   text-align: center;
@@ -795,9 +796,10 @@ a.btn-primary:focus
   overflow: hidden;
 }
 
-.footer .login
+.footer .credits
 {
-  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .user-logged-in .footer .login

@@ -17,8 +17,8 @@ use Drupal\views\Views;
  * Provides an 'all blogs' block.
  *
  * @Block(
- *   id = "aw_derived_from_front_page_block",
- *   admin_label = @Translation("AW Derived from Front Page Block"),
+ *   id = "aw_front_page_main_block",
+ *   admin_label = @Translation("AW Front Page Main Block"),
  *   category = @Translation("Custom block for displaying content derived from Front Page content.")
  * )
  */
@@ -26,7 +26,7 @@ class FrontPageContentBlock extends AWBlock
 {
   const NO_DATA = 'Not much data to show here. . . .';
   const VIEW_NAME = 'views_for_custom_programmatically';
-  const VIEW_BLOCK_ID = 'block_derived_from_front_page';
+  const VIEW_BLOCK_ID = 'block_front_page_main';
 
   //-------------------------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ class FrontPageContentBlock extends AWBlock
       $lnWidth = $loImage['width'];
       $lnHeight = $loImage['height'];
 
-      $lcContent .= "<div class='top-parallax col-sm-12 views-row row0'>\n";
+      $lcContent .= "<div class='top-parallax col-sm-12'>\n";
 
       $lcStyle = "style='height: $lnHeight" . "px;'";
       $lcContent .= "<div class='parallax-window' data-parallax='scroll' data-image-src='$lcImage' data-natural-width='$lnWidth' data-natural-height='$lnHeight' $lcStyle>";
@@ -91,34 +91,28 @@ class FrontPageContentBlock extends AWBlock
       $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
       $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
-      $lcContent .= "<div class='wow-summary col-sm-12 views-row row$lnIndex'>\n";
+      $lcContent .= "<div class='wow-summary col-sm-12'>\n";
       //-
       /*
         Force the cell of the title to match the cell of the image.
       */
       $lcContent .= "<div class='col-sm-12'><div class='col-sm-5 title'><a href='$lcWOWUrl' title='$lcWOWUrlTitle'>WOMAN OF THE WEEK</a></div></div>\n";
       //-
-      $lcContent .= "<div class='col-sm-12 flexdisplay'><div class='col-sm-5'>\n";
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'>";
-      $lcContent .= "<a href='$lcWOWUrl' hreflang='en'>\n";
-      $lcContent .= "<img src='$lcImage' alt='$lcTitle' title='$lcTitle'>\n";
-      $lcContent .= "</a>\n";
-      $lcContent .= "</div></div>";
+      $lcContent .= "<div class='col-sm-12 flexdisplay'>\n";
+      //-
+      $lcContent .= "<div class='col-sm-5'>\n";
+      $lcContent .= "<div class='views-field views-field-field_image'><a href='$lcWOWUrl' hreflang='en'><img src='$lcImage' alt='$lcTitle' title='$lcTitle'></a></div>";
       $lcContent .= "</div>\n";
       //-
       $lcContent .= "<div class='col-sm-7'>\n";
       $lcContent .= "<div class='views-field-field_html_text'>$lcText</div>\n";
-      $lcContent .= "<div class='field-append-title'>\n";
-      $lcContent .= "<h3>$lcWOWTitle</h3>";
-      $lcContent .= "</div>\n";
-      $lcContent .= "<div class='field-append-button'>\n";
-      $lcContent .= "<a class='btn-primary btn' href='$lcWOWUrl' title='$lcWOWUrlTitle'>Read full story...</a>";
-      $lcContent .= "</div>\n";
+      $lcContent .= "<div class='field-append-title'><h3>$lcWOWTitle</h3></div>\n";
+      $lcContent .= "<div class='field-append-button'><a class='btn-primary btn' href='$lcWOWUrl' title='$lcWOWUrlTitle'>Read full story...</a></div>\n";
       $lcContent .= "</div>\n";
       //-
       $lcContent .= "</div>\n";
-      $lcContent .= "</div></div>\n";
-
+      //-
+      $lcContent .= "</div>\n";
       //**********************************
       // Benenfactors Carousel block
       //**********************************
