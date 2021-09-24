@@ -798,6 +798,7 @@ a.btn-primary:focus
 
 .footer .credits
 {
+  font-size: 0.8em;
   text-align: center;
   padding-top: 10px;
 }
