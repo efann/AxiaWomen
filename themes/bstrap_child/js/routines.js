@@ -95,6 +95,20 @@ var Routines =
         }
 
       });
+
+      jQuery(tcSelect).find('form').each(function ()
+      {
+        let loThis = jQuery(this);
+        let lcAction = loThis.attr('action');
+        let lcHostname = window.location.hostname;
+
+        if (Boolean(lcAction) && (!lcAction.startsWith("/")) && (!lcAction.includes(lcHostname)))
+        {
+          loThis.attr('target', '_blank');
+        }
+
+      });
+
     },
 
     //----------------------------------------------------------------------------------------------------
