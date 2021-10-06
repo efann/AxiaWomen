@@ -395,6 +395,7 @@ a.btn-primary:focus
   padding-top: 10px;
 }
 
+.authorize-net-form,
 .paypal-form
 {
   padding-top: 0px;
@@ -404,6 +405,7 @@ a.btn-primary:focus
 
 @media (min-width: 768px)
 {
+  .authorize-net-form,
   .paypal-form
   {
     padding-top: 45px;
