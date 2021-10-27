@@ -969,6 +969,16 @@ a.btn-primary:focus
   }
 }
 
+.page-node-type-page .field--name-field-row-of-image-text .col-sm-12
+{
+  padding: 20px 0;
+}
+
+.page-node-type-page .field--name-field-row-of-image-text .col-sm-12:nth-child(even)
+{
+  background-color: lightgrey;
+}
+
 #block-wowlisting
 {
   padding: 15px 0;
