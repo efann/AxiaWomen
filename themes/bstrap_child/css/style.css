@@ -395,18 +395,22 @@ a.btn-primary:focus
   padding-top: 10px;
 }
 
-.authorize-net-form,
-.paypal-form
+.aplos
 {
   padding-top: 0px;
   padding: 15px 0;
   text-align: center;
 }
 
+.aplos div
+{
+  clear: both;
+  padding-bottom: 20px;
+}
+
 @media (min-width: 768px)
 {
-  .authorize-net-form,
-  .paypal-form
+  .aplos
   {
     padding-top: 45px;
     padding-bottom: 0px;
