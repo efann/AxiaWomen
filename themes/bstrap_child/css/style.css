@@ -158,6 +158,35 @@ a.btn-primary:focus
   outline: unset !important;
 }
 
+.btn-primary.donate,
+a.btn-primary.donate,
+a.btn-primary.donate:link,
+a.btn-primary.donate:visited
+{
+  background-color: #FFCD5C;
+  border-radius: 42px !important;
+  border-color: #2E6DA4 !important;
+  color: #0A073B;
+
+  letter-spacing: 0.3rem;
+}
+
+.btn-primary.donate.large,
+a.btn-primary.donate.large,
+a.btn-primary.donate.large:link,
+a.btn-primary.donate.large:visited
+{
+  font-size: 2.0em;
+}
+
+a.btn-primary.donate:active,
+a.btn-primary.donate:hover,
+a.btn-primary.donate:focus
+{
+  background-color: #286090;
+  color: whitesmoke;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* Debugging
    Install Devel, Kint
@@ -244,6 +273,12 @@ a.btn-primary:focus
   padding: 0;
 }
 
+.page-node-type-front-page .block-aw-front-page-blog-block .col-sm-4,
+.page-node-type-front-page .block-aw-front-page-blog-block .col-sm-4:nth-child(1)
+{
+  padding-bottom: 20px;
+}
+
 .page-node-type-front-page .bottom-section .col-sm-6:nth-child(2) .views-field-field_image
 {
   text-align: center;
@@ -263,6 +298,7 @@ a.btn-primary:focus
   {
     padding-right: 15px;
     padding-left: 0;
+    padding-bottom: 0;
   }
 
   .page-node-type-front-page .wow-summary .col-sm-7,
