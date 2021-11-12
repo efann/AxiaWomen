@@ -81,8 +81,10 @@ theme.has_glyphicons ? 'has-glyphicons',
 
       Routines.setupSlick('#benefactors-carousel');
 
+      Routines.updateExternalURLs("#block-custommainmenu");
       Routines.updateExternalURLs(".main-container");
-      // Turns out that the Parallax is called when loading the library
+
+      // By the way, turns out that the Parallax is called when loading the library
       // so no need to manually call a Routines.setupParallax() or something similar.
     });
   </script>
