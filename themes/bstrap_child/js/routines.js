@@ -1,7 +1,7 @@
 var Routines =
   {
-    CONTACT_BLOCK: "#contact-message-feedback-form",
-    PARALLAX_CLASS: ".parallax-window",
+    CONTACT_BLOCK: '#contact-message-feedback-form',
+    PARALLAX_CLASS: '.parallax-window',
 
     //----------------------------------------------------------------------------------------------------
     initializeRoutines: function ()
@@ -41,10 +41,10 @@ var Routines =
         return;
       }
 
-      Beo.setupWatermark(lcForm + " #edit-name", "Your Name");
-      Beo.setupWatermark(lcForm + " #edit-mail", "Your@E-mail.com");
-      Beo.setupWatermark(lcForm + " #edit-subject-0-value", "Subject of Question");
-      Beo.setupWatermark(lcForm + " #edit-message-0-value", "Question for Axia Women");
+      Beo.setupWatermark(lcForm + ' #edit-name', 'Your Name');
+      Beo.setupWatermark(lcForm + ' #edit-mail', 'Your@E-mail.com');
+      Beo.setupWatermark(lcForm + ' #edit-subject-0-value', 'Subject of Question');
+      Beo.setupWatermark(lcForm + ' #edit-message-0-value', 'Question for Axia Women');
 
     },
 
@@ -89,7 +89,7 @@ var Routines =
         let lcHref = loThis.attr('href');
         let lcHostname = window.location.hostname;
 
-        if (Boolean(lcHref) && (!lcHref.startsWith("/")) && (!lcHref.includes(lcHostname)))
+        if (Boolean(lcHref) && (!lcHref.startsWith('/')) && (!lcHref.startsWith('?')) && (!lcHref.includes(lcHostname)))
         {
           loThis.attr('target', '_blank');
         }
@@ -102,7 +102,7 @@ var Routines =
         let lcAction = loThis.attr('action');
         let lcHostname = window.location.hostname;
 
-        if (Boolean(lcAction) && (!lcAction.startsWith("/")) && (!lcAction.includes(lcHostname)))
+        if (Boolean(lcAction) && (!lcAction.startsWith('/')) && (!lcAction.includes(lcHostname)))
         {
           loThis.attr('target', '_blank');
         }
@@ -114,11 +114,11 @@ var Routines =
     //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
-      let lcAJAX = "#ajax-loading";
+      let lcAJAX = '#ajax-loading';
       let loAJAX = jQuery(lcAJAX);
       if (loAJAX.length == 0)
       {
-        alert("The HTML element " + lcAJAX + " does not exist!");
+        alert('The HTML element ' + lcAJAX + ' does not exist!');
         return;
       }
 
