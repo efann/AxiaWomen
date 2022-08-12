@@ -102,7 +102,7 @@ var Routines =
         let lcAction = loThis.attr('action');
         let lcHostname = window.location.hostname;
 
-        if (Boolean(lcAction) && (!lcAction.startsWith('/')) && (!lcAction.includes(lcHostname)))
+        if (Boolean(lcAction) && (!lcAction.startsWith('/')) && (!lcHref.startsWith('?')) && (!lcAction.includes(lcHostname)))
         {
           loThis.attr('target', '_blank');
         }
