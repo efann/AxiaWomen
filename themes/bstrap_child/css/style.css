@@ -850,6 +850,7 @@ a.btn-primary.btn-donate:focus
 .block-aw-front-page-blog-block,
 .block-aw-all-images-block,
 .block-aw-all-blogs-block,
+.block-aw-all-events-block,
 .block-aw-all-wow-block,
 .block-aw-front-page-blog-block
 {
@@ -880,6 +881,7 @@ a.btn-primary.btn-donate:focus
 
 .block-aw-all-images-block .views-field-title,
 .block-aw-all-blogs-block .views-field-title,
+.block-aw-all-events-block .views-field-title,
 .block-aw-all-wow-block .views-field-title,
 .block-aw-front-page-blog-block .views-field-title
 {
@@ -895,6 +897,7 @@ a.btn-primary.btn-donate:focus
 {
   .block-aw-all-images-block .views-field-title,
   .block-aw-all-blogs-block .views-field-title,
+  .block-aw-all-events-block .views-field-title,
   .block-aw-all-wow-block .views-field-title,
   .block-aw-front-page-blog-block .views-field-title
   {
@@ -916,6 +919,7 @@ a.btn-primary.btn-donate:focus
 
 .block-aw-all-images-block .views-field-field_image,
 .block-aw-all-blogs-block .views-field-field_image,
+.block-aw-all-events-block .views-field-field_image,
 .block-aw-all-wow-block .views-field-field_image,
 .block-aw-front-page-blog-block .views-field-field_image
 {
@@ -923,6 +927,7 @@ a.btn-primary.btn-donate:focus
 }
 
 .block-aw-all-blogs-block .views-field-field-post-date,
+.block-aw-all-events-block .views-field-field-post-date,
 .block-aw-all-wow-block .views-field-field-post-date,
 .block-aw-front-page-blog-block .views-field-field-post-date
 {
@@ -979,6 +984,7 @@ a.btn-primary.btn-donate:focus
 }
 
 .block-aw-all-blogs-block .views-row,
+.block-aw-all-events-block .views-row,
 .block-aw-all-wow-block .views-row,
 .block-aw-all-images-block .views-row
 {
@@ -986,6 +992,7 @@ a.btn-primary.btn-donate:focus
 }
 
 .block-aw-all-blogs-block .views-row:nth-child(even),
+.block-aw-all-events-block .views-row:nth-child(even),
 .block-aw-all-wow-block .views-row:nth-child(even),
 .block-aw-all-images-block .views-row:nth-child(even)
 {
@@ -995,6 +1002,7 @@ a.btn-primary.btn-donate:focus
 @media (min-width: 768px)
 {
   .block-aw-all-blogs-block .views-row:nth-child(even),
+  .block-aw-all-events-block .views-row:nth-child(even),
   .block-aw-all-wow-block .views-row:nth-child(even),
   .block-aw-all-images-block .views-row:nth-child(even)
   {
