@@ -413,11 +413,18 @@ a.btn-primary.btn-donate:focus
 }
 
 .page-node-type-wow .field--name-field-post-date,
+.page-node-type-event .field--name-field-post-date,
 .page-node-type-blog .field--name-field-post-date
 {
   text-align: center;
   font-style: italic;
   padding-bottom: 9px;
+}
+
+.page-node-type-event .field--name-field-event-image-text .field--label
+{
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 /*----------------------------------------------------------------------------------------*/
