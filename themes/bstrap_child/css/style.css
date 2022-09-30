@@ -1032,11 +1032,26 @@ a.btn-primary.btn-donate:focus
   padding: 15px 0;
 }
 
+#block-wowlisting-clone
+{
+  float: none;
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media (min-width: 768px)
+{
+  #block-wowlisting-clone
+  {
+    float: right;
+    text-align: left;
+  }
+}
+
 #block-paypal
 {
   padding-top: 30px;
 }
-
 
 #block-aw-benefactors-block .row
 {

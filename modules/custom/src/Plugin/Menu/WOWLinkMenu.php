@@ -15,7 +15,7 @@ use Drupal\custom\Service\CustomFunctions;
 
 class WOWLinkMenu extends MenuLinkDefault
 {
-  const TITLE = 'WOW';
+  const TITLE = 'W.O.W.';
   const DESCRIPTION = 'Link to current Woman of the Week';
 
   //-------------------------------------------------------------------------------------------------

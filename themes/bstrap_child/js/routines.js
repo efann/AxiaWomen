@@ -112,6 +112,19 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
+    duplicateWOWListingButton: function ()
+    {
+      let loButton = jQuery('#block-wowlisting a.btn');
+      if (loButton.length == 0)
+      {
+        return;
+      }
+
+      let lcCloneID = 'block-wowlisting-clone';
+      let loClone = loButton.clone();
+      loClone.insertBefore('h1.page-header').wrap(`<div id='${lcCloneID}'></div>`);
+    },
+    //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
       let lcAJAX = '#ajax-loading';
