@@ -80,8 +80,8 @@ class AllWOWController
       $lcContent .= "<div>";
       $lcContent .= "<a href='$lcURLAlias' hreflang='en'>";
       $lcContent .= "<div class='col-xs-12'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div>";
-      $lcContent .= "<div class='col-xs-12'>$lcURLTitle<br>";
-      $lcContent .= "$lcPostDateFormat</div>";
+      $lcContent .= "<div class='col-xs-12 title'>$lcURLTitle</div>";
+      $lcContent .= "<div class='col-xs-12 postdate'>$lcPostDateFormat</div>";
       $lcContent .= "</a>\n";
       $lcContent .= "</div>\n";
 

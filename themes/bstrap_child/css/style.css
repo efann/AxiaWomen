@@ -1159,6 +1159,12 @@ a.btn-primary.btn-donate:focus
 {
   max-height: 275px;
   display: inline-block;
+  width: 100%;
+}
+
+#block-awallwowblock .col-sm-4.col-xs-6 .postdate
+{
+  font-style: italic;
 }
 
 @media (min-width: 768px)
@@ -1173,7 +1179,7 @@ a.btn-primary.btn-donate:focus
 {
   #block-awallwowblock .col-sm-4.col-xs-6
   {
-    font-size: 1.1vw;
+    font-size: 1.0vw;
   }
 }
 
