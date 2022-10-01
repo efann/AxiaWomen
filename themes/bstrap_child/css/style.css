@@ -765,6 +765,11 @@ a.btn-primary.btn-donate:focus
   width: auto;
 }
 
+.footer a img:hover
+{
+  opacity: 0.25;
+}
+
 .footer .instagram,
 .footer .facebook,
 .footer .youtube,
@@ -1034,17 +1039,16 @@ a.btn-primary.btn-donate:focus
 
 #block-wowlisting-clone
 {
-  float: none;
   margin-top: 7px;
   text-align: center;
+  padding: 0;
 }
 
 @media (min-width: 768px)
 {
   #block-wowlisting-clone
   {
-    float: right;
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -1142,6 +1146,35 @@ a.btn-primary.btn-donate:focus
 #block-aw-benefactors-carousel-block .slick-caption a:focus
 {
   color: #0A073B;
+}
+
+#block-awallwowblock .col-sm-4.col-xs-6
+{
+  height: 350px;
+  text-align: center;
+  font-size: 2.6vw;
+}
+
+#block-awallwowblock .col-sm-4.col-xs-6 img
+{
+  max-height: 275px;
+  display: inline-block;
+}
+
+@media (min-width: 768px)
+{
+  #block-awallwowblock .col-sm-4.col-xs-6
+  {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  #block-awallwowblock .col-sm-4.col-xs-6
+  {
+    font-size: 1.1vw;
+  }
 }
 
 /*----------------------------------------------------------------------------------------*/

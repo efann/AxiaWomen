@@ -51,7 +51,7 @@ class AllWOWController
 
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
-      $lcContent .= "<div class='col-sm-12 views-row row$lnIndex'>\n";
+      $lcContent .= "<div class='col-sm-4 col-xs-6'>\n";
 
       $loNode = $loRow->_entity;
       $lnID = $loNode->id();
@@ -76,17 +76,13 @@ class AllWOWController
       $lcTitle = HTML::escape(AWBlock::getNodeField($loReferencedImage, 'title'));
       $lcImage = AWBlock::getNodeField($loReferencedImage, 'field_image');
 
-      $lcContent .= "<div class='col-sm-5'>\n";
-      $lcContent .= "<div class='views-field views-field-field_image'><div class='field-content'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div></div>";
-      $lcContent .= "</div>\n";
-
-      $lcContent .= "<div class='col-sm-7'>\n";
-      $lcContent .= "<div class='views-field views-field-title'><span class='field-content'><a href='$lcURLAlias' hreflang='en'>$lcURLTitle</a></span></div>";
-      $lcContent .= "<div class='views-field views-field-field-post-date'><div class='field-content'>$lcPostDateFormat</div></div>";
-
-      $lcContent .= "<div class='views-field views-field-field_html_text'><div class='field-content'>$lcText</div></div>";
-
-      $lcContent .= "<div class='views-field views-field-more-button'><div class='field-content'><a class='btn-primary btn' href='$lcURLAlias' hreflang='en'>More</a></div></div>";
+      //$lcContent .= "<div class='col-xs-12'>";
+      $lcContent .= "<div>";
+      $lcContent .= "<a href='$lcURLAlias' hreflang='en'>";
+      $lcContent .= "<div class='col-xs-12'><img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' /></div>";
+      $lcContent .= "<div class='col-xs-12'>$lcURLTitle<br>";
+      $lcContent .= "$lcPostDateFormat</div>";
+      $lcContent .= "</a>\n";
       $lcContent .= "</div>\n";
 
       $lcContent .= "</div>\n";

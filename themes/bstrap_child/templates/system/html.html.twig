@@ -77,7 +77,10 @@ theme.has_glyphicons ? 'has-glyphicons',
       Routines.setupLogo();
       Routines.setupWatermarks();
 
-      Beo.setupLightbox();
+      if (jQuery('#block-awallwowblock').length == 0)
+      {
+        Beo.setupLightbox();
+      }
 
       Routines.setupSlick('#benefactors-carousel');
 

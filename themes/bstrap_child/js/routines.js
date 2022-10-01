@@ -122,7 +122,7 @@ var Routines =
 
       let lcCloneID = 'block-wowlisting-clone';
       let loClone = loButton.clone();
-      loClone.insertBefore('h1.page-header').wrap(`<div id='${lcCloneID}'></div>`);
+      loClone.insertBefore('h1.page-header').wrap(`<div id='${lcCloneID}' class='col-sm-12'></div>`);
     },
     //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
