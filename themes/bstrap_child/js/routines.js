@@ -116,14 +116,24 @@ var Routines =
     generateWOWWrapper: function ()
     {
       let loDivs = jQuery('div.wow-cell');
-      let lnColumns = jQuery(window).width() >= 768 ? 3 : 2;
+      // From https://errorsandanswers.com/css-media-queries-and-jquery-window-width-do-not-match/
+      let lnColumns = (window.innerWidth) >= 768 ? 3 : 2;
       let lcColumns = `count${lnColumns}`;
 
       if (jQuery(`.row.${lcColumns}`).length > 0)
       {
-        console.log('skipping');
         return;
       }
+
+      loDivs.each(function ()
+      {
+        let loThis = jQuery(this);
+        if (loThis.parent().is('div.row'))
+        {
+          // Remove the parent.
+          loThis.unwrap();
+        }
+      });
 
       for (let i = 0; i < loDivs.length; i += lnColumns)
       {
