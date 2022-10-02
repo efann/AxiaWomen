@@ -1148,28 +1148,43 @@ a.btn-primary.btn-donate:focus
   color: #0A073B;
 }
 
-#block-awallwowblock .col-sm-4.col-xs-6
+#block-awallwowblock .row
 {
-  height: 350px;
+  padding: 20px 0;
+  margin-bottom: 25px;
+  min-height: 0;
+}
+
+#block-awallwowblock .row:nth-child(even)
+{
+  background-color: lightgrey;
+}
+
+#block-awallwowblock .wow-cell
+{
   text-align: center;
   font-size: 2.6vw;
 }
 
-#block-awallwowblock .col-sm-4.col-xs-6 img
+/*
+ Don't set the display: inline-block here. Let the Routines.setupWOWWrapper
+ set this attribute, so that the images all appear at once.
+*/
+#block-awallwowblock .wow-cell img
 {
   max-height: 275px;
-  display: inline-block;
   max-width: 100%;
+  height: auto;
 }
 
-#block-awallwowblock .col-sm-4.col-xs-6 .postdate
+#block-awallwowblock .wow-cell .postdate
 {
   font-style: italic;
 }
 
 @media (min-width: 768px)
 {
-  #block-awallwowblock .col-sm-4.col-xs-6
+  #block-awallwowblock .wow-cell
   {
     font-size: 1.5vw;
   }
@@ -1177,7 +1192,7 @@ a.btn-primary.btn-donate:focus
 
 @media (min-width: 1200px)
 {
-  #block-awallwowblock .col-sm-4.col-xs-6
+  #block-awallwowblock .wow-cell
   {
     font-size: 1.0vw;
   }

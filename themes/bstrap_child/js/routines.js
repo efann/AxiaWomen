@@ -80,38 +80,6 @@ var Routines =
     },
 
     //----------------------------------------------------------------------------------------------------
-    // Now ensuring that external links display in a separate tab.
-    updateExternalURLs: function (tcSelect)
-    {
-      jQuery(tcSelect).find('a').each(function ()
-      {
-        let loThis = jQuery(this);
-        let lcHref = loThis.attr('href');
-        let lcHostname = window.location.hostname;
-
-        if (Boolean(lcHref) && (!lcHref.startsWith('/')) && (!lcHref.startsWith('?')) && (!lcHref.includes(lcHostname)))
-        {
-          loThis.attr('target', '_blank');
-        }
-
-      });
-
-      jQuery(tcSelect).find('form').each(function ()
-      {
-        let loThis = jQuery(this);
-        let lcAction = loThis.attr('action');
-        let lcHostname = window.location.hostname;
-
-        if (Boolean(lcAction) && (!lcAction.startsWith('/')) && (!lcHref.startsWith('?')) && (!lcAction.includes(lcHostname)))
-        {
-          loThis.attr('target', '_blank');
-        }
-
-      });
-
-    },
-
-    //----------------------------------------------------------------------------------------------------
     duplicateWOWListingButton: function ()
     {
       let loButton = jQuery('#block-wowlisting a.btn');
@@ -124,6 +92,46 @@ var Routines =
       let loClone = loButton.clone();
       loClone.insertBefore('h1.page-header').wrap(`<div id='${lcCloneID}' class='col-sm-12'></div>`);
     },
+
+    //----------------------------------------------------------------------------------------------------
+    setupWOWWrapper: function ()
+    {
+      let loBlock = jQuery('#block-awallwowblock');
+      if (loBlock.length == 0)
+      {
+        return;
+      }
+
+      loBlock.find('img').css('display', 'inline-block');
+
+      Routines.generateWOWWrapper();
+
+      jQuery(window).resize(function ()
+      {
+        Routines.generateWOWWrapper();
+      });
+
+    },
+    //----------------------------------------------------------------------------------------------------
+    generateWOWWrapper: function ()
+    {
+      let loDivs = jQuery('div.wow-cell');
+      let lnColumns = jQuery(window).width() >= 768 ? 3 : 2;
+      let lcColumns = `count${lnColumns}`;
+
+      if (jQuery(`.row.${lcColumns}`).length > 0)
+      {
+        console.log('skipping');
+        return;
+      }
+
+      for (let i = 0; i < loDivs.length; i += lnColumns)
+      {
+        loDivs.slice(i, i + lnColumns).wrapAll(`<div class='row ${lcColumns}'></div>`);
+      }
+
+    },
+
     //----------------------------------------------------------------------------------------------------
     showAJAX: function (tlShow)
     {
