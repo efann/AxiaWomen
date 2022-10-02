@@ -104,23 +104,23 @@ var Routines =
 
       loBlock.find('img').css('display', 'inline-block');
 
-      Routines.generateWOWWrapper();
+      Routines.generateWOWWrapper(loBlock);
 
       jQuery(window).resize(function ()
       {
-        Routines.generateWOWWrapper();
+        Routines.generateWOWWrapper(loBlock);
       });
 
     },
     //----------------------------------------------------------------------------------------------------
-    generateWOWWrapper: function ()
+    generateWOWWrapper: function (toBlock)
     {
-      let loDivs = jQuery('div.wow-cell');
+      let loDivs = toBlock.find('div.wow-cell');
       // From https://errorsandanswers.com/css-media-queries-and-jquery-window-width-do-not-match/
       let lnColumns = (window.innerWidth) >= 768 ? 3 : 2;
       let lcColumns = `count${lnColumns}`;
 
-      if (jQuery(`.row.${lcColumns}`).length > 0)
+      if (toBlock.find(`.row.${lcColumns}`).length > 0)
       {
         return;
       }
