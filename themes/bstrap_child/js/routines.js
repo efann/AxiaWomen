@@ -120,11 +120,13 @@ var Routines =
       let lnColumns = (window.innerWidth) >= 768 ? 3 : 2;
       let lcColumns = `count${lnColumns}`;
 
+      // If the column# class has been already set, then no need re-wrap
       if (toBlock.find(`.row.${lcColumns}`).length > 0)
       {
         return;
       }
 
+      // Remove the current wrapping.
       loDivs.each(function ()
       {
         let loThis = jQuery(this);
@@ -135,6 +137,7 @@ var Routines =
         }
       });
 
+      // From https://codepen.io/grbav/pen/rLpYye
       for (let i = 0; i < loDivs.length; i += lnColumns)
       {
         loDivs.slice(i, i + lnColumns).wrapAll(`<div class='row ${lcColumns}'></div>`);
