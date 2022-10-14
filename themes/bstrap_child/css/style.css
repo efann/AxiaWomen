@@ -622,7 +622,18 @@ a.btn-primary.btn-donate:focus
 {
   div.navbar-collapse
   {
-    width: 179px;
+    width: 200px;
+  }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a
+  {
+    color: #222;
+    font-weight: bold;
+  }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover
+  {
+    color: darkgray;
   }
 }
 

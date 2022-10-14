@@ -67,7 +67,9 @@ class AllEventsController
 
       $loReferencedParagraph = AWBlock::getReferencedEntity($loNode, 'field_event_image_text');
       // Format must be an existing text formatter.
-      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 750);
+      // Also, we want the entire paragraph for events. So use zero, not null or missing parameter.
+      // From https://api.drupal.org/api/drupal/core%21modules%21text%21text.module/function/text_summary/9.3.x
+      $lcText = text_summary(AWBlock::getNodeField($loReferencedParagraph, 'field_html_text'), 'full_html', 0);
 
       $loReferencedImage = AWBlock::getReferencedEntity($loReferencedParagraph, 'field_image_content_id');
       // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
