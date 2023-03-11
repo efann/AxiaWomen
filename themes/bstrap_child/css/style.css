@@ -9,7 +9,7 @@ body
   color: #0A033B;
   margin: 0;
   padding: 0px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 body.navbar-is-fixed-top
@@ -484,7 +484,7 @@ a.btn-primary.btn-donate:focus
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form
 {
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 @media (max-width: 767px)
@@ -511,7 +511,7 @@ a.btn-primary.btn-donate:focus
 
 .navbar-inverse
 {
-  background-color: whitesmoke;
+  background-color: white;
   border: none;
 }
 
@@ -553,7 +553,7 @@ a.btn-primary.btn-donate:focus
 .navbar-inverse .navbar-nav > .open > a:focus
 {
   color: #93A9D7;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 /*
@@ -993,17 +993,17 @@ a.btn-primary.btn-donate:focus
 
 .block-aw-front-page-blog-block .row0
 {
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .block-aw-front-page-blog-block .row1
 {
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .block-aw-front-page-blog-block .row2
 {
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .block-aw-all-blogs-block .views-row,
