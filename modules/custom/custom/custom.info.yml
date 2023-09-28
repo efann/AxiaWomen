@@ -3,8 +3,7 @@ description: Module for blocks, custom formatting of content, and twig extension
 package: Custom
 type: module
 version: 1.0
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - node
