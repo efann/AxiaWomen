@@ -5,8 +5,7 @@ namespace Drupal\custom\TwigExtension;
 use Drupal;
 use Drupal\Component\Utility\Html;
 use Drupal\custom\Plugin\Block\AWBlock;
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\TwigFunction;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -15,17 +14,17 @@ use Twig_SimpleFunction;
 /**
  * Copied from Twig Tweak
  */
-class CustomTwigExtension extends Twig_Extension
+class CustomTwigExtension extends Drupal\twig_tweak\TwigTweakExtension
 {
 
   //-------------------------------------------------------------------------------------------------
   /**
    * {@inheritdoc}
    */
-  public function getFunctions()
+  public function getFunctions(): array
   {
     return [
-        new Twig_SimpleFunction('custom_field_image', [$this, 'customFieldImage']),
+        new TwigFunction('custom_field_image', [$this, 'customFieldImage']),
     ];
   }
 
@@ -34,13 +33,13 @@ class CustomTwigExtension extends Twig_Extension
   /**
    * {@inheritdoc}
    */
-  public function getName()
+  public function getName(): string
   {
     return 'custom';
   }
 
   //-------------------------------------------------------------------------------------------------
-  public function customFieldImage($tnID, $tcFieldName)
+  public function customFieldImage($tnID, $tcFieldName): string
   {
     $loEntity = Drupal::entityTypeManager()->getStorage('node')->load($tnID);
 

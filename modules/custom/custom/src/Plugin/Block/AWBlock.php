@@ -45,7 +45,7 @@ abstract class AWBlock extends BlockBase
   }
 
   //-------------------------------------------------------------------------------------------------
-  public static function getNode($tnNodeID)
+  public static function getNode($tnNodeID): ?Drupal\Core\Entity\EntityInterface
   {
     // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
     $loNode = Drupal::entityTypeManager()
@@ -120,7 +120,6 @@ abstract class AWBlock extends BlockBase
     return ($lcName);
   }
   //-------------------------------------------------------------------------------------------------
-
 
 }
 

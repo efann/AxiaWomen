@@ -1,6 +1,7 @@
 services:
   custom.twig_extension:
     class: Drupal\custom\TwigExtension\CustomTwigExtension
+    arguments: ['@module_handler', '@theme.manager']
     tags:
       - { name: twig.extension }
   custom.service:

@@ -5,7 +5,6 @@
 namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Modules\Text;
 use Drupal\custom\Service\CustomFunctions;
 use Drupal\views\Views;
 
@@ -33,12 +32,11 @@ class FrontPageContentBlock extends AWBlock
   /**
    * {@inheritdoc}
    */
-  public function build()
+  public function build(): array
   {
 
     $loViewExecutable = Views::getView(self::VIEW_NAME);
-    if (!is_object($loViewExecutable))
-    {
+    if (!is_object($loViewExecutable)) {
       return array(
           '#type' => 'markup',
           '#markup' => t(self::NO_DATA),
@@ -48,8 +46,7 @@ class FrontPageContentBlock extends AWBlock
     $lcContent = "";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
-    foreach ($loViewExecutable->result as $lnIndex => $loRow)
-    {
+    foreach ($loViewExecutable->result as $lnIndex => $loRow) {
       $loNode = $loRow->_entity;
 
       //**********************************
@@ -124,7 +121,7 @@ class FrontPageContentBlock extends AWBlock
       $loBlockManager = \Drupal::service('plugin.manager.block');
       $laConfig = [];
       $loPluginBlock = $loBlockManager->createInstance($lcBlockID, $laConfig);
-      $lcPluginBlock = render($loPluginBlock->build());
+      $lcPluginBlock = \Drupal::service('renderer')->render($loPluginBlock->build());
 
       $lcContent .= "<div class='benefactors-carousel col-sm-12'>\n";
       $lcContent .= $lcPluginBlock;
