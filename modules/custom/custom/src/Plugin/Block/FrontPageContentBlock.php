@@ -36,17 +36,19 @@ class FrontPageContentBlock extends AWBlock
   {
 
     $loViewExecutable = Views::getView(self::VIEW_NAME);
-    if (!is_object($loViewExecutable)) {
+    if (!is_object($loViewExecutable))
+    {
       return array(
-          '#type' => 'markup',
-          '#markup' => t(self::NO_DATA),
+        '#type' => 'markup',
+        '#markup' => t(self::NO_DATA),
       );
     }
 
     $lcContent = "";
 
     $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
-    foreach ($loViewExecutable->result as $lnIndex => $loRow) {
+    foreach ($loViewExecutable->result as $lnIndex => $loRow)
+    {
       $loNode = $loRow->_entity;
 
       //**********************************
@@ -155,11 +157,11 @@ class FrontPageContentBlock extends AWBlock
     // From https://drupal.stackexchange.com/questions/184963/pass-raw-html-to-markup/243216
     // Normally, I would not like to use raw. However, it is stripping out the style.
     return (array(
-        '#type' => 'inline_template',
-        '#template' => '{{ generatedcontent|raw }}',
-        '#context' => [
-            'generatedcontent' => $lcContent
-        ]
+      '#type' => 'inline_template',
+      '#template' => '{{ generatedcontent|raw }}',
+      '#context' => [
+        'generatedcontent' => $lcContent
+      ]
     ));
 
 

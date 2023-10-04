@@ -49,8 +49,8 @@ abstract class AWBlock extends BlockBase
   {
     // From https://drupal.stackexchange.com/questions/225209/load-term-by-name
     $loNode = Drupal::entityTypeManager()
-        ->getStorage('node')
-        ->load($tnNodeID);
+      ->getStorage('node')
+      ->load($tnNodeID);
 
     return ($loNode);
   }
@@ -80,8 +80,8 @@ abstract class AWBlock extends BlockBase
     try
     {// From https://drupal.stackexchange.com/questions/225209/load-term-by-name
       $laTerms = Drupal::entityTypeManager()
-          ->getStorage('taxonomy_term')
-          ->loadByProperties(['name' => $tcTerm]);
+        ->getStorage('taxonomy_term')
+        ->loadByProperties(['name' => $tcTerm]);
     }
     catch (Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException $e)
     {
@@ -120,6 +120,7 @@ abstract class AWBlock extends BlockBase
     return ($lcName);
   }
   //-------------------------------------------------------------------------------------------------
+
 
 }
 
