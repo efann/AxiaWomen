@@ -46,7 +46,7 @@ class FrontPageContentBlock extends AWBlock
 
     $lcContent = "";
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
       $loNode = $loRow->_entity;
