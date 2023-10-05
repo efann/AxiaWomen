@@ -24,7 +24,7 @@ class CustomTwigExtension extends Drupal\twig_tweak\TwigTweakExtension
   public function getFunctions(): array
   {
     return [
-        new TwigFunction('custom_field_image', [$this, 'customFieldImage']),
+      new TwigFunction('custom_field_image', [$this, 'customFieldImage']),
     ];
   }
 
@@ -41,15 +41,29 @@ class CustomTwigExtension extends Drupal\twig_tweak\TwigTweakExtension
   //-------------------------------------------------------------------------------------------------
   public function customFieldImage($tnID, $tcFieldName): string
   {
-    $loEntity = Drupal::entityTypeManager()->getStorage('node')->load($tnID);
+    $lcTitle = "<Image not found.>";
 
-    // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
-    // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
-    // By the way, title has this problem as it's a plain text field with no conversion.
-    $lcTitle = HTML::escape(AWBlock::getNodeField($loEntity, 'title'));
-    $lcImage = AWBlock::getNodeField($loEntity, $tcFieldName);
+    try
+    {
+      $loEntity = Drupal::entityTypeManager()->getStorage('node')->load($tnID);
 
-    return ("<img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' />");
+      // If you don't convert to the appropriate HTML codes, then if you have an apostrophe,
+      // then wrong title, Credits, will appear instead 'cause Drupal corrects HTML mistakes.
+      // By the way, title has this problem as it's a plain text field with no conversion.
+      $lcTitle = HTML::escape(AWBlock::getNodeField($loEntity, 'title'));
+      $lcImage = AWBlock::getNodeField($loEntity, $tcFieldName);
+
+      return ("<img src='$lcImage' aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' />");
+    }
+    catch (Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException|Drupal\Component\Plugin\Exception\PluginNotFoundException $loErr)
+    {
+      $lcTitle = $loErr->getMessage();
+    }
+
+    // From https://bobbyhadz.com/blog/javascript-clear-image-src
+    // Return an empty attribute for src.
+    return ("<img src aria-label='$lcTitle' alt='$lcTitle' title='$lcTitle' />");
+
   }
 
   //-------------------------------------------------------------------------------------------------

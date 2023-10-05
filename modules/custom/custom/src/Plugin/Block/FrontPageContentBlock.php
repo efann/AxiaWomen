@@ -113,7 +113,7 @@ class FrontPageContentBlock extends AWBlock
       //-
       $lcContent .= "</div>\n";
       //**********************************
-      // Benenfactors Carousel block
+      // Benefactors Carousel block
       //**********************************
       // From https://drupal.stackexchange.com/questions/171686/how-can-i-programmatically-display-a-block/171733#171733
       // It's a plugin block.

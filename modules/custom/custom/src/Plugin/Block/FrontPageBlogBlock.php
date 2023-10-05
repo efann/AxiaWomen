@@ -5,7 +5,6 @@
 namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Modules\Text;
 use Drupal\Core\Url;
 use Drupal\views\Views;
 
@@ -33,7 +32,7 @@ class FrontPageBlogBlock extends AWBlock
   /**
    * {@inheritdoc}
    */
-  public function build()
+  public function build(): array
   {
 
     $loViewExecutable = Views::getView(self::VIEW_NAME);
@@ -51,7 +50,7 @@ class FrontPageBlogBlock extends AWBlock
     */
     $lcContent = "<div class='col-sm-12'>\n";
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
       $lcContent .= "<div class='col-sm-4 views-row row$lnIndex'>\n";

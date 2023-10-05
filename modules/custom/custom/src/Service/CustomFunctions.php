@@ -31,7 +31,7 @@ class CustomFunctions
       return ($lcLink);
     }
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
       $loNode = $loRow->_entity;
@@ -56,7 +56,7 @@ class CustomFunctions
       return ($lcTitle);
     }
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {
       $loNode = $loRow->_entity;
@@ -68,7 +68,7 @@ class CustomFunctions
   }
 
   //-------------------------------------------------------------------------------------------------
-  public function clearContentCaches()
+  public function clearContentCaches(): string
   {
     $llOkay = true;
     $lcResults = '';

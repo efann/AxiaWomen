@@ -33,7 +33,7 @@ class AllImageBlock extends AWBlock
   /**
    * {@inheritdoc}
    */
-  public function build()
+  public function build(): array
   {
 
     $loViewExecutable = Views::getView(self::VIEW_NAME);
@@ -54,7 +54,7 @@ class AllImageBlock extends AWBlock
     $lnItems = $loViewExecutable->getItemsPerPage();
     $loViewExecutable->setOffset($lnPage * $lnItems);
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
     $lnTrack = 0;
     foreach ($loViewExecutable->result as $lnIndex => $loRow)
     {

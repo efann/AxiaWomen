@@ -5,7 +5,6 @@
 namespace Drupal\custom\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Modules\Text;
 use Drupal\views\Views;
 
 //-------------------------------------------------------------------------------------------------
@@ -38,7 +37,7 @@ class BenefactorsCarouselBlock extends AWBlock
   /**
    * {@inheritdoc}
    */
-  public function build()
+  public function build(): array
   {
     $loViewExecutable = Views::getView(self::VIEW_NAME);
     if (!is_object($loViewExecutable))
@@ -92,7 +91,7 @@ class BenefactorsCarouselBlock extends AWBlock
   }
 
   //-------------------------------------------------------------------------------------------------
-  private function buildViewList($toViewExecutable, $lcTerm)
+  private function buildViewList($toViewExecutable, $lcTerm): string
   {
     $lcContent = "";
 
@@ -100,7 +99,7 @@ class BenefactorsCarouselBlock extends AWBlock
     $laArgs = [$lnTermID];
 
     $toViewExecutable->setArguments($laArgs);
-    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {

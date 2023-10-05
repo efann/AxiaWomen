@@ -45,7 +45,7 @@ class AllEventsController
     $lnItems = $loViewExecutable->getItemsPerPage();
     $loViewExecutable->setOffset($lnPage * $lnItems);
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     $lcContent .= '<section id="block-awalleventsblock" class="block block-custom block-aw-all-events-block clearfix">' . "\n";
 

@@ -45,7 +45,7 @@ class AllWOWController
     $lnItems = $loViewExecutable->getItemsPerPage();
     $loViewExecutable->setOffset($lnPage * $lnItems);
 
-    $loViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $loViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     $lcContent .= '<section id="block-awallwowblock" class="block block-custom block-aw-all-wow-block clearfix">' . "\n";
 

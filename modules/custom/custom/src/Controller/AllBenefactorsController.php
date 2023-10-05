@@ -75,7 +75,7 @@ class AllBenefactorsController
     $laArgs = [$lnTermID];
 
     $toViewExecutable->setArguments($laArgs);
-    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     foreach ($toViewExecutable->result as $lnIndex => $loRow)
     {
@@ -135,7 +135,7 @@ class AllBenefactorsController
     $laArgs = [$lnTermID];
 
     $toViewExecutable->setArguments($laArgs);
-    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     $lnTrack = 0;
     $lnMultiple = 4;
@@ -206,7 +206,7 @@ class AllBenefactorsController
     $laArgs = [$lnTermID];
 
     $toViewExecutable->setArguments($laArgs);
-    $toViewExecutable->execute(Self::VIEW_BLOCK_ID);
+    $toViewExecutable->execute(self::VIEW_BLOCK_ID);
 
     $lnTrack = 0;
     $lnMultiple = 4;

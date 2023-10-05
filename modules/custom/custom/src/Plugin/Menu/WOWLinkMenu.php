@@ -6,7 +6,6 @@ namespace Drupal\custom\Plugin\Menu;
 
 use Drupal\Core\Menu\MenuLinkDefault;
 use Drupal\Core\Menu\StaticMenuLinkOverridesInterface;
-use Drupal\Core\Modules\Text;
 use Drupal\custom\Service\CustomFunctions;
 
 //-------------------------------------------------------------------------------------------------
@@ -37,7 +36,7 @@ class WOWLinkMenu extends MenuLinkDefault
   /**
    * @inheritDoc
    */
-  public function getTitle()
+  public function getTitle(): string
   {
     return (self::TITLE);
   }
@@ -46,7 +45,7 @@ class WOWLinkMenu extends MenuLinkDefault
   /**
    * @inheritDoc
    */
-  public function getDescription()
+  public function getDescription(): string
   {
     return (self::DESCRIPTION);
   }
